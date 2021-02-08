@@ -17,10 +17,7 @@ public class DialogueSystem : MonoBehaviour
     string targetSpeech = "";
     private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
+        instance = this;
     }
 
     void Start()
@@ -81,6 +78,12 @@ public class DialogueSystem : MonoBehaviour
             retVal = (s.ToLower().Contains("narrator")) ? "" : s;
         return retVal;
     }   
+
+    public void Close()
+    {
+        StopSpeaking();
+        speechPanel.SetActive(false);
+    }
 
     [System.Serializable]
     public class ELEMENTS
