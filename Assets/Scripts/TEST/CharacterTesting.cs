@@ -7,11 +7,14 @@ public class CharacterTesting : MonoBehaviour
     public Character Tachibana;
     void Start()
     {
-        Tachibana = CharacterManager.instance.GetCharacter("Tachibana", enableCreatedCharacterOnStart:false);
+        Tachibana = CharacterManager.instance.GetCharacter("Tachibana", enableCreatedCharacterOnStart: false);
     }
 
     public string[] speech;
     int i = 0;
+    public Vector2 moveTarget;
+    public float moveSpeed;
+    public bool smooth;
 
     // Update is called once per frame
     void Update()
@@ -27,6 +30,14 @@ public class CharacterTesting : MonoBehaviour
                 DialogueSystem.instance.Close();
             }
             i++;
+        }
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            Tachibana.MoveTo(moveTarget, moveSpeed, smooth);
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            Tachibana.StopMoving(true);
         }
     }
 }

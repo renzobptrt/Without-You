@@ -40,4 +40,15 @@ public class CharacterManager : MonoBehaviour
         characters.Add(newCharacter);
         return newCharacter;
     }
+
+    public class CHARACTERPOSITIONS
+    {
+        public Vector2 bottonLeft = new Vector2(0, 0);
+        public Vector2 topRight = new Vector2(1f, 1f);
+        public Vector2 center = new Vector2(0.5f, 0.5f);
+        public Vector2 bottonRight = new Vector2(1f, 0);
+        public Vector2 topLeft = new Vector2(0, 1f);
+    }
+
+    public static CHARACTERPOSITIONS characterPositions = new CHARACTERPOSITIONS();
 }

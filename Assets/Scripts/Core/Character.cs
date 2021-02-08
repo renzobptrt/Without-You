@@ -12,6 +12,11 @@ public class Character
     public bool isMultiLayerCharacter { get { return renderers.renderer == null; } }
     public bool enabled { get { return root.gameObject.activeInHierarchy; } set { root.gameObject.SetActive(value); } }
     DialogueSystem dialogue;
+    private Vector2 targetPosition;
+    private Coroutine moving;
+    public Vector2 anchorPadding { get { return root.anchorMax - root.anchorMin; } }
+    private bool isMoving { get { return moving != null; } }
+
     public void Say(string speech, bool add = false)
     {   if (!enabled)
             enabled = true;
@@ -19,6 +24,53 @@ public class Character
             dialogue.Say(speech, characterName);
         else
             dialogue.SayAdd(speech, characterName);
+    }
+
+    public void MoveTo(Vector2 target, float speed, bool smoth)
+    {
+        StopMoving();
+        moving = CharacterManager.instance.StartCoroutine(Moving(target, speed, smoth));
+    }
+
+    public void StopMoving(bool arriveAtTargetPositionInmediately = false)
+    {
+        if (isMoving)
+        {
+            CharacterManager.instance.StopCoroutine(moving);
+            if (arriveAtTargetPositionInmediately) SetPosition(targetPosition);
+        }
+        moving = null;
+    }
+
+    public void SetPosition(Vector2 target)
+    {
+        targetPosition = target;
+        Vector2 padding = anchorPadding;
+        float maxX = 1f - padding.x;
+        float maxY = 1f - padding.y;
+
+        Vector2 minAnchorTarget = new Vector2(maxX * targetPosition.x, maxY * targetPosition.y);
+
+        root.anchorMin = minAnchorTarget;
+        root.anchorMax = root.anchorMin + padding;
+    }
+
+    IEnumerator Moving(Vector2 target, float speed, bool smoth)
+    {
+        targetPosition = target;
+        Vector2 padding = anchorPadding;
+        float maxX = 1f - padding.x;
+        float maxY = 1f - padding.y;
+
+        Vector2 minAnchorTarget = new Vector2(maxX * targetPosition.x, maxY * targetPosition.y);
+        speed *= Time.deltaTime;
+        while(root.anchorMin != minAnchorTarget)
+        {
+            root.anchorMin = (!smoth) ? Vector2.MoveTowards(root.anchorMin, minAnchorTarget, speed) : Vector2.Lerp(root.anchorMin,minAnchorTarget,speed);
+            root.anchorMax = root.anchorMin + padding;
+            yield return new WaitForEndOfFrame();
+        }
+        StopMoving();
     }
 
     public Character(string _characterName, bool enableOnStart = true)
