@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 0c0018a34e87a484a8cca6d46f96a3b4
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Sayloves_DEMO
+  fontNames:
+  - Sayloves_DEMO
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: d10bf0a6df1a04649a4ef2eec908481d, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
