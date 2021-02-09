@@ -539,7 +539,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 421889789}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5ea88e926f3b6b54eab314b760d3d62d, type: 3}
   m_Name: 
@@ -551,9 +551,9 @@ MonoBehaviour:
       bodyRenderer: {fileID: 0}
       allBodyRenderers: []
   speech:
-  - Hola, mi nombre es Tachibana.
-  - "\xBFComo te llamas?"
-  - "Oh. \xBFEnserio?"
+  - Hola mi nombre es <color=red>Tachibana</color>
+  - "\xBFQue <b>haces</b> aqui?"
+  - "\xBFQuieres <b><i>jugar</i></b>?"
   moveTarget: {x: 0, y: 0}
   moveSpeed: 1
   smooth: 0
@@ -594,7 +594,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 421889789}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7aacda8e6d8d79418bacab5ef267a9f, type: 3}
   m_Name: 
@@ -609,7 +609,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 421889789}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c02b3aa0c7a3c74484c9232a2700036, type: 3}
   m_Name: 
@@ -1258,6 +1258,7 @@ GameObject:
   - component: {fileID: 1815059078}
   - component: {fileID: 1815059080}
   - component: {fileID: 1815059079}
+  - component: {fileID: 1815059081}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1380,6 +1381,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1815059077}
   m_CullTransparentMesh: 0
+--- !u!114 &1815059081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815059077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c92f15423d60717438ae6135b8a3edfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1815059079}
+  say: 
+  charactersPerFrame: 1
+  speed: 200
+  useEncap: 1
 --- !u!1 &1900605244
 GameObject:
   m_ObjectHideFlags: 0

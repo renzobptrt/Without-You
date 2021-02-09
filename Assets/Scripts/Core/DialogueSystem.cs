@@ -13,6 +13,7 @@ public class DialogueSystem : MonoBehaviour
     //Feature
     public bool _isSpeaking { get { return speaking != null; } }
     private Coroutine speaking = null;
+    private TextArchitect textArchitect = null;
     public bool _isWaitingForUserInput = false;
     string targetSpeech = "";
     private void Awake()
@@ -45,24 +46,39 @@ public class DialogueSystem : MonoBehaviour
         {
             StopCoroutine(speaking);
         }
+        if(textArchitect!=null && textArchitect.isConstructing)
+        {
+            textArchitect.Stop();
+        }
         speaking = null;
     }
 
-    IEnumerator Speaking(string speech, bool additive,string targetSpeaker = "")
+    IEnumerator Speaking(string speech, bool additive, string targetSpeaker = "")
     {
         speechPanel.SetActive(true);
         targetSpeech = speech;
-        if (!additive)
-            speechText.text = "";
-        else
-            targetSpeech = speechText.text + targetSpeech;
+
+        string additiveSpeech = additive ? speechText.text : "";
+        /*
+        targetSpeech = additiveSpeech + speech;
+
+        textArchitect = new TextArchitect(speech,additiveSpeech);
+        */
+
+        textArchitect = new TextArchitect(targetSpeech);
+
         speakerNameText.text = DeterminateSpeaker(targetSpeaker);
         _isWaitingForUserInput = false;
-        while(speechText.text != targetSpeech)
+        while(textArchitect.isConstructing)
         {
-            speechText.text += targetSpeech[speechText.text.Length];
-            yield return new WaitForSeconds(0.05f);
+            if (Input.GetKey(KeyCode.Space))
+                textArchitect.skip = true;
+
+            speechText.text = textArchitect.currentText;
+
+            yield return new WaitForEndOfFrame();
         }
+        speechText.text = textArchitect.currentText;
 
         _isWaitingForUserInput = true;
         while (_isWaitingForUserInput)
