@@ -29,7 +29,5 @@ public class ArchitectTesting : MonoBehaviour
             architect = new TextArchitect(say,"",charactersPerFrame,speed,useEncap);
             text.text = architect.currentText;
         }
-
-        
     }
 }
