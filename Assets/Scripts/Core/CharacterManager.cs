@@ -51,4 +51,11 @@ public class CharacterManager : MonoBehaviour
     }
 
     public static CHARACTERPOSITIONS characterPositions = new CHARACTERPOSITIONS();
+    public class CHARACTEREXPRESSIONS
+    {
+        public string normal = "Normal";
+        public string shocked = "Shocked";
+    }
+
+    public static CHARACTEREXPRESSIONS characterExpressions = new CHARACTEREXPRESSIONS();
 }
