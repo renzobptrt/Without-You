@@ -540,7 +540,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 421889789}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5ea88e926f3b6b54eab314b760d3d62d, type: 3}
   m_Name: 
@@ -551,10 +551,7 @@ MonoBehaviour:
     renderers:
       bodyRenderer: {fileID: 0}
       allBodyRenderers: []
-  speech:
-  - Hola mi nombre es <color=red>Tachibana</color>
-  - "\xBFQue <b>haces</b> aqui? <sprite=1>"
-  - "\xBFQuieres <b><i>jugar</i></b>?"
+  speech: []
   moveTarget: {x: 0, y: 0}
   moveSpeed: 1
   smooth: 0
@@ -595,7 +592,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 421889789}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7aacda8e6d8d79418bacab5ef267a9f, type: 3}
   m_Name: 
@@ -630,7 +627,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 421889789}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c92f15423d60717438ae6135b8a3edfd, type: 3}
   m_Name: 
@@ -638,7 +635,7 @@ MonoBehaviour:
   textMPro: {fileID: 1815059079}
   say: 
   charactersPerFrame: 1
-  speed: 1
+  speed: 15
   useEncap: 1
   isTMPro: 1
 --- !u!1 &519420028
@@ -775,6 +772,7 @@ MonoBehaviour:
     speechText: {fileID: 1815059079}
   _isWaitingForUserInput: 0
   targetSpeech: 
+  speedText: 10
 --- !u!4 &694993773
 Transform:
   m_ObjectHideFlags: 0

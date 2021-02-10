@@ -11,3 +11,5 @@ narrator "Mi nombre es: "
 Tachibana "Tu eres <i>Favio</i> ?" setExpression(Tachibana,body,shocked,4) moveCharacter(Tachibana,1,0,3,false)
 "Espera-"
 +"  ....¿Estas hablando enserio?"
+
+Chitose "Holaaaaa" setPosition(Chitose,0,0)
