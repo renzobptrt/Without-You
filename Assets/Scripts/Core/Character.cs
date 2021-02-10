@@ -20,15 +20,14 @@ public class Character
     private bool isTransitioningBody { get { return transitioningBody != null; } }
 
     public void Say(string speech, bool add = false)
-    {   if (!enabled)
+    {   
+        if (!enabled)
             enabled = true;
-        if (!add)
-            dialogue.Say(speech, characterName);
-        else
-            dialogue.SayAdd(speech, characterName);
+      
+         dialogue.Say(speech, characterName,add);
     }
 
-    public void MoveTo(Vector2 target, float speed, bool smoth)
+    public void MoveTo(Vector2 target, float speed, bool smoth = true)
     {
         StopMoving();
         moving = CharacterManager.instance.StartCoroutine(Moving(target, speed, smoth));
@@ -93,7 +92,7 @@ public class Character
         renderers.bodyRenderer.sprite = newSprite;
     }
 
-    public void TransitionBody(Sprite newSprite, float speed, bool isSmooth)
+    public void TransitionBody(Sprite newSprite, float speed, bool isSmooth = true)
     {
         if (renderers.bodyRenderer.sprite == newSprite)
             return;

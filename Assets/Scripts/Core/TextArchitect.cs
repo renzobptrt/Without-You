@@ -12,7 +12,7 @@ public class TextArchitect
 
 	private int charactersPerFrame = 1;
 	[Range(1f, 60f)]
-	private float speed = 15f;
+	private float speed = 1f;
 	private bool useEncapsulation = true;
 
 	public bool skip = false;
@@ -22,7 +22,7 @@ public class TextArchitect
 
 	private bool isTMPro;
 
-	public TextArchitect(string targetText, string preText = "", int charactersPerFrame = 1, float speed = 15f, bool useEncapsulation = true,
+	public TextArchitect(string targetText, string preText = "", int charactersPerFrame = 1, float speed = 1f, bool useEncapsulation = true,
 		bool isTMPro = true)
 	{
 		this.targetText = targetText;

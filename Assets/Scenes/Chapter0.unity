@@ -282,12 +282,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 289063768}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 694993773}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &289063770
 MonoBehaviour:
@@ -525,6 +525,7 @@ GameObject:
   - component: {fileID: 421889790}
   - component: {fileID: 421889793}
   - component: {fileID: 421889794}
+  - component: {fileID: 421889795}
   m_Layer: 0
   m_Name: Test
   m_TagString: Untagged
@@ -552,7 +553,7 @@ MonoBehaviour:
       allBodyRenderers: []
   speech:
   - Hola mi nombre es <color=red>Tachibana</color>
-  - "\xBFQue <b>haces</b> aqui?"
+  - "\xBFQue <b>haces</b> aqui? <sprite=1>"
   - "\xBFQuieres <b><i>jugar</i></b>?"
   moveTarget: {x: 0, y: 0}
   moveSpeed: 1
@@ -622,6 +623,24 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b83de32af3ec29d4e9e03a76812f80f2, type: 3}
   - {fileID: 8300000, guid: e5532aa834ccf994c945b811e54f05d8, type: 3}
   - {fileID: 8300000, guid: aef7492657a286d4db8b8eee5587db73, type: 3}
+--- !u!114 &421889795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421889789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c92f15423d60717438ae6135b8a3edfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMPro: {fileID: 1815059079}
+  say: 
+  charactersPerFrame: 1
+  speed: 1
+  useEncap: 1
+  isTMPro: 1
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -716,6 +735,7 @@ GameObject:
   - component: {fileID: 694993773}
   - component: {fileID: 694993772}
   - component: {fileID: 694993771}
+  - component: {fileID: 694993774}
   m_Layer: 0
   m_Name: Core
   m_TagString: Untagged
@@ -754,6 +774,7 @@ MonoBehaviour:
     speakerNameText: {fileID: 326564928}
     speechText: {fileID: 1815059079}
   _isWaitingForUserInput: 0
+  targetSpeech: 
 --- !u!4 &694993773
 Transform:
   m_ObjectHideFlags: 0
@@ -764,11 +785,22 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 289063769}
+  m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &694993774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694993770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab6a3484bd678940a89c4969bfdecf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1027321791
 GameObject:
   m_ObjectHideFlags: 0
@@ -1258,7 +1290,6 @@ GameObject:
   - component: {fileID: 1815059078}
   - component: {fileID: 1815059080}
   - component: {fileID: 1815059079}
-  - component: {fileID: 1815059081}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1304,7 +1335,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: <sprite=0>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1381,23 +1412,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1815059077}
   m_CullTransparentMesh: 0
---- !u!114 &1815059081
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1815059077}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c92f15423d60717438ae6135b8a3edfd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: {fileID: 1815059079}
-  say: 
-  charactersPerFrame: 1
-  speed: 20
-  useEncap: 1
 --- !u!1 &1900605244
 GameObject:
   m_ObjectHideFlags: 0

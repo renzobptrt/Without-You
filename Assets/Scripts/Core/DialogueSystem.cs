@@ -14,8 +14,11 @@ public class DialogueSystem : MonoBehaviour
     public bool _isSpeaking { get { return speaking != null; } }
     private Coroutine speaking = null;
     private TextArchitect textArchitect = null;
+    [HideInInspector]
     public bool _isWaitingForUserInput = false;
-    string targetSpeech = "";
+    public string targetSpeech = "";
+
+    public float speedText = 1f;
     private void Awake()
     {
         instance = this;
@@ -27,17 +30,12 @@ public class DialogueSystem : MonoBehaviour
     }
 
     //Say something
-    public void Say(string speech, string speaker="")
+    public void Say(string speech, string speaker="",bool additive = false)
     {
         StopSpeaking();
-        speaking = StartCoroutine(Speaking(speech,false,speaker));
-    }
-
-    public void SayAdd(string speech, string speaker = "")
-    {
-        StopSpeaking();
-        speechText.text = targetSpeech;
-        speaking = StartCoroutine(Speaking(speech, true, speaker));
+        if(additive)
+            speechText.text = targetSpeech;
+        speaking = StartCoroutine(Speaking(speech,additive,speaker));
     }
 
     public void StopSpeaking()
@@ -59,13 +57,10 @@ public class DialogueSystem : MonoBehaviour
         targetSpeech = speech;
 
         string additiveSpeech = additive ? speechText.text : "";
-        /*
+        
         targetSpeech = additiveSpeech + speech;
 
-        textArchitect = new TextArchitect(speech,additiveSpeech);
-        */
-
-        textArchitect = new TextArchitect(targetSpeech);
+        textArchitect = new TextArchitect(speech,additiveSpeech,1,speedText);
 
         speakerNameText.text = DeterminateSpeaker(targetSpeaker);
         _isWaitingForUserInput = false;
@@ -76,7 +71,7 @@ public class DialogueSystem : MonoBehaviour
 
             speechText.text = textArchitect.currentText;
 
-            yield return new WaitForEndOfFrame();
+            yield return new WaitForSeconds(0.05f);
         }
         speechText.text = textArchitect.currentText;
 
