@@ -20,8 +20,15 @@ public class NovelManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            HandleLine(data[progress]);
-            progress++;
+            if (progress < data.Count)
+            {
+                HandleLine(data[progress]);
+                progress++;
+            }
+            else
+            {
+                print("Ya no hay más dialogos");
+            }
         }
     }
 
@@ -88,40 +95,53 @@ public class NovelManager : MonoBehaviour
     {
         print("Accion: " + action);
         string[] data = action.Split('(', ')');
-        if (data[0] == "setBackground")
+        switch (data[0])
         {
-            Command_SetLayerImage(data[1], BackgroundManager.instance.background);
-            return;
-        }
-        if (data[0] == "setForeground")
-        {
-            Command_SetLayerImage(data[1], BackgroundManager.instance.foreground);
-            return;
-        }
-        if (data[0] == "playSfx")
-        {
-            Command_PlaySfx(data[1]);
-            return;
-        }
-        if (data[0] == "playMusic")
-        {
-            Command_PlayMusic(data[1]);
-            return;
-        }
-        if (data[0] == "moveCharacter")
-        {
-            Command_MoveCharacter(data[1]);
-            return;
-        }
-        if (data[0] == "setPosition")
-        {
-            Command_SetPosition(data[1]);
-            return;
-        }
-        if (data[0] == "setExpression")
-        {
-            Command_ChangeExpression(data[1]);
-            return;
+            case "setBackground":
+                {
+                    Command_SetLayerImage(data[1], BackgroundManager.instance.background);
+                    break;
+                }
+            case "setForeground":
+                {
+                    Command_SetLayerImage(data[1], BackgroundManager.instance.foreground);
+                    break;
+                }
+            case "playSfx":
+                {
+                    Command_PlaySfx(data[1]);
+                    break;
+                }
+            case "playMusic":
+                {
+                    Command_PlayMusic(data[1]);
+                    break;
+                }
+            case "moveCharacter":
+                {
+                    Command_MoveCharacter(data[1]);
+                    break;
+                }
+            case "setPosition":
+                {
+                    Command_SetPosition(data[1]);
+                    break;
+                }
+            case "setExpression":
+                {
+                    Command_ChangeExpression(data[1]);
+                    break;
+                }
+            case "enter":
+                {
+                    Command_Enter(data[1]);
+                    break;
+                }
+            case "exit":
+                {
+                    Command_Exit(data[1]);
+                    break;
+                }
         }
     }
 
@@ -207,6 +227,54 @@ public class NovelManager : MonoBehaviour
         {
             //c.SetNewEmotion(expression);
             c.TransitionBody(sprite, speed,false);
+        }
+    }
+
+    void Command_Exit(string data)
+    {
+        string[] parameters = data.Split(',');
+        string[] characters = parameters[0].Split(';');
+        float speed = 3;
+        bool smooth = false;
+        for (int i = 1; i < parameters.Length; i++)
+        {
+            float fVal = 0; bool bVal = false;
+            if (float.TryParse(parameters[i], out fVal)) { speed = fVal; continue; }
+            if (bool.TryParse(parameters[i], out bVal)) { smooth = bVal; continue; }
+        }
+        
+        foreach(string s in characters)
+        {
+            Character c = CharacterManager.instance.GetCharacter(s);
+            c.FadeOut(speed, smooth);
+        }
+    }
+
+    void Command_Enter(string data)
+    {
+        string[] parameters = data.Split(',');
+        string[] characters = parameters[0].Split(';');
+        float speed = 3;
+        bool smooth = false;
+        for (int i = 1; i < parameters.Length; i++)
+        {
+            float fVal = 0; bool bVal = false;
+            if (float.TryParse(parameters[i], out fVal)) { speed = fVal; continue; }
+            if (bool.TryParse(parameters[i], out bVal)) { smooth = bVal; continue; }
+        }
+
+        foreach (string s in characters)
+        {
+            Character c = CharacterManager.instance.GetCharacter(s,true,false);
+            if (!c.enabled)
+            {
+                c.renderers.bodyRenderer.color = new Color(1, 1, 1, 0);
+                c.enabled = true;
+
+                c.TransitionBody(c.renderers.bodyRenderer.sprite, speed, smooth);
+            }
+            else
+                c.FadeIn(speed, smooth);
         }
     }
 }

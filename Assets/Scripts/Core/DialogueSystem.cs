@@ -63,7 +63,10 @@ public class DialogueSystem : MonoBehaviour
         textArchitect = new TextArchitect(speech,additiveSpeech,1,speedText);
 
         speakerNameText.text = DeterminateSpeaker(targetSpeaker);
+        speakerNamePanel.SetActive(speakerNameText.text != "" || speakerNameText.text == "narrator");
+
         _isWaitingForUserInput = false;
+
         while(textArchitect.isConstructing)
         {
             if (Input.GetKey(KeyCode.Space))
@@ -100,6 +103,7 @@ public class DialogueSystem : MonoBehaviour
     public class ELEMENTS
     {
         public GameObject speechPanel;
+        public GameObject speakerNamePanel;
         public TextMeshProUGUI speakerNameText;
         public TextMeshProUGUI speechText;
     }
@@ -107,6 +111,8 @@ public class DialogueSystem : MonoBehaviour
     public GameObject speechPanel { get { return elements.speechPanel; } }
     public TextMeshProUGUI speakerNameText { get { return elements.speakerNameText; } }
     public TextMeshProUGUI speechText { get { return elements.speechText; } }
+
+    public GameObject speakerNamePanel { get { return elements.speakerNamePanel; } }
 
 
 }

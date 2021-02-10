@@ -14,6 +14,7 @@ public class Character
     private Vector2 targetPosition;
     private Coroutine moving;
     private Coroutine transitioningBody;
+    private Sprite lastBodySprite = null;
    
     public Vector2 anchorPadding { get { return root.anchorMax - root.anchorMin; } }
     private bool isMoving { get { return moving != null; } }
@@ -56,6 +57,22 @@ public class Character
         root.anchorMax = root.anchorMin + padding;
     }
 
+    public void FadeOut(float speed = 3, bool smooth = false)
+    {
+        Sprite alphaSprite = Resources.Load<Sprite>("images/AlphaOnly");
+        lastBodySprite = renderers.bodyRenderer.sprite;
+
+        TransitionBody(alphaSprite, speed, smooth);
+    }
+
+    public void FadeIn(float speed = 3, bool smooth = false)
+    {
+        if(lastBodySprite != null)
+        {
+            TransitionBody(lastBodySprite, speed, smooth);
+        }
+    }
+
     IEnumerator Moving(Vector2 target, float speed, bool smoth)
     {
         targetPosition = target;
@@ -94,8 +111,6 @@ public class Character
 
     public void TransitionBody(Sprite newSprite, float speed, bool isSmooth = true)
     {
-        if (renderers.bodyRenderer.sprite == newSprite)
-            return;
         StopTransitionBody();
         transitioningBody = CharacterManager.instance.StartCoroutine(TransitioningBody(newSprite,speed,isSmooth));
     }
@@ -129,7 +144,7 @@ public class Character
             image.sprite = newSprite;
         }
 
-        while (GlobalFunction.TransitionImages(ref renderers.bodyRenderer, ref renderers.allBodyRenderers, speed, isSmooth))
+        while (GlobalFunction.TransitionImages(ref renderers.bodyRenderer, ref renderers.allBodyRenderers, speed, isSmooth,true))
             yield return new WaitForEndOfFrame();
 
         StopTransitionBody();
