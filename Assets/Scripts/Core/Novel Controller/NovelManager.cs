@@ -4,11 +4,26 @@ using UnityEngine;
 
 public class NovelManager : MonoBehaviour
 {
+    public static NovelManager instance;
 
     List<string> data = new List<string>();
 
     int progress = 0;
-    string cachedLastSpeaker = "";
+
+    Coroutine handlingLine = null;
+    public bool isHandlingLine { get { return handlingLine != null; } }
+
+    Coroutine handlingChapterFile = null;
+
+    bool _next = false;
+
+    [HideInInspector]
+    public string cachedLastSpeaker = "";
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     void Start()
     {
@@ -20,75 +35,113 @@ public class NovelManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            if (progress < data.Count)
-            {
-                HandleLine(data[progress]);
-                progress++;
-            }
-            else
-            {
-                print("Ya no hay más dialogos");
-            }
+            Next();
         }
     }
 
     public void LoadChapterFile(string fileName)
     {
         data = FileManager.LoadFile(FileManager.savPath + "Resources/Story/"+fileName);
-        progress = 0;
         cachedLastSpeaker = "";
+
+        if (handlingChapterFile != null)
+        {
+            StopCoroutine(handlingChapterFile);
+        }
+
+        handlingChapterFile = StartCoroutine(HandlingChapterFile());
     }
 
-    void HandleLine(string line)
+    public void Next()
     {
-        string[] dialogueAndActions = line.Split('"');
-
-        if(dialogueAndActions.Length == 3)
-        {
-            HandleDialogue(dialogueAndActions[0], dialogueAndActions[1]);
-            HandleEventsFromLine(dialogueAndActions[2]);
-        }
-        else
-        {
-            HandleEventsFromLine(dialogueAndActions[0]);
-        }
+        _next = true;
     }
 
-    void HandleDialogue(string dialogueDetails,string dialogue)
+    IEnumerator HandlingChapterFile()
     {
-        string speaker = cachedLastSpeaker;
-        bool additive = dialogueDetails.Contains("+");
-        if (additive)
-            dialogueDetails = dialogueDetails.Remove(dialogueDetails.Length - 1);
-        if (dialogueDetails.Length > 0)
+        int progress = 0;
+
+        while( progress < data.Count)
         {
-            if (dialogueDetails[dialogueDetails.Length - 1] == ' ')
+            if (_next)
             {
-                dialogueDetails = dialogueDetails.Remove(dialogueDetails.Length - 1);
+                HandleLine(data[progress]);
+                progress++;
+                while (isHandlingLine)
+                {
+                    yield return new WaitForEndOfFrame();
+                }
             }
-            speaker = dialogueDetails;
-            cachedLastSpeaker = speaker;
-        }
-
-        if(speaker != "narrator")
-        {
-            Character character = CharacterManager.instance.GetCharacter(speaker);
-            character.Say(dialogue, additive);
-        }
-        else
-        {
-            DialogueSystem.instance.Say(dialogue, speaker, additive);
+            //We need a way of knowing when the player wants to advance. We need a "next" trigger.
+            yield return new WaitForEndOfFrame();
         }
     }
 
-    void HandleEventsFromLine(string events)
+    void HandleLine(string rawLine)
     {
+        ControllerLineManager.LINE line = ControllerLineManager.Interpret(rawLine);
 
-        string[] actions = events.Split(' ');
-        foreach(string action in actions)
+        StopHandlingLine();
+        handlingLine = StartCoroutine(HandlingLine(line));
+    }
+
+    void StopHandlingLine()
+    {
+        if (isHandlingLine)
+            StopCoroutine(handlingLine);
+
+        handlingLine = null;
+    }
+
+    IEnumerator HandlingLine(ControllerLineManager.LINE line)
+    {
+        _next = false;
+        int lineProgress = 0;
+        while (lineProgress < line.segments.Count)
         {
-            HandleAction(action);
+            _next = false;
+            ControllerLineManager.LINE.SEGMENT segment = line.segments[lineProgress];
+            if (lineProgress > 0)
+            {
+                if(segment.trigger == ControllerLineManager.LINE.SEGMENT.TRIGGER.autoDelay)
+                {
+                    for(float timer = segment.autoDelay; timer>=0; timer -= Time.deltaTime)
+                    {
+                        yield return new WaitForEndOfFrame();
+                        if (_next)
+                            break;
+                    }
+                }
+                else
+                {
+                    while(!_next)
+                        yield return new WaitForEndOfFrame();
+                }
+            }
+            _next = false;
+
+            segment.Run();
+
+            while (segment.isRunning)
+            {
+                yield return new WaitForEndOfFrame();
+                if (_next)
+                {
+                    if (!segment.architect.skip)
+                        segment.architect.skip = true;
+                    else
+                        segment.ForceFinish();
+                }
+            }
+
+            lineProgress++;
+            yield return new WaitForEndOfFrame();
         }
+        for(int i=0;i< line.actions.Count; i++)
+        {
+            HandleAction(line.actions[i]);
+        }
+        handlingLine = null;
     }
 
     void HandleAction(string action)

@@ -107,6 +107,12 @@ public class TextArchitect
 			DialogueSystem.instance.StopCoroutine(buildProcess);
 		buildProcess = null;
 	}
+
+	public void ForceFinish()
+    {
+		tmpro.maxVisibleCharacters = tmpro.text.Length;
+		Terminate();
+    }
 	/*
 	private class ENCAPSULATED_TEXT
 	{

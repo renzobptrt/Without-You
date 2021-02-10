@@ -13,7 +13,7 @@ public class DialogueSystem : MonoBehaviour
     //Feature
     public bool _isSpeaking { get { return speaking != null; } }
     private Coroutine speaking = null;
-    private TextArchitect textArchitect = null;
+    public TextArchitect textArchitect = null;
     [HideInInspector]
     public bool _isWaitingForUserInput = false;
     public string targetSpeech = "";
