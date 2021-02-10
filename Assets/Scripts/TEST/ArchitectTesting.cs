@@ -27,7 +27,8 @@ public class ArchitectTesting : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            architect = new TextArchitect(say,"",charactersPerFrame,speed,useEncap, isTMPro);  
+            architect = new TextArchitect(say,"",charactersPerFrame,speed,useEncap, isTMPro);
+            textMPro.text = architect.currentText;
         }
         //textMPro.text = architect.currentText;
     }
