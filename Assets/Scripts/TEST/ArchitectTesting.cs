@@ -13,13 +13,12 @@ public class ArchitectTesting : MonoBehaviour
     public string say;
     public int charactersPerFrame = 1;
     public float speed = 1f;
-    public bool useEncap = true;
-    public bool isTMPro = true;
+    public string additive;
 
     // Start is called before the first frame update
     void Start()
     {
-        architect = new TextArchitect(say, "", charactersPerFrame, speed, useEncap,isTMPro);
+        architect = new TextArchitect(textMPro,say, additive, charactersPerFrame, speed);
     }
 
     // Update is called once per frame
@@ -27,9 +26,7 @@ public class ArchitectTesting : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            architect = new TextArchitect(say,"",charactersPerFrame,speed,useEncap, isTMPro);
-            textMPro.text = architect.currentText;
+            architect = new TextArchitect(textMPro, say, additive, charactersPerFrame, speed);
         }
-        //textMPro.text = architect.currentText;
     }
 }

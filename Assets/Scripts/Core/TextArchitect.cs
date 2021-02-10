@@ -1,37 +1,35 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class TextArchitect
 {
-	public string currentText { get { return _currentText; } }
-	private string _currentText = "";
+	/// <summary>A dictionary keeping tabs on all architects present in a scene. Prevents multiple architects from influencing the same text object simultaneously.</summary>
+	private static Dictionary<TextMeshProUGUI, TextArchitect> activeArchitects = new Dictionary<TextMeshProUGUI, TextArchitect>();
 
 	private string preText;
 	private string targetText;
 
 	private int charactersPerFrame = 1;
-	[Range(1f, 60f)]
 	private float speed = 1f;
-	private bool useEncapsulation = true;
 
 	public bool skip = false;
 
 	public bool isConstructing { get { return buildProcess != null; } }
 	Coroutine buildProcess = null;
 
-	private bool isTMPro;
+	TextMeshProUGUI tmpro;
 
-	public TextArchitect(string targetText, string preText = "", int charactersPerFrame = 1, float speed = 1f, bool useEncapsulation = true,
-		bool isTMPro = true)
+	public TextArchitect(TextMeshProUGUI tmpro, string targetText, string preText = "", int charactersPerFrame = 1, float speed = 1f)
 	{
+		this.tmpro = tmpro;
 		this.targetText = targetText;
 		this.preText = preText;
 		this.charactersPerFrame = charactersPerFrame;
-		this.speed = speed;
-		this.useEncapsulation = useEncapsulation;
-		this.isTMPro = isTMPro;
-		buildProcess = DialogueSystem.instance.StartCoroutine(Construction());
+		this.speed = Mathf.Clamp(speed, 1f, 300f);
+
+		Initiate();
 	}
 
 	public void Stop()
@@ -46,78 +44,70 @@ public class TextArchitect
 	IEnumerator Construction()
 	{
 		int runsThisFrame = 0;
-		string[] speechAndTags = useEncapsulation ? TagManager.SplitByTags(targetText) : new string[1] { targetText };
 
-		//is this is additive, make sure we include the additive text.
-		_currentText = preText;
-		//make a storage for the building text so we don't change what is already made. so we can sandwich it between tags.
-		string curText = "";
+		tmpro.text = "";
+		tmpro.text += preText;
 
-		//build the text by moving through each part
-		for (int a = 0; a < speechAndTags.Length; a++)
+		tmpro.ForceMeshUpdate();
+		TMP_TextInfo inf = tmpro.textInfo;
+		int vis = inf.characterCount;
+
+		tmpro.text += targetText;
+
+		tmpro.ForceMeshUpdate();
+		inf = tmpro.textInfo;
+		int max = inf.characterCount;
+
+		tmpro.maxVisibleCharacters = vis;
+
+		while (vis < max)
 		{
-			string section = speechAndTags[a];
-			//tags will always be odd indexed.
-			bool isATag = (a & 1) != 0;
-
-			if (isATag && useEncapsulation)
+			//allow skipping by increasing the characters per frame and the speed of occurance.
+			if (skip)
 			{
-                if (!isTMPro)
-                {
-					//store the current text into something that can be referenced as a restart point as tagged sections of text are added and removed.
-					curText = _currentText;
-					ENCAPSULATED_TEXT encapsulation = new ENCAPSULATED_TEXT(string.Format("<{0}>", section), speechAndTags, a);
-					while (!encapsulation.isDone)
-					{
-						bool stepped = encapsulation.Step();
-
-						_currentText = curText + encapsulation.displayText;
-
-						//only yield if a step was taken in building the string
-						if (stepped)
-						{
-							runsThisFrame++;
-							int maxRunsPerFrame = skip ? 5 : charactersPerFrame;
-							if (runsThisFrame == maxRunsPerFrame)
-							{
-								runsThisFrame = 0;
-								yield return new WaitForSeconds(skip ? 0.01f : 0.01f * speed);
-							}
-						}
-					}
-					//increment by one to bypass the text that was used in the encapsulation.
-					a = encapsulation.speechAndTagsArrayProgress + 1;
-				}
-                else
-                {
-					string tag = string.Format("<{0}>", section);
-					_currentText += tag;
-					yield return new WaitForEndOfFrame();
-				}
-
+				speed = 1;
+				charactersPerFrame = charactersPerFrame < 5 ? 5 : charactersPerFrame + 3;
 			}
-			//not a tag or not using encap. build like regular text.
-			else
+
+			//reveal a certain number of characters per frame.
+			while (runsThisFrame < charactersPerFrame)
 			{
-				for (int i = 0; i < section.Length; i++)
-				{
-					_currentText += section[i];
-
-					runsThisFrame++;
-					int maxRunsPerFrame = skip ? 5 : charactersPerFrame;
-					if (runsThisFrame == maxRunsPerFrame)
-					{
-						runsThisFrame = 0;
-						yield return new WaitForSeconds(skip ? 0.01f : 0.01f * speed);
-					}
-				}
+				vis++;
+				tmpro.maxVisibleCharacters = vis;
+				runsThisFrame++;
 			}
+
+			//wait for the next available revelation time.
+			runsThisFrame = 0;
+			yield return new WaitForSeconds(0.01f * speed);
 		}
 
-		//end the build process, construction is done.
-		buildProcess = null;
+		//terminate the architect and remove it from the active log of architects.
+		Terminate();
 	}
 
+	void Initiate()
+	{
+		//check if an architect for this text object is already running. if it is, terminate it. Do not allow more than one architect to affect the same text object at once.
+		TextArchitect existingArchitect = null;
+		if (activeArchitects.TryGetValue(tmpro, out existingArchitect))
+			existingArchitect.Terminate();
+
+		buildProcess = DialogueSystem.instance.StartCoroutine(Construction());
+		activeArchitects.Add(tmpro, this);
+	}
+
+	/// <summary>
+	/// Terminate this architect. Stops the text generation process and removes it from the cache of all active architects.
+	/// </summary>
+	public void Terminate()
+	{
+		activeArchitects.Remove(tmpro);
+		if (isConstructing)
+			DialogueSystem.instance.StopCoroutine(buildProcess);
+		buildProcess = null;
+	}
+	/*
 	private class ENCAPSULATED_TEXT
 	{
 		//tag precedes text. ending tag trails it.
@@ -270,5 +260,5 @@ public class TextArchitect
 			if (encapsulator != null)
 				encapsulator.UpdateDisplay(displayText);
 		}
-	}
+	}*/
 }
