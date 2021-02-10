@@ -453,7 +453,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &377807549
 RectTransform:
   m_ObjectHideFlags: 0
@@ -768,6 +768,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   elements:
     speechPanel: {fileID: 377807548}
+    speakerNamePanel: {fileID: 1550792522}
     speakerNameText: {fileID: 326564928}
     speechText: {fileID: 1815059079}
   _isWaitingForUserInput: 0

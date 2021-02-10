@@ -12,6 +12,6 @@ Tachibana "Tu eres <i>Favio</i> ?"
 "Espera-"
 +"  ....¿Estas hablando enserio?"
 
-Chitose "Holaaaaa" setPosition(Chitose,0,0) moveCharacter(Tachibana,1,0,3,false)
+Chitose "Holaaaaa" setPosition(Chitose,0,0) moveCharacter(Tachibana,1,0,3,false) setPosition(Akiko,0.5,0)
 "¿Como estas Favio?" exit(Tachibana) moveCharacter(Chitose,0.5,0,3)
 "¿Te acuerdas de mi cierto?"
