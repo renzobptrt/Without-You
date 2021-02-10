@@ -6,10 +6,10 @@ Tachibana "Hola, mi nombre es Tachibana. ¿Cual es el tuyo?"
 
 narrator "Mi nombre es: " 
 
-"Ella se sonroja luego de decirle mi nombre"
+"Ella se sonroja luego de decirle mi nombre" setExpression(Tachibana,body,shocked,4)
 
-Tachibana "Tu eres <i>Favio</i> ?" setExpression(Tachibana,body,shocked,4) moveCharacter(Tachibana,1,0,3,false)
+Tachibana "Tu eres <i>Favio</i> ?" 
 "Espera-"
 +"  ....¿Estas hablando enserio?"
 
-Chitose "Holaaaaa" setPosition(Chitose,0,0)
+Chitose "Holaaaaa" setPosition(Chitose,0,0) moveCharacter(Tachibana,1,0,3,false)
