@@ -15,6 +15,8 @@ public class ControllerLineManager : MonoBehaviour
         public List<SEGMENT> segments = new List<SEGMENT>();
         public List<string> actions = new List<string>();
 
+        public string lastSegmentsWholeDialogue = "";
+
         public LINE(string rawLine)
         {
             string[] dialogueAndActions = rawLine.Split('"');
@@ -109,6 +111,8 @@ public class ControllerLineManager : MonoBehaviour
 
             public TextArchitect architect = null;
 
+            List<string> allCurrentlyExecutedEvents = new List<string>();
+
             public void Run()
             {
                 if (running != null)
@@ -118,20 +122,40 @@ public class ControllerLineManager : MonoBehaviour
 
             IEnumerator Running()
             {
-                if(line.speaker != "narrator")
-                {
-                    Character character = CharacterManager.instance.GetCharacter(line.speaker);
-                    character.Say(dialogue, pretext != "");
-                }
-                else
-                {
-                    DialogueSystem.instance.Say(dialogue, line.speaker, pretext != "");
-                }
+                allCurrentlyExecutedEvents.Clear();
 
-                architect = DialogueSystem.instance.textArchitect;
+                TagManager.Inject(ref dialogue);
 
-                while (architect.isConstructing)
-                    yield return new WaitForEndOfFrame();
+                string[] parts = dialogue.Split('[', ']');
+
+                for(int i = 0; i < parts.Length; i++)
+                {
+                    bool isOdd = i % 2 != 0;
+
+                    if (isOdd)
+                    {
+                        DialogueEvents.HandleEvent(parts[i], this);
+                        allCurrentlyExecutedEvents.Add(parts[i]);
+                        i++;
+                    }
+
+                    string targDialogue = parts[i];
+
+                    if (line.speaker != "narrator")
+                    {
+                        Character character = CharacterManager.instance.GetCharacter(line.speaker);
+                        character.Say(targDialogue, i > 0 ? true : pretext != "");
+                    }
+                    else
+                    {
+                        DialogueSystem.instance.Say(targDialogue, line.speaker, i > 0 ? true : pretext != "");
+                    }
+
+                    architect = DialogueSystem.instance.textArchitect;
+
+                    while (architect.isConstructing)
+                        yield return new WaitForEndOfFrame();
+                }
 
                 running = null;
             }
@@ -145,7 +169,35 @@ public class ControllerLineManager : MonoBehaviour
 
                 running = null;
                 if (architect != null)
+                {
                     architect.ForceFinish();
+
+                    if(pretext == "")
+                        line.lastSegmentsWholeDialogue= "";
+
+                    string[] parts = dialogue.Split('[', ']');
+
+                    for(int i = 0; i < parts.Length; i++)
+                    {
+                        bool isOdd = i % 2 != 0;
+                        if (isOdd)
+                        {
+                            string e = parts[i];
+                            if (allCurrentlyExecutedEvents.Contains(e))
+                            {
+                                allCurrentlyExecutedEvents.Remove(e);
+                            }
+                            else
+                            {
+                                DialogueEvents.HandleEvent(e, this);
+                            }
+                            i++;
+                        }
+                        line.lastSegmentsWholeDialogue += parts[i];
+                    }
+                    architect.ShowText(line.lastSegmentsWholeDialogue);
+                }
+
             }
         }
     }

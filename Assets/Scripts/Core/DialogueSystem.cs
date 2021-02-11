@@ -60,7 +60,10 @@ public class DialogueSystem : MonoBehaviour
         
         targetSpeech = additiveSpeech + speech;
 
-        textArchitect = new TextArchitect(speechText,speech,additiveSpeech,1,speedText);
+        if (textArchitect == null)
+            textArchitect = new TextArchitect(speechText, speech, additiveSpeech);
+        else
+            textArchitect.Renew(speech, additiveSpeech);
 
         speakerNameText.text = DeterminateSpeaker(targetSpeaker);
         speakerNamePanel.SetActive(speakerNameText.text != "" || speakerNameText.text == "narrator");
@@ -72,7 +75,7 @@ public class DialogueSystem : MonoBehaviour
             if (Input.GetKey(KeyCode.Space))
                 textArchitect.skip = true;
 
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForEndOfFrame();
         }
 
         _isWaitingForUserInput = true;

@@ -1,15 +1,15 @@
-setBackground(Classroom_0,false,1) playMusic(Relax)
+narrator "Ven, [mainCharName]! Vamos a buscar a [txtSpd 30,1]Airi[/txtSpd] a otro piso!. {c} Tengo que darle su cuaderno"
 
-playSfx(door) 
+"[setBackground(Classroom_0,false,1) playMusic(Relax)]"
+
+"[playSfx(door)]"
 
 Tachibana "Hola, mi nombre es Tachibana. ¿Cual es el tuyo?"
 
 narrator "Mi nombre es: Favio" 
 
-"Ella se sonroja luego de decirle mi nombre.{w 1}" setExpression(Tachibana,body,shocked,4)
+"Ella se sonroja luego de decirle mi nombre.{w 1} [setExpression(Tachibana,body,shocked,4)]"
 
 Tachibana "Tu eres <i>Favio</i> ?{c}Espera-{a}....¿Estas hablando enserio?"
 
-Chitose "Holaaaaa" setPosition(Chitose,0,0) moveCharacter(Tachibana,1,0,3,false) setPosition(Akiko,0.5,0)
-"¿Como estas Favio?" exit(Tachibana) moveCharacter(Chitose,0.5,0,3)
-"¿Te acuerdas de mi cierto?"
+Chitose "Holaaaaa. [moveCharacter(Tachibana,1,0,3) moveCharacter(Chitose,0,0,3)] {c}¿Como estas Favio? [exit(Tachibana) moveCharacter(Chitose,0.5,0,3)] {c}¿Te acuerdas de mi cierto?"

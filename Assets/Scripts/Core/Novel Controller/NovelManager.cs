@@ -8,8 +8,6 @@ public class NovelManager : MonoBehaviour
 
     List<string> data = new List<string>();
 
-    int progress = 0;
-
     Coroutine handlingLine = null;
     public bool isHandlingLine { get { return handlingLine != null; } }
 
@@ -131,6 +129,7 @@ public class NovelManager : MonoBehaviour
                         segment.architect.skip = true;
                     else
                         segment.ForceFinish();
+                    _next = false;
                 }
             }
 
@@ -144,7 +143,7 @@ public class NovelManager : MonoBehaviour
         handlingLine = null;
     }
 
-    void HandleAction(string action)
+    public void HandleAction(string action)
     {
         print("Accion: " + action);
         string[] data = action.Split('(', ')');
