@@ -17,6 +17,8 @@ public class NovelManager : MonoBehaviour
 
     bool _next = false;
 
+    private int chapterProgress = 0;
+
     [HideInInspector]
     public string cachedLastSpeaker = "";
 
@@ -50,6 +52,7 @@ public class NovelManager : MonoBehaviour
         }
 
         handlingChapterFile = StartCoroutine(HandlingChapterFile());
+        Next();
     }
 
     public void Next()
@@ -59,24 +62,85 @@ public class NovelManager : MonoBehaviour
 
     IEnumerator HandlingChapterFile()
     {
-        int progress = 0;
+        chapterProgress = 0;
 
-        while( progress < data.Count)
+        while(chapterProgress < data.Count)
         {
             if (_next)
             {
-                HandleLine(data[progress]);
-                progress++;
-                while (isHandlingLine)
+                string line = data[chapterProgress];
+
+                if (line.StartsWith("choice"))
                 {
-                    yield return new WaitForEndOfFrame();
+                    yield return HandlingChoiceLine(line);
+                    chapterProgress++;
                 }
+                else
+                {
+                    HandleLine(line);
+                    chapterProgress++;
+                    while (isHandlingLine)
+                    {
+                        yield return new WaitForEndOfFrame();
+                    }
+                }
+
             }
             //We need a way of knowing when the player wants to advance. We need a "next" trigger.
             yield return new WaitForEndOfFrame();
         }
 
         handlingChapterFile = null;
+    }
+
+    IEnumerator HandlingChoiceLine(string line)
+    {
+        string title = line.Split('"')[1];
+        List<string> choices = new List<string>();
+        List<string> actions = new List<string>();
+
+        bool gatheringChoices = true;
+
+        while (gatheringChoices)
+        {
+            chapterProgress++;
+            line = data[chapterProgress];
+
+            if (line == "{")
+                continue;
+
+            line = line.Replace("    ","");
+
+            if (line != "}")
+            {
+                choices.Add(line.Split('"')[1]);
+                actions.Add(data[chapterProgress + 1].Replace("    ", ""));
+                chapterProgress++;
+            }
+            else
+            {
+                gatheringChoices = false;
+            }
+        }
+
+        if (choices.Count > 0)
+        {
+            ChoiceScreen.Show(title, choices.ToArray());
+            yield return new WaitForEndOfFrame();
+
+            while (ChoiceScreen.isWaitingForChoiceToBeMade)
+                yield return new WaitForEndOfFrame();
+
+            string action = actions[ChoiceScreen.lastChoiceMade.index];
+            HandleLine(action);
+
+            while (isHandlingLine)
+                yield return new WaitForEndOfFrame();
+        }
+        else
+        {
+            Debug.LogError("No se encontraron elecciones");
+        }
     }
 
     void HandleLine(string rawLine)
@@ -198,7 +262,17 @@ public class NovelManager : MonoBehaviour
                     Command_Exit(data[1]);
                     break;
                 }
+            case "Load":
+                {
+                    Command_Load(data[1]);
+                    break;
+                }
         }
+    }
+
+    void Command_Load(string chapterName)
+    {
+        NovelManager.instance.LoadChapterFile(chapterName); 
     }
 
     void Command_SetLayerImage(string data,BackgroundManager.LAYER layer)

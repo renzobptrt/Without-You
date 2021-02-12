@@ -12,4 +12,14 @@ narrator "Mi nombre es: Favio"
 
 Tachibana "Tu eres <i>Favio</i> ?{c}Espera-{a}....¿Estas hablando enserio?"
 
-Chitose "Holaaaaa. [moveCharacter(Tachibana,1,0,3) moveCharacter(Chitose,0,0,3)] {c}¿Como estas Favio? [exit(Tachibana) moveCharacter(Chitose,0.5,0,3)] {c}¿Te acuerdas de mi cierto?"
+Chitose "Holaaaaa. [moveCharacter(Chitose,0,0,3) moveCharacter(Tachibana,1,0,3)]{c}¿Como estas Favio?{c}¿Te acuerdas de mi cierto?"
+
+choice "Con quien hago grupo?"
+{
+  "Tachibana"
+    "[Load(chapter_a1)]"
+  "Chitose"
+    "[Load(chapter_a2)]"
+}
+
+narrator "Va al final tuve que elegir a una"

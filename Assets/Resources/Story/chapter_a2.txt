@@ -1,1 +1,1 @@
-Chitose "Gracias por escogerme"
+Chitose "[exit(Tachibana) moveCharacter(Chitose,0.5,0,3)] Gracias por escogerme, estás en mi ruta."

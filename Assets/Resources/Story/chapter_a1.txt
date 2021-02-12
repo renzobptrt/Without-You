@@ -1,1 +1,1 @@
-Tachibana "[exit(Chitose) moveCharacter(Tachibana,0.5,0) enter(Tachibana)] Gracias por escogerme"
+Tachibana "[exit(Chitose) moveCharacter(Tachibana,0.5,0,3)]Gracias por escogerme, estas en mi ruta"
