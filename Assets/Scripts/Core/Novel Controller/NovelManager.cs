@@ -11,6 +11,8 @@ public class NovelManager : MonoBehaviour
     Coroutine handlingLine = null;
     public bool isHandlingLine { get { return handlingLine != null; } }
 
+    public bool isHandlingChapterFile { get { return handlingChapterFile != null; } }
+
     Coroutine handlingChapterFile = null;
 
     bool _next = false;
@@ -73,6 +75,8 @@ public class NovelManager : MonoBehaviour
             //We need a way of knowing when the player wants to advance. We need a "next" trigger.
             yield return new WaitForEndOfFrame();
         }
+
+        handlingChapterFile = null;
     }
 
     void HandleLine(string rawLine)
