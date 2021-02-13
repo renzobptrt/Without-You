@@ -9,9 +9,9 @@ public class Character
     public string characterName;
     public RectTransform root;
     public Renderers renderers = new Renderers();
-    public bool enabled { get { return root.gameObject.activeInHierarchy; } set { root.gameObject.SetActive(value); } }
+    public bool enabled { get { return root.gameObject.activeInHierarchy; } set { root.gameObject.SetActive(value); visibleInScene = value; } }
     DialogueSystem dialogue;
-    private Vector2 targetPosition;
+    [SerializeField] private Vector2 targetPosition = new Vector2(0.5f,0);
     private Coroutine moving;
     private Coroutine transitioningBody;
     private Sprite lastBodySprite = null;
@@ -26,6 +26,11 @@ public class Character
             enabled = true;
       
          dialogue.Say(speech, characterName,add);
+    }
+
+    public Vector2 _targetPosition
+    {
+        get { return targetPosition; }
     }
 
     public void MoveTo(Vector2 target, float speed, bool smoth = true)
@@ -57,12 +62,19 @@ public class Character
         root.anchorMax = root.anchorMin + padding;
     }
 
+    public bool isVisibleInScene
+    {
+        get { return visibleInScene; }
+    }
+    bool visibleInScene = true;
+
     public void FadeOut(float speed = 3, bool smooth = false)
     {
         Sprite alphaSprite = Resources.Load<Sprite>("images/AlphaOnly");
         lastBodySprite = renderers.bodyRenderer.sprite;
 
         TransitionBody(alphaSprite, speed, smooth);
+        visibleInScene = false;
     }
 
     public void FadeIn(float speed = 3, bool smooth = false)
@@ -70,6 +82,8 @@ public class Character
         if(lastBodySprite != null)
         {
             TransitionBody(lastBodySprite, speed, smooth);
+            if (enabled)
+                visibleInScene = true;
         }
     }
 
@@ -101,7 +115,10 @@ public class Character
 
     public void SetNewEmotion(string status)
     {
-        renderers.bodyRenderer.sprite = GetSprite(status);
+        if (status == "AlphaOnly")
+            SetNewEmotion(Resources.Load<Sprite>("images/AlphaOnly"));
+        else
+            renderers.bodyRenderer.sprite = GetSprite(status);
     }
 
     public void SetNewEmotion(Sprite newSprite)
@@ -168,6 +185,7 @@ public class Character
         dialogue = DialogueSystem.instance;
 
         enabled = enableOnStart;
+        visibleInScene = enabled;
     }
     [System.Serializable]
     public class Renderers

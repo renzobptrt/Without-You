@@ -18,6 +18,7 @@ public class DialogueSystem : MonoBehaviour
     public bool _isWaitingForUserInput = false;
     public string targetSpeech = "";
 
+
     public float speedText = 1f;
     private void Awake()
     {
@@ -67,7 +68,12 @@ public class DialogueSystem : MonoBehaviour
 
         speakerNameText.text = DeterminateSpeaker(targetSpeaker);
         speakerNamePanel.SetActive(speakerNameText.text != "" || speakerNameText.text == "narrator");
-
+        /*if (speech != "")
+        {   
+            //speechBox.SetActive(true);
+            OpenAllRequerimentsForDialogueSystemVisibility(true);
+        }*/
+        //speechBox.SetActive(speech != "");
         _isWaitingForUserInput = false;
 
         while(textArchitect.isConstructing)
@@ -96,7 +102,37 @@ public class DialogueSystem : MonoBehaviour
     public void Close()
     {
         StopSpeaking();
-        speechPanel.SetActive(false);
+        for(int i=0; i < SpeechPanelRequeriments.Length; i++)
+        {
+            SpeechPanelRequeriments[i].SetActive(false);
+        }
+    }
+
+    public void OpenAllRequerimentsForDialogueSystemVisibility(bool v)
+    {
+        for (int i = 0; i < SpeechPanelRequeriments.Length; i++)
+        {
+            SpeechPanelRequeriments[i].SetActive(v);
+        }
+    }
+
+    public void Open(string speakerName="", string speech = "")
+    {
+        if(speakerName == "" && speech == "")
+        {
+            OpenAllRequerimentsForDialogueSystemVisibility(false);
+            return;
+        }
+
+        OpenAllRequerimentsForDialogueSystemVisibility(true);
+        speakerNameText.text = speakerName;
+        speakerNamePanel.SetActive(speakerName != "");
+        speechText.text = speech;
+    }
+
+    public bool isClosed
+    {
+        get { return !speechBox.activeInHierarchy; }
     }
 
     [System.Serializable]
@@ -114,5 +150,6 @@ public class DialogueSystem : MonoBehaviour
 
     public GameObject speakerNamePanel { get { return elements.speakerNamePanel; } }
 
-
+    public GameObject[] SpeechPanelRequeriments;
+    public GameObject speechBox;
 }

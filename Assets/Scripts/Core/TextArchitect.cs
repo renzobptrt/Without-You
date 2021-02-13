@@ -49,13 +49,13 @@ public class TextArchitect
 		tmpro.text = "";
 		tmpro.text += preText;
 
-		tmpro.ForceMeshUpdate();
+		tmpro.ForceMeshUpdate(false);
 		TMP_TextInfo inf = tmpro.textInfo;
 		int vis = inf.characterCount;
 
 		tmpro.text += targetText;
 
-		tmpro.ForceMeshUpdate();
+		tmpro.ForceMeshUpdate(false);
 		inf = tmpro.textInfo;
 		int max = inf.characterCount;
 
