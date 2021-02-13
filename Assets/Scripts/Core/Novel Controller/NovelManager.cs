@@ -33,7 +33,7 @@ public class NovelManager : MonoBehaviour
 
     void Start()
     {
-        LoadGameFile(0);
+        LoadGameFile(1);
     }
 
     public void LoadGameFile(int gameFileNumber)
@@ -44,10 +44,10 @@ public class NovelManager : MonoBehaviour
 
         if (!System.IO.File.Exists(filePath))
         {
-            FileManager.SaveJSON(filePath, new GameFile());
+            FileManager.SaveEncryptedJSON(filePath, new GameFile(),keys);
         }
 
-        activeGameFile = FileManager.LoadJSON<GameFile>(filePath);
+        activeGameFile = FileManager.LoadEncryptedJSON<GameFile>(filePath,keys);
 
         //Load the file
         data = FileManager.LoadFile(FileManager.savPath + "Resources/Story/" + activeGameFile.chapterName);
@@ -113,8 +113,14 @@ activeGameFile.currentTextSystemDisplayText);
         //Save the music
         activeGameFile.music = AudioManager.activeSong != null ? AudioManager.activeSong.clip : null;
 
-        FileManager.SaveJSON(filePath, activeGameFile);
+        FileManager.SaveEncryptedJSON(filePath, activeGameFile,keys);
     }
+
+    //temporary
+    public byte[] keys = new byte[3]
+    {
+        23,70,194
+    };
 
     // Update is called once per frame
     void Update()
