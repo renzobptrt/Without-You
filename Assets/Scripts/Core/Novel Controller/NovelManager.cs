@@ -33,7 +33,8 @@ public class NovelManager : MonoBehaviour
 
     void Start()
     {
-        LoadGameFile(1);
+        //LoadGameFile(1);
+        LoadChapterFile("chapter_start");
     }
 
     public void LoadGameFile(int gameFileNumber)
