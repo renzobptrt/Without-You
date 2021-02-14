@@ -49,7 +49,7 @@ public class MainMenu : MonoBehaviour
         switch (indexButton)
         {
             case 0:
-                LoadNextScene("Chapter0");
+                LoadNextScene("Novele");
                 break;
             case 1:
                 ShowOptionPanel(0);
