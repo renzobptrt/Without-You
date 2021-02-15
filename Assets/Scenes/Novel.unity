@@ -8910,6 +8910,7 @@ MonoBehaviour:
   saveButton: {fileID: 600117009}
   deleteButton: {fileID: 1762774207}
   slotTask: 1
+  SaveLoadingAnimator: {fileID: 2111912139}
   selectedButton:
     button: {fileID: 0}
     previewDisplay: {fileID: 0}

@@ -25,6 +25,8 @@ public class GameSavePanel : MonoBehaviour
     }
     public TASK slotTask = TASK.loadFromSlot;
 
+    public Animator SaveLoadingAnimator = null;
+
     public void LoadFilesOntoScreen(int page = 1)
     {
         currentSaveLoadPage = page;
@@ -93,16 +95,22 @@ public class GameSavePanel : MonoBehaviour
         //Run an error check just to be sure the file has not been removed since load.
         if (System.IO.File.Exists(selectedFilePath))
         {
-            loadButton.interactable = allowLoadingFromThisScreen;
-            saveButton.interactable = allowSavingFromThisScreen;
-            deleteButton.interactable = allowDeletingFromThisScreen;
+            if(loadButton!=null)
+                loadButton.interactable = allowLoadingFromThisScreen;
+            if(saveButton!=null)
+                saveButton.interactable = allowSavingFromThisScreen;
+            if(deleteButton!=null)
+                deleteButton.interactable = allowDeletingFromThisScreen;
         }
         else
         {
             selectedButton.dateTimeText.text = "<color=red>FILE NOT FOUND!";
-            loadButton.interactable = false;
-            saveButton.interactable = allowSavingFromThisScreen;
-            deleteButton.interactable = true;
+            if (loadButton != null)
+                loadButton.interactable = false;
+            if (saveButton != null)
+                saveButton.interactable = allowSavingFromThisScreen;
+            if (deleteButton != null)
+                deleteButton.interactable = true;
         }
     }
 
@@ -117,6 +125,17 @@ public class GameSavePanel : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene("Novel");
 
         gameObject.SetActive(false);//deactivate the panel after loading.
+    }
+
+    public void LoadFromSelectedSlotMaiMenu()
+    {
+        //we need to load the data from this slot to know what to do.
+        GameFile file = FileManager.LoadEncryptedJSON<GameFile>(selectedFilePath, FileManager.keys);
+
+        //save the name of the file that we will be loading in the visual novel. carries over to next scene.
+        FileManager.SaveFile(FileManager.savPath + "savData/file", selectedGameFile);
+
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Novel");
     }
 
     public void ClosePanel()
@@ -140,7 +159,7 @@ public class GameSavePanel : MonoBehaviour
         NovelManager.instance.activeGameFileName = selectedGameFile;
 
         //render this part of the screen invisible so we get a clear snapshot of the visual novel.
-        GetComponent<Animator>().SetTrigger("instantVisible");
+        SaveLoadingAnimator.SetTrigger("instantVisible");
         yield return new WaitForEndOfFrame();
 
         // a screen shot is made during this point.
@@ -150,9 +169,9 @@ public class GameSavePanel : MonoBehaviour
         selectedButton.previewDisplay.texture = GameFile.activeFile.previewImage;
 
         yield return new WaitForEndOfFrame();
-        
+
         //render this part of the screen visible again after the screenshot is taken.
-        GetComponent<Animator>().SetTrigger("instantVisible");
+        SaveLoadingAnimator.SetTrigger("instantVisible");
 
         savingFile = null;
     }

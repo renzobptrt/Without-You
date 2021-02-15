@@ -56,7 +56,7 @@ public class MainMenu : MonoBehaviour
         switch (indexButton)
         {
             case 0:
-                LoadNextScene("Novele");
+                LoadNextScene("Novel");
                 break;
             case 1:
                 ShowOptionPanel(0);
@@ -116,7 +116,7 @@ public class MainMenu : MonoBehaviour
 
     public void LoadNextScene(string nameNextScene)
     {
-        selectedGameFile = "auto/autoSave";
+        selectedGameFile = "chapter_start";
         FileManager.SaveFile(FileManager.savPath + "savData/file", selectedGameFile);
         StartCoroutine(TransitionScene(() =>
         {

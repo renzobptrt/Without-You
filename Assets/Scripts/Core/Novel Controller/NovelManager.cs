@@ -46,6 +46,7 @@ public class NovelManager : MonoBehaviour
         saveLoadPanel.gameObject.SetActive(false);
         //LoadChapterFile("chapter_start");
         LoadGameFile(FileManager.LoadFile(FileManager.savPath + "savData/file.txt")[0]);
+        print(FileManager.LoadFile(FileManager.savPath + "savData/file.txt")[0]);
     }
 
     // Update is called once per frame
@@ -96,8 +97,8 @@ public class NovelManager : MonoBehaviour
         activeChapterName = activeGameFile.chapterName;
         cachedLastSpeaker = activeGameFile.cachedLastSpeaker;
 
-        DialogueSystem.instance.Open(activeGameFile.currentTextSystemSpeakerDisplayText,
-activeGameFile.currentTextSystemDisplayText);
+        //DialogueSystem.instance.Open(activeGameFile.currentTextSystemSpeakerDisplayText,
+//activeGameFile.currentTextSystemDisplayText);
 
         //Load all characters in the scene
         for (int i = 0; i < activeGameFile.charactersInScene.Count; i++)
