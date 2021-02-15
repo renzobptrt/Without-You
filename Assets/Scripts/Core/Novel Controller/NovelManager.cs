@@ -19,9 +19,18 @@ public class NovelManager : MonoBehaviour
 
     private int chapterProgress = 0;
 
-    private int activeGameFileNumber = 0;
-    GameFile activeGameFile = null;
+    public string activeGameFileName = "";
+
+    public GameSavePanel saveLoadPanel;
+
+    GameFile activeGameFile
+    {
+        get { return GameFile.activeFile; }
+        set { GameFile.activeFile = value; }
+    }
+
     string activeChapterName = string.Empty;
+    bool encrypGameFile = true;
 
    [HideInInspector]
     public string cachedLastSpeaker = "";
@@ -34,21 +43,52 @@ public class NovelManager : MonoBehaviour
     void Start()
     {
         //LoadGameFile(1);
-        LoadChapterFile("chapter_start");
+        saveLoadPanel.gameObject.SetActive(false);
+        //LoadChapterFile("chapter_start");
+        LoadGameFile(FileManager.LoadFile(FileManager.savPath + "savData/file.txt")[0]);
     }
 
-    public void LoadGameFile(int gameFileNumber)
+    // Update is called once per frame
+    void Update()
     {
-        activeGameFileNumber = gameFileNumber;
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            Next();
+        }
 
-        string filePath = FileManager.savPath + "Resources/gameFiles/" + gameFileNumber.ToString() + ".txt";
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            SaveGameFile();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {   
+            if (!saveLoadPanel.gameObject.activeInHierarchy)
+            {
+                saveLoadPanel.gameObject.SetActive(true);
+                print(saveLoadPanel.currentSaveLoadPage);
+                saveLoadPanel.LoadFilesOntoScreen(saveLoadPanel.currentSaveLoadPage);
+            }
+        }
+    }
+
+    public void LoadGameFile(string gameFileName)
+    {
+        activeGameFileName = gameFileName;
+
+        string filePath = FileManager.savPath + "savData/gameFiles/" + gameFileName + ".txt";
 
         if (!System.IO.File.Exists(filePath))
         {
-            FileManager.SaveEncryptedJSON(filePath, new GameFile(),keys);
+            if (encrypGameFile)
+                FileManager.SaveEncryptedJSON(filePath, new GameFile(), keys);
+            else
+                FileManager.SaveJSON(filePath, new GameFile());
         }
-
-        activeGameFile = FileManager.LoadEncryptedJSON<GameFile>(filePath,keys);
+        if (encrypGameFile)
+            activeGameFile = FileManager.LoadEncryptedJSON<GameFile>(filePath, keys);
+        else
+            activeGameFile = FileManager.LoadJSON<GameFile>(filePath);
 
         //Load the file
         data = FileManager.LoadFile(FileManager.savPath + "Resources/Story/" + activeGameFile.chapterName);
@@ -89,7 +129,7 @@ activeGameFile.currentTextSystemDisplayText);
 
     public void SaveGameFile()
     {
-        string filePath = FileManager.savPath + "Resources/gameFiles/" + activeGameFileNumber.ToString() + ".txt";
+        string filePath = FileManager.savPath + "savData/gameFiles/" + activeGameFileName + ".txt";
         activeGameFile.chapterName = activeChapterName;
         activeGameFile.chapterProgress = chapterProgress;
         activeGameFile.cachedLastSpeaker = cachedLastSpeaker;
@@ -114,27 +154,35 @@ activeGameFile.currentTextSystemDisplayText);
         //Save the music
         activeGameFile.music = AudioManager.activeSong != null ? AudioManager.activeSong.clip : null;
 
-        FileManager.SaveEncryptedJSON(filePath, activeGameFile,keys);
+        //Save a preview image (screenshot)
+        //save the ambiance to disk if there is any playing.
+        //activeGameFile.ambiance = AudioManager.activeAmbianceClips;
+
+        //save the tempvals to disk. for easy variable storage.
+        //activeGameFile.tempVals = CACHE.tempVals;
+
+        //save a preview image (screenshot) to be viewed from the save load screen
+        string screenShotPath = FileManager.savPath + "savData/gameFiles/" + activeGameFileName + ".png";
+        if (FileManager.TryCreateDirectoryFromPath(screenShotPath + ".png"))
+        {
+            GameFile.activeFile.previewImage = ScreenCapture.CaptureScreenshotAsTexture();
+            byte[] textureData = activeGameFile.previewImage.EncodeToPNG();
+            FileManager.SaveComposingBytes(screenShotPath, textureData);
+        }
+
+        //save the data and time this file was created or modified.
+        activeGameFile.modificationDate = System.DateTime.Now.ToString();
+
+        if (encrypGameFile)
+            FileManager.SaveEncryptedJSON(filePath, activeGameFile, keys);
+        else
+            FileManager.SaveJSON(filePath, activeGameFile);
     }
 
     //temporary
-    public byte[] keys = new byte[3]
+    byte[] keys
     {
-        23,70,194
-    };
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            Next();
-        }
-
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            SaveGameFile();
-        }
+        get { return FileManager.keys; }
     }
 
     public void LoadChapterFile(string fileName)

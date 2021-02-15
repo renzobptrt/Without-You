@@ -19,6 +19,13 @@ public class MainMenu : MonoBehaviour
 
     public TextMeshProUGUI titleOption = null;
 
+    public GameSavePanel saveLoadPanel;
+    int currentSaveLoadPage
+    {
+        get { return saveLoadPanel.currentSaveLoadPage; }
+    }
+    public string selectedGameFile = "";
+
     private void Start()
     {
         for(int i=0; i < ButtonsOptionsMainMenu.Length;i++)
@@ -55,6 +62,7 @@ public class MainMenu : MonoBehaviour
                 ShowOptionPanel(0);
                 TransitionMenuOptions(true);
                 titleOption.text = "Load Game";
+                saveLoadPanel.LoadFilesOntoScreen(currentSaveLoadPage);
                 break;
             case 2:
                 ShowOptionPanel(1);
@@ -108,6 +116,8 @@ public class MainMenu : MonoBehaviour
 
     public void LoadNextScene(string nameNextScene)
     {
+        selectedGameFile = "auto/autoSave";
+        FileManager.SaveFile(FileManager.savPath + "savData/file", selectedGameFile);
         StartCoroutine(TransitionScene(() =>
         {
             SceneManager.LoadScene(nameNextScene);
@@ -158,6 +168,5 @@ public class MainMenu : MonoBehaviour
             else
                 PanelsOption[i].anchoredPosition = new Vector2(2000f, 0f);
         }
-
     }
 }
