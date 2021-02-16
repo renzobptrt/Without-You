@@ -160,15 +160,13 @@ public class GameSavePanel : MonoBehaviour
 
         //render this part of the screen invisible so we get a clear snapshot of the visual novel.
         SaveLoadingAnimator.SetTrigger("instantVisible");
-        yield return new WaitForEndOfFrame();
 
+        yield return new WaitForEndOfFrame();
         // a screen shot is made during this point.
         NovelManager.instance.SaveGameFile();
-
+        yield return new WaitForEndOfFrame();
         selectedButton.dateTimeText.text = currentSaveLoadPage.ToString() + "\n" + GameFile.activeFile.modificationDate;
         selectedButton.previewDisplay.texture = GameFile.activeFile.previewImage;
-
-        yield return new WaitForEndOfFrame();
 
         //render this part of the screen visible again after the screenshot is taken.
         SaveLoadingAnimator.SetTrigger("instantVisible");

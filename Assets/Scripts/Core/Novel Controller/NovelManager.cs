@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NovelManager : MonoBehaviour
 {
@@ -23,16 +24,15 @@ public class NovelManager : MonoBehaviour
 
     public GameSavePanel saveLoadPanel;
 
-    GameFile activeGameFile
+    public GameFile activeGameFile
     {
         get { return GameFile.activeFile; }
         set { GameFile.activeFile = value; }
     }
 
     string activeChapterName = string.Empty;
-    bool encrypGameFile = true;
+    public bool encrypGameFile = true;
 
-   [HideInInspector]
     public string cachedLastSpeaker = "";
 
     private void Awake()
@@ -57,12 +57,12 @@ public class NovelManager : MonoBehaviour
             Next();
         }
 
-        if (Input.GetKeyDown(KeyCode.S))
+        /*if (Input.GetKeyDown(KeyCode.S))
         {
             SaveGameFile();
-        }
+        }*/
 
-        if (Input.GetKeyDown(KeyCode.Mouse1))
+        /*if (Input.GetKeyDown(KeyCode.Mouse1))
         {   
             if (!saveLoadPanel.gameObject.activeInHierarchy)
             {
@@ -70,7 +70,7 @@ public class NovelManager : MonoBehaviour
                 print(saveLoadPanel.currentSaveLoadPage);
                 saveLoadPanel.LoadFilesOntoScreen(saveLoadPanel.currentSaveLoadPage);
             }
-        }
+        }*/
     }
 
     public void LoadGameFile(string gameFileName)
@@ -81,15 +81,15 @@ public class NovelManager : MonoBehaviour
 
         if (!System.IO.File.Exists(filePath))
         {
-            if (encrypGameFile)
-                FileManager.SaveEncryptedJSON(filePath, new GameFile(), keys);
-            else
-                FileManager.SaveJSON(filePath, new GameFile());
+            activeGameFile = new GameFile();
         }
-        if (encrypGameFile)
-            activeGameFile = FileManager.LoadEncryptedJSON<GameFile>(filePath, keys);
         else
-            activeGameFile = FileManager.LoadJSON<GameFile>(filePath);
+        {
+            if (encrypGameFile)
+                activeGameFile = FileManager.LoadEncryptedJSON<GameFile>(filePath, keys);
+            else
+                activeGameFile = FileManager.LoadJSON<GameFile>(filePath);
+        }
 
         //Load the file
         data = FileManager.LoadFile(FileManager.savPath + "Resources/Story/" + activeGameFile.chapterName);
@@ -97,8 +97,8 @@ public class NovelManager : MonoBehaviour
         activeChapterName = activeGameFile.chapterName;
         cachedLastSpeaker = activeGameFile.cachedLastSpeaker;
 
-        //DialogueSystem.instance.Open(activeGameFile.currentTextSystemSpeakerDisplayText,
-//activeGameFile.currentTextSystemDisplayText);
+        DialogueSystem.instance.Open(activeGameFile.currentTextSystemSpeakerDisplayText, activeGameFile.currentTextSystemDisplayText);
+
 
         //Load all characters in the scene
         for (int i = 0; i < activeGameFile.charactersInScene.Count; i++)
@@ -222,6 +222,11 @@ public class NovelManager : MonoBehaviour
                     yield return HandlingChoiceLine(line);
                     chapterProgress++;
                 }
+                else if (line.StartsWith("input"))
+                {
+                    yield return HandlingInputLine(line);
+                    chapterProgress++;
+                }
                 else
                 {
                     HandleLine(line);
@@ -238,6 +243,44 @@ public class NovelManager : MonoBehaviour
         }
 
         handlingChapterFile = null;
+    }
+
+    IEnumerator HandlingInputLine(string line)
+    {
+        string title = line.Split('"')[1];
+
+        //get the one or more commands to execute when this input is done and accepted.
+        string[] parts = line.Split(' ');
+        List<string> endingCommands = new List<string>();
+        if (parts.Length >= 3)
+        {
+            for (int i = 2; i < parts.Length; i++)
+            {
+                endingCommands.Add(parts[i]);
+            }
+        }
+
+        //we have the title and the ending commands to execute. Now we need to bring up the input screen.
+        InputScreen.Show(title);
+        while (InputScreen.isShowingInputField || InputScreen.isRevaling)
+        {
+            //wait for the input screen to finish revealing before being able to accept input.
+            if (Input.GetKey(KeyCode.Return) && !InputScreen.isRevaling)
+            {
+                //if the input is not empty, accept it.
+                if (InputScreen.currentInput != "")
+                    InputScreen.instance.Accept();
+            }
+
+            yield return new WaitForEndOfFrame();
+        }
+
+        //the input has been accepted, now it is time to execute the commands that follow.
+        for (int i = 0; i < endingCommands.Count; i++)
+        {
+            string command = endingCommands[i];
+            HandleAction(command);
+        }
     }
 
     IEnumerator HandlingChoiceLine(string line)
@@ -552,6 +595,21 @@ public class NovelManager : MonoBehaviour
             }
             else
                 c.FadeIn(speed, smooth);
+        }
+    }
+
+    public void GoToMenuScene()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+
+    public void OpenSaveLayer()
+    {
+        if (!saveLoadPanel.gameObject.activeInHierarchy)
+        {
+            saveLoadPanel.gameObject.SetActive(true);
+            print(saveLoadPanel.currentSaveLoadPage);
+            saveLoadPanel.LoadFilesOntoScreen(saveLoadPanel.currentSaveLoadPage);
         }
     }
 }

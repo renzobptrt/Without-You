@@ -25,11 +25,6 @@ public class DialogueSystem : MonoBehaviour
         instance = this;
     }
 
-    void Start()
-    {
-        
-    }
-
     //Say something
     public void Say(string speech, string speaker="",bool additive = false)
     {
@@ -67,13 +62,9 @@ public class DialogueSystem : MonoBehaviour
             textArchitect.Renew(speech, additiveSpeech);
 
         speakerNameText.text = DeterminateSpeaker(targetSpeaker);
-        speakerNamePanel.SetActive(speakerNameText.text != "" || speakerNameText.text == "narrator");
-        /*if (speech != "")
-        {   
-            //speechBox.SetActive(true);
-            OpenAllRequerimentsForDialogueSystemVisibility(true);
-        }*/
-        //speechBox.SetActive(speech != "");
+        speakerNamePanel.SetActive(speakerNameText.text != "");
+        speechBox.SetActive(true);
+
         _isWaitingForUserInput = false;
 
         while(textArchitect.isConstructing)
@@ -95,7 +86,7 @@ public class DialogueSystem : MonoBehaviour
     {
         string retVal = speakerNameText.text; //default is the current name
         if (s != speakerNameText.text && s!="")
-            retVal = (s.ToLower().Contains("narrator")) ? "" : s;
+            retVal = (s.ToLower().Contains("narrator")) ? "mainCharacter" : s;
         return retVal;
     }   
 

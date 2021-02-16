@@ -16,6 +16,7 @@ public class InputScreen : MonoBehaviour
     public GameObject root;
 
     static Coroutine revealing = null;
+    public static bool isShowingInputField { get { return instance.inputField.gameObject.activeInHierarchy; } }
     public static bool isWaitingForUserInput { get { return instance.root.activeInHierarchy; } }
     public static bool isRevaling { get { return revealing != null; } }
 

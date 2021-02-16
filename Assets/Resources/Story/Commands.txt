@@ -3,11 +3,15 @@ Every click event is a separate line in the file. The events below show how to c
 Each line may have multiple actions. Actions on the same line should be delimited by a space. Because of this, no value,
 including filenames, should contain spaces.
 
+
+
+
 #DIALOGUE COMMANDS
 #Make a character speak
-  characterName "dialogue"                                                      ex: Raelin "Hi, how are you?"
-  + symbol makes dialogue additive to continue from last segment.               ex: Raelin +"That's good to hear."
-  No name before dialogue means use last speaker.                               ex: +"That's good to hear."
+case "c": //wait for input and clear {c}
+case "a": //wait for input and append {a}
+case "w": //wait for set time and clear {w1} //Number is the time
+case "wa"://wait for set time and append {wa1}//Number is the time
 
 #REGULAR ACTION COMMANDS
 actions are called as normal. But if you want to delay an action, precede it with the delay tag followed by the amount
@@ -20,11 +24,11 @@ of time you want the action to be delayed. such as <delay=15>action()  or  <dela
     1. speedOfTransition                                                        ex: set___(Raelin,happy01,15)
 
 #Move character on screen
-  move(characterName,targetlocationX,targetLocationY)                           ex: move(Raelin,0.3,0.7)
+  move(characterName,targetlocationX,targetLocationY)                           ex: moveCharacter(Raelin,0.3,0.7)
 
   *optional parameters
-    1. speed of movement                                                        ex: move(Raelin,0.3,0.7,10)
-    2. smooth movement                                                          ex: move(Raelin,0.3,0.7,10,false)
+    1. speed of movement                                                        ex: moveCharacter(Raelin,0.3,0.7,10)
+    2. smooth movement                                                          ex: moveCharacter(Raelin,0.3,0.7,10,false)
 
   setPosition(characterName,targetlocationX,targetLocationY)                    ex: setPosition(Raelin,0.3,0.7)
 
@@ -33,13 +37,13 @@ of time you want the action to be delayed. such as <delay=15>action()  or  <dela
   flip(characterName)                                                           ex: flip(Raelin)
   faceLeft(characterName)                                                       ex: faceLeft(Raelin)
   faceRight(characterName)                                                      ex: faceRight(Raelin)
-                                                                                or: _____(Raelin;Avira;Enik)
+                                                                                or
 
 #Make Character fade in and out of scene.
 #use ; for multiple characters...
   enter(characterName)                                                          ex: enter(Raelin)
   exit(characterName)                                                           ex: exit(Raelin)
-                                                                                or: _____(Raelin;Avira;Enik)
+                                                                                o
 
   *optional parameters
      1. speed of fade.                                                          ex: enter(Raelin;Avira,15)
