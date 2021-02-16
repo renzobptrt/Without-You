@@ -728,7 +728,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 270328589}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2111912137}
+        m_MethodName: LoadFilesOntoScreen
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 6
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &270328589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2734,6 +2745,10 @@ MonoBehaviour:
   saveLoadPanel: {fileID: 2111912137}
   encrypGameFile: 1
   cachedLastSpeaker: 
+  mainCharacterName: 
+  tachibanaAffinity: 0
+  chitoseAffinity: 0
+  akikoAffinity: 0
 --- !u!1 &745027218
 GameObject:
   m_ObjectHideFlags: 0
@@ -3538,7 +3553,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 951514212}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2111912137}
+        m_MethodName: LoadFilesOntoScreen
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &951514212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4573,7 +4599,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1210144341}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2111912137}
+        m_MethodName: LoadFilesOntoScreen
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1210144341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5675,7 +5712,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1385126803}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2111912137}
+        m_MethodName: LoadFilesOntoScreen
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1385126803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7066,7 +7114,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1784709252}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2111912137}
+        m_MethodName: LoadFilesOntoScreen
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1784709252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7447,7 +7506,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1880304205}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2111912137}
+        m_MethodName: LoadFilesOntoScreen
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1880304205
 MonoBehaviour:
   m_ObjectHideFlags: 0

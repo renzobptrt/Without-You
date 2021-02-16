@@ -52,7 +52,8 @@ public class NovelManager : MonoBehaviour
         saveLoadPanel.gameObject.SetActive(false);
         //LoadChapterFile("chapter_start");
         LoadGameFile(FileManager.LoadFile(FileManager.savPath + "savData/file.txt")[0]);
-        print(FileManager.LoadFile(FileManager.savPath + "savData/file.txt")[0]);
+
+        saveLoadPanel.LoadFilesOntoScreen(saveLoadPanel.currentSaveLoadPage);
     }
 
     // Update is called once per frame
@@ -664,8 +665,6 @@ public class NovelManager : MonoBehaviour
         if (!saveLoadPanel.gameObject.activeInHierarchy)
         {
             saveLoadPanel.gameObject.SetActive(true);
-            print(saveLoadPanel.currentSaveLoadPage);
-            saveLoadPanel.LoadFilesOntoScreen(saveLoadPanel.currentSaveLoadPage);
         }
     }
 }

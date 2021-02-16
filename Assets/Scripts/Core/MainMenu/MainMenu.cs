@@ -47,8 +47,6 @@ public class MainMenu : MonoBehaviour
                 ChoiceOptionMenuOptions(temp);
             });
         }
-
-        ScreenCapture.CaptureScreenshot("SomeLevel");
     }
 
     void ChoiceOption(int indexButton)
