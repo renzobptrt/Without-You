@@ -34,6 +34,7 @@ public class NovelManager : MonoBehaviour
     public bool encrypGameFile = true;
 
     public string cachedLastSpeaker = "";
+    public string mainCharacterName = "";
 
     private void Awake()
     {
@@ -96,8 +97,10 @@ public class NovelManager : MonoBehaviour
 
         activeChapterName = activeGameFile.chapterName;
         cachedLastSpeaker = activeGameFile.cachedLastSpeaker;
+        mainCharacterName = activeGameFile.playerName;
 
-        DialogueSystem.instance.Open(activeGameFile.currentTextSystemSpeakerDisplayText, activeGameFile.currentTextSystemDisplayText);
+        if(System.IO.File.Exists(filePath))
+            DialogueSystem.instance.Open(activeGameFile.currentTextSystemSpeakerDisplayText, activeGameFile.currentTextSystemDisplayText);
 
 
         //Load all characters in the scene
@@ -134,7 +137,7 @@ public class NovelManager : MonoBehaviour
         activeGameFile.chapterName = activeChapterName;
         activeGameFile.chapterProgress = chapterProgress;
         activeGameFile.cachedLastSpeaker = cachedLastSpeaker;
-
+        activeGameFile.playerName = mainCharacterName;
         activeGameFile.currentTextSystemSpeakerDisplayText = DialogueSystem.instance.speakerNameText.text;
         activeGameFile.currentTextSystemDisplayText = DialogueSystem.instance.speechText.text;
 
@@ -457,7 +460,28 @@ public class NovelManager : MonoBehaviour
                     Command_Load(data[1]);
                     break;
                 }
+            case "Affinity":
+                {
+                    Command_Affinity(data[1]);
+                    break;
+                }
+            case "SavePlayerName":
+                {
+                    Command_SavePlayerName();
+                    break;
+                }
         }
+    }
+
+    void Command_SavePlayerName()
+    {
+        print("Queriendo guardar nombre");
+        NovelManager.instance.mainCharacterName = InputScreen.instance.inputField.text; 
+    }
+
+    void Command_Affinity(string data)
+    {
+
     }
 
     void Command_Load(string chapterName)

@@ -85,8 +85,22 @@ public class DialogueSystem : MonoBehaviour
     string DeterminateSpeaker(string s)
     {
         string retVal = speakerNameText.text; //default is the current name
-        if (s != speakerNameText.text && s!="")
-            retVal = (s.ToLower().Contains("narrator")) ? "mainCharacter" : s;
+        if (s != speakerNameText.text && s != "")
+        {
+            if (s.ToLower().Contains("narrator"))
+            {
+                retVal = "";
+            }
+            else if(s.ToLower().Contains("mc"))
+            {
+                retVal = NovelManager.instance.mainCharacterName;
+            }
+            else
+            {
+
+                retVal = s;
+            }
+        }
         return retVal;
     }   
 

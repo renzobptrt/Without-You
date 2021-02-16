@@ -116,7 +116,7 @@ public class MainMenu : MonoBehaviour
 
     public void LoadNextScene(string nameNextScene)
     {
-        selectedGameFile = "chapter_start";
+        selectedGameFile = "chapter_1";
         FileManager.SaveFile(FileManager.savPath + "savData/file", selectedGameFile);
         StartCoroutine(TransitionScene(() =>
         {

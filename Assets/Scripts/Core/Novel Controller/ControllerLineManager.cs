@@ -141,13 +141,14 @@ public class ControllerLineManager : MonoBehaviour
 
                     string targDialogue = parts[i];
 
-                    if (line.speaker != "narrator")
+                    if (line.speaker != "narrator" && line.speaker != "MC")
                     {
                         Character character = CharacterManager.instance.GetCharacter(line.speaker);
                         character.Say(targDialogue, i > 0 ? true : pretext != "");
                     }
                     else
                     {
+                        print(line.speaker);
                         DialogueSystem.instance.Say(targDialogue, line.speaker, i > 0 ? true : pretext != "");
                     }
 

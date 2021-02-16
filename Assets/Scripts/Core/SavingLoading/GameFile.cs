@@ -7,7 +7,7 @@ public class GameFile
 {
     public static GameFile activeFile = new GameFile();
 
-    public string chapterName = "chapter_start";
+    public string chapterName = "chapter_1";
     public int chapterProgress = 0;
 
     public string playerName = "";
@@ -30,9 +30,14 @@ public class GameFile
 
     public string[] tempVals = new string[9];
 
+    //Afinidad de heroinas
+    public int tachibanaAffinity = 0;
+    public int chitoseAffinity = 0;
+    public int akikoAffinity = 0;
+
     public GameFile()
     {
-        this.chapterName = "chapter_start";
+        this.chapterName = "chapter_1";
         this.chapterProgress = 0;
         this.cachedLastSpeaker = string.Empty;
 
@@ -46,6 +51,10 @@ public class GameFile
         charactersInScene = new List<CHARACTERDATA>();
         ambiance = new List<AudioClip>();
         tempVals = new string[9];
+
+        this.tachibanaAffinity = 0;
+        this.chitoseAffinity = 0;
+        this.akikoAffinity = 0;
     }
 
     [System.Serializable]
