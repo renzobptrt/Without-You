@@ -36,6 +36,11 @@ public class NovelManager : MonoBehaviour
     public string cachedLastSpeaker = "";
     public string mainCharacterName = "";
 
+    [Header("Heroines Affinity")]
+    public int tachibanaAffinity = 0;
+    public int chitoseAffinity = 0;
+    public int akikoAffinity = 0;
+
     private void Awake()
     {
         instance = this;
@@ -99,6 +104,10 @@ public class NovelManager : MonoBehaviour
         cachedLastSpeaker = activeGameFile.cachedLastSpeaker;
         mainCharacterName = activeGameFile.playerName;
 
+        tachibanaAffinity = activeGameFile.tachibanaAffinity;
+        chitoseAffinity = activeGameFile.chitoseAffinity;
+        akikoAffinity = activeGameFile.akikoAffinity;
+
         if(System.IO.File.Exists(filePath))
             DialogueSystem.instance.Open(activeGameFile.currentTextSystemSpeakerDisplayText, activeGameFile.currentTextSystemDisplayText);
 
@@ -129,6 +138,9 @@ public class NovelManager : MonoBehaviour
         }
         handlingChapterFile = StartCoroutine(HandlingChapterFile());
         chapterProgress = activeGameFile.chapterProgress;
+
+        if (!System.IO.File.Exists(filePath))
+            Next();
     }
 
     public void SaveGameFile()
@@ -140,6 +152,11 @@ public class NovelManager : MonoBehaviour
         activeGameFile.playerName = mainCharacterName;
         activeGameFile.currentTextSystemSpeakerDisplayText = DialogueSystem.instance.speakerNameText.text;
         activeGameFile.currentTextSystemDisplayText = DialogueSystem.instance.speechText.text;
+
+        //Affinity
+        activeGameFile.tachibanaAffinity = tachibanaAffinity;
+        activeGameFile.chitoseAffinity = chitoseAffinity;
+        activeGameFile.akikoAffinity = akikoAffinity;
 
         //Get all characters and save their stats
         activeGameFile.charactersInScene.Clear();
@@ -475,14 +492,29 @@ public class NovelManager : MonoBehaviour
 
     void Command_SavePlayerName()
     {
-        print("Queriendo guardar nombre");
-        NovelManager.instance.mainCharacterName = InputScreen.instance.inputField.text; 
+        mainCharacterName = InputScreen.instance.inputField.text; 
     }
 
     void Command_Affinity(string data)
     {
+        string[] parameters = data.Split(',');
+        string character = parameters[0];
+        int affinity = int.Parse(parameters[1]);
 
+        switch (character)
+        {
+            case "Tachibana":
+                tachibanaAffinity += affinity;
+                break;
+            case "Chitose":
+                chitoseAffinity += affinity;
+                break;
+            case "Akiko":
+                akikoAffinity += affinity;
+                break;
+        }
     }
+
 
     void Command_Load(string chapterName)
     {
