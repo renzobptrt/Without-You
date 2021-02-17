@@ -104,7 +104,7 @@ public class GameSavePanel : MonoBehaviour
         }
         else
         {
-            selectedButton.dateTimeText.text = "<color=red>FILE NOT FOUND!";
+            //selectedButton.dateTimeText.text = "<color=red>FILE NOT FOUND!";
             if (loadButton != null)
                 loadButton.interactable = false;
             if (saveButton != null)
@@ -170,7 +170,7 @@ public class GameSavePanel : MonoBehaviour
         NovelManager.instance.SaveGameFile();
 
         yield return new WaitForEndOfFrame();
-        selectedButton.dateTimeText.text = currentSaveLoadPage.ToString() + "\n" + GameFile.activeFile.modificationDate;
+        selectedButton.dateTimeText.text = GameFile.activeFile.modificationDate;
         selectedButton.previewDisplay.texture = GameFile.activeFile.previewImage;
 
         //render this part of the screen visible again after the screenshot is taken.
