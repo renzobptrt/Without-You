@@ -130,12 +130,16 @@ public class GameSavePanel : MonoBehaviour
     public void LoadFromSelectedSlotMaiMenu()
     {
         //we need to load the data from this slot to know what to do.
-        GameFile file = FileManager.LoadEncryptedJSON<GameFile>(selectedFilePath, FileManager.keys);
 
-        //save the name of the file that we will be loading in the visual novel. carries over to next scene.
-        FileManager.SaveFile(FileManager.savPath + "savData/file", selectedGameFile);
+        if (System.IO.File.Exists(selectedFilePath))
+        {
+            GameFile file = FileManager.LoadEncryptedJSON<GameFile>(selectedFilePath, FileManager.keys);
 
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Novel");
+            //save the name of the file that we will be loading in the visual novel. carries over to next scene.
+            FileManager.SaveFile(FileManager.savPath + "savData/file", selectedGameFile);
+
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Novel");
+        }
     }
 
     public void ClosePanel()

@@ -14,6 +14,7 @@ public class MainMenu : MonoBehaviour
     public RectTransform[] MainContainers = null;
     public Button[] ButtonsOptionsMainMenu = null;
     public Button[] ButtonsOptionsMenu = null;
+    public Sprite[] SpriteNormalOptionsMenu = new Sprite[4];
 
     public RectTransform[] PanelsOption = null;
 
@@ -26,6 +27,7 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
+        SpriteNormalOptionsMenu = new Sprite[4];
         for(int i=0; i < ButtonsOptionsMainMenu.Length;i++)
         {
             int temp = i;
@@ -39,6 +41,7 @@ public class MainMenu : MonoBehaviour
         for(int i = 0; i < ButtonsOptionsMenu.Length; i++)
         {
             int temp = i;
+            SpriteNormalOptionsMenu[temp] = ButtonsOptionsMenu[temp].GetComponent<Image>().sprite;
             ButtonsOptionsMenu[temp].onClick.RemoveAllListeners();
             ButtonsOptionsMenu[temp].onClick.AddListener(() =>
             {
@@ -57,14 +60,17 @@ public class MainMenu : MonoBehaviour
             case 1:
                 ShowOptionPanel(0);
                 TransitionMenuOptions(true);
+                ButtonsOptionsMenu[1].GetComponent<Image>().sprite = ButtonsOptionsMenu[1].spriteState.pressedSprite;
                 saveLoadPanel.LoadFilesOntoScreen(currentSaveLoadPage);
                 break;
             case 2:
                 ShowOptionPanel(1);
+                ButtonsOptionsMenu[2].GetComponent<Image>().sprite = ButtonsOptionsMenu[2].spriteState.pressedSprite;
                 TransitionMenuOptions(true);
                 break;
             case 3:
                 ShowOptionPanel(2);
+                ButtonsOptionsMenu[3].GetComponent<Image>().sprite = ButtonsOptionsMenu[3].spriteState.pressedSprite;
                 TransitionMenuOptions(true);
                 break;
             case 4:
@@ -79,18 +85,24 @@ public class MainMenu : MonoBehaviour
         {
             case 0:
                 TransitionMenuOptions(false);
+                ButtonsOptionsMenu[1].GetComponent<Image>().sprite = SpriteNormalOptionsMenu[1];
+                ButtonsOptionsMenu[2].GetComponent<Image>().sprite = SpriteNormalOptionsMenu[2];
+                ButtonsOptionsMenu[3].GetComponent<Image>().sprite = SpriteNormalOptionsMenu[3];
                 break;
             case 1:
                 ShowOptionPanel(0);
+                ButtonsOptionsMenu[2].GetComponent<Image>().sprite = SpriteNormalOptionsMenu[2];
+                ButtonsOptionsMenu[3].GetComponent<Image>().sprite = SpriteNormalOptionsMenu[3];
                 break;
             case 2:
                 ShowOptionPanel(1);
+                ButtonsOptionsMenu[1].GetComponent<Image>().sprite = SpriteNormalOptionsMenu[1];
+                ButtonsOptionsMenu[3].GetComponent<Image>().sprite = SpriteNormalOptionsMenu[3];
                 break;
             case 3:
                 ShowOptionPanel(2);
-                break;
-            case 4:
-                GoToExitGame();
+                ButtonsOptionsMenu[1].GetComponent<Image>().sprite = SpriteNormalOptionsMenu[1];
+                ButtonsOptionsMenu[2].GetComponent<Image>().sprite = SpriteNormalOptionsMenu[2];
                 break;
         }
     }
