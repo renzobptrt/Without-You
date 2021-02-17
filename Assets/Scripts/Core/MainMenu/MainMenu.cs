@@ -17,8 +17,6 @@ public class MainMenu : MonoBehaviour
 
     public RectTransform[] PanelsOption = null;
 
-    public TextMeshProUGUI titleOption = null;
-
     public GameSavePanel saveLoadPanel;
     int currentSaveLoadPage
     {
@@ -59,18 +57,15 @@ public class MainMenu : MonoBehaviour
             case 1:
                 ShowOptionPanel(0);
                 TransitionMenuOptions(true);
-                titleOption.text = "Load Game";
                 saveLoadPanel.LoadFilesOntoScreen(currentSaveLoadPage);
                 break;
             case 2:
                 ShowOptionPanel(1);
                 TransitionMenuOptions(true);
-                titleOption.text = "Setting";
                 break;
             case 3:
                 ShowOptionPanel(2);
                 TransitionMenuOptions(true);
-                titleOption.text = "Help";
                 break;
             case 4:
                 GoToExitGame();
@@ -87,15 +82,12 @@ public class MainMenu : MonoBehaviour
                 break;
             case 1:
                 ShowOptionPanel(0);
-                titleOption.text = "Load Game";
                 break;
             case 2:
                 ShowOptionPanel(1);
-                titleOption.text = "Setting";
                 break;
             case 3:
                 ShowOptionPanel(2);
-                titleOption.text = "Help";
                 break;
             case 4:
                 GoToExitGame();

@@ -51,13 +51,13 @@ public class GameSavePanel : MonoBehaviour
                     b.previewDisplay.texture = file.previewImage;
 
                     //need to read date and time information from file.
-                    b.dateTimeText.text = page.ToString() + "\n" + file.modificationDate;
+                    b.dateTimeText.text = file.modificationDate;
                 }
                 else
                 {
                     b.button.interactable = allowSavingFromThisScreen;
-                    b.previewDisplay.texture = Resources.Load<Texture2D>("Images/UI/EmptyGameFile");
-                    b.dateTimeText.text = page.ToString() + "\n" + "empty file...";
+                    b.previewDisplay.texture = Resources.Load<Texture2D>("images/UI/GameGUI/Settings/SwitchBackground");
+                    b.dateTimeText.text = "Empty file...";
                 }
             }
         }
@@ -67,8 +67,8 @@ public class GameSavePanel : MonoBehaviour
             {
                 BUTTON b = buttons[i];
                 b.button.interactable = allowSavingFromThisScreen;
-                b.previewDisplay.texture = Resources.Load<Texture2D>("Images/UI/EmptyGameFile");
-                b.dateTimeText.text = page.ToString() + "\n" + "empty file...";
+                b.previewDisplay.texture = Resources.Load<Texture2D>("images/UI/GameGUI/Settings/SwitchBackground");
+                b.dateTimeText.text = "Empty file...";
             }
         }
     }

@@ -1,3 +1,5 @@
+"[playSfx(door)]"
+
 narrator "Antes de poder entender qué es lo que pasaba recibo el golpe de una gruesa revista lanzada con mucha fuerza"
 
 Airi "maldito pervertido!!!"
@@ -6,7 +8,7 @@ narrator "Por querer cubrirme de un posible segundo ataque me cubro y ruedo, cay
 
 MC "¡¡Maldición, eso dolió!!"
 
-Airi "¿y? ¿Para ti es normal dejar tiradas revistas porno en la misma casa que vive tu hermana?"
+Airi "¿Y?{c}¿Para ti es normal dejar tiradas revistas porno en la misma casa que vive tu hermana?"
 
 narrator "Mi nombre es [mainCharName], la niña que está gritando es mi hermana menor (Airi), y al parecer ya es el primer día de mi último año de preparatoria."
 

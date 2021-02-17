@@ -1,6 +1,6 @@
-narrator "[setBackground(Bethroom_MC_2,false,1)]"
-
 input "¿Cual es tu nombre?" SavePlayerName()
+
+narrator "[setBackground(Bethroom_MC_2,false,1)]"
 
 "[playSfx(door)]"
 
@@ -8,7 +8,7 @@ Airi "[mainCharacterName] Despierta…"
 
 "[playSfx(door)]"
 
-choice ""
+choice "Elección"
 {
   "Seguir durmiendo"
     "[Load(chapter_1_a)]"
