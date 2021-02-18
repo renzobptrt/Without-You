@@ -618,7 +618,7 @@ public class NovelManager : MonoBehaviour
         if(region.ToLower() == "body")
         {
             //c.SetNewEmotion(expression);
-            c.TransitionBody(sprite, speed,false);
+            c.TransitionBody(sprite, speed,true);
         }
     }
 
