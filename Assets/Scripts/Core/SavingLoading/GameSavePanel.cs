@@ -121,7 +121,7 @@ public class GameSavePanel : MonoBehaviour
 
         //save the name of the file that we will be loading in the visual novel. carries over to next scene.
         FileManager.SaveFile(FileManager.savPath + "savData/file", selectedGameFile);
-
+        AudioManager.instance.SaveVolume();
         UnityEngine.SceneManagement.SceneManager.LoadScene("Novel");
 
         gameObject.SetActive(false);//deactivate the panel after loading.
@@ -137,7 +137,7 @@ public class GameSavePanel : MonoBehaviour
 
             //save the name of the file that we will be loading in the visual novel. carries over to next scene.
             FileManager.SaveFile(FileManager.savPath + "savData/file", selectedGameFile);
-
+            AudioManager.instance.SaveVolume();
             UnityEngine.SceneManagement.SceneManager.LoadScene("Novel");
         }
     }

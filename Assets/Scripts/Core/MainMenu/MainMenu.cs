@@ -85,6 +85,7 @@ public class MainMenu : MonoBehaviour
         {
             case 0:
                 LoadNextScene("Novel");
+                AudioManager.instance.SaveVolume();
                 break;
             case 1:
                 ShowOptionPanel(0);

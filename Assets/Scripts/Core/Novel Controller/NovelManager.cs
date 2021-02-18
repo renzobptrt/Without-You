@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UnityEngine.Audio;
+using TMPro;
 
 public class NovelManager : MonoBehaviour
 {
@@ -41,6 +44,13 @@ public class NovelManager : MonoBehaviour
     public int chitoseAffinity = 0;
     public int akikoAffinity = 0;
 
+    [Header("Audio Componentes")]
+    public Slider musicSlider;
+    public Slider sfxSlider;
+
+    public TextMeshProUGUI musicText;
+    public TextMeshProUGUI sfxText;
+
     private void Awake()
     {
         instance = this;
@@ -54,6 +64,8 @@ public class NovelManager : MonoBehaviour
         LoadGameFile(FileManager.LoadFile(FileManager.savPath + "savData/file.txt")[0]);
 
         saveLoadPanel.LoadFilesOntoScreen(saveLoadPanel.currentSaveLoadPage);
+        AudioManager.instance.SetSlidersAndText(musicSlider, sfxSlider, musicText, sfxText);
+        Command_PlayMusic("Relax");
     }
 
     // Update is called once per frame
@@ -153,7 +165,7 @@ public class NovelManager : MonoBehaviour
         activeGameFile.playerName = mainCharacterName;
         activeGameFile.currentTextSystemSpeakerDisplayText = DialogueSystem.instance.speakerNameText.text;
         activeGameFile.currentTextSystemDisplayText = DialogueSystem.instance.speechText.text;
-
+        AudioManager.instance.SaveVolume();
         //Affinity
         activeGameFile.tachibanaAffinity = tachibanaAffinity;
         activeGameFile.chitoseAffinity = chitoseAffinity;
@@ -657,6 +669,7 @@ public class NovelManager : MonoBehaviour
 
     public void GoToMenuScene()
     {
+        AudioManager.instance.SaveVolume();
         SceneManager.LoadScene("Menu");
     }
 
