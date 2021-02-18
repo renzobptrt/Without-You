@@ -27,6 +27,8 @@ public class AudioManager : MonoBehaviour
     public AudioSource musicSource;
     public AudioSource sfxSource;
 
+    public AnimationCurve volumeCurve;
+
     void Awake()
     {
         if(instance == null)
@@ -55,13 +57,13 @@ public class AudioManager : MonoBehaviour
 
     public void SetMusicVolume()
     {
-        masterMixer.SetFloat("MusicVolume", -80f + (80f * musicSlider.value));
+        masterMixer.SetFloat("MusicVolume", -80f + (80f * volumeCurve.Evaluate(musicSlider.value)));
         musicText.text = $"{(Mathf.RoundToInt(musicSlider.value * 100f))}%";
     }
 
     public void SetSfxVolume()
     {
-        masterMixer.SetFloat("SfxVolume", -80f + (80f * sfxSlider.value));
+        masterMixer.SetFloat("SfxVolume", -80f + (80f * volumeCurve.Evaluate(sfxSlider.value)));
         sfxText.text = $"{(Mathf.RoundToInt(sfxSlider.value * 100f))}%";
     }
     

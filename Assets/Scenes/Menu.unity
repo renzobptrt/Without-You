@@ -6579,6 +6579,48 @@ MonoBehaviour:
   sfxText: {fileID: 0}
   musicSource: {fileID: 1541938643}
   sfxSource: {fileID: 1541938642}
+  volumeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.06342497
+      value: 0.30518764
+      inSlope: 3.4669347
+      outSlope: 3.4669347
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.21218367
+      value: 0.59619296
+      inSlope: 1.0933933
+      outSlope: 1.0933933
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.27179196
+      outWeight: 0.08546429
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &1541938641
 Transform:
   m_ObjectHideFlags: 0
