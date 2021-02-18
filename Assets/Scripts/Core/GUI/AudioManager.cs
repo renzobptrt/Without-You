@@ -1,6 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.Audio;
+using TMPro;
+
 
 public class AudioManager : MonoBehaviour
 {
@@ -11,6 +15,17 @@ public class AudioManager : MonoBehaviour
 
     public float songTransitionSpeed = 2f;
     public bool songSmoothTransitions = true;
+
+    public AudioMixer masterMixer;
+
+    public Slider musicSlider;
+    public Slider sfxSlider;
+
+    public TextMeshProUGUI musicText;
+    public TextMeshProUGUI sfxText;
+
+    public AudioSource musicSource;
+    public AudioSource sfxSource;
 
     void Awake()
     {
@@ -24,16 +39,55 @@ public class AudioManager : MonoBehaviour
             DestroyImmediate(gameObject);
         }
     }
+
+    public void SetSlidersAndText(Slider _musicSlider, Slider _sfxSlider,TextMeshProUGUI _musicTextVolume,TextMeshProUGUI _sfxTextVolume)
+    {
+        musicSlider = _musicSlider;
+        sfxSlider = _sfxSlider;
+        musicText = _musicTextVolume;
+        sfxText = _sfxTextVolume;
+
+        musicSlider.onValueChanged.AddListener(delegate { SetMusicVolume(); });
+        sfxSlider.onValueChanged.AddListener(delegate { SetSfxVolume(); });
+
+        LoadVolume();
+    }
+
+    public void SetMusicVolume()
+    {
+        masterMixer.SetFloat("MusicVolume", -80f + (80f * musicSlider.value));
+        musicText.text = $"{(Mathf.RoundToInt(musicSlider.value * 100f))}%";
+    }
+
+    public void SetSfxVolume()
+    {
+        masterMixer.SetFloat("SfxVolume", -80f + (80f * sfxSlider.value));
+        sfxText.text = $"{(Mathf.RoundToInt(sfxSlider.value * 100f))}%";
+    }
     
+    public void SaveVolume()
+    {
+        PlayerPrefs.SetFloat("MusicVolume", musicSlider.value);
+        PlayerPrefs.SetFloat("SfxVolume", sfxSlider.value);
+    }
+
+    public void LoadVolume()
+    {
+        if (PlayerPrefs.HasKey("MusicVolume"))
+            musicSlider.value = PlayerPrefs.GetFloat("MusicVolume");
+        if (PlayerPrefs.HasKey("SfxVolume"))
+            sfxSlider.value = PlayerPrefs.GetFloat("SfxVolume");
+    }
+
     public void PlaySfx(AudioClip effect,float volume=1f,float pitch = 1f)
     {
-        AudioSource source = CreateNewSource(string.Format("SFX [{0}]", effect.name));
-        source.clip = effect;
-        source.volume = volume;
-        source.pitch = pitch;
-        source.Play();
+        //AudioSource source = CreateNewSource(string.Format("SFX [{0}]", effect.name));
+        sfxSource.clip = effect;
+        sfxSource.volume = volume;
+        sfxSource.pitch = pitch;
+        sfxSource.Play();
 
-        Destroy(source.gameObject, effect.length);
+        //Destroy(source.gameObject, effect.length);
     }
 
     public void PlayMusic(AudioClip song, float maxVolume=1f, float maxPitch=1f,
@@ -51,7 +105,7 @@ public class AudioManager : MonoBehaviour
                 }
             }
             if(activeSong == null || activeSong.clip != song)
-                activeSong = new SONG(song, maxVolume, maxPitch, startingVolume, playOnStart, isLoop);
+                activeSong = new SONG(musicSource,song, maxVolume, maxPitch, startingVolume, playOnStart, isLoop);
         }
         else
             activeSong = null;
@@ -122,9 +176,10 @@ public class AudioManager : MonoBehaviour
         public float maxVolume = 1f;
         public float volume { get { return source.volume; } set { source.volume = value; } }
         public float pitch { get { return source.pitch; } set { source.pitch = value; } }
-        public SONG(AudioClip newClip, float newMaxVolume, float newPitch, float startVolume, bool playOnStart, bool isNewLoop)
+        public SONG(AudioSource newSource,AudioClip newClip, float newMaxVolume, float newPitch, float startVolume, bool playOnStart, bool isNewLoop)
         {
-            source = AudioManager.CreateNewSource(string.Format("SONG [{0}]", newClip.name));
+            //source = AudioManager.CreateNewSource(string.Format("SONG [{0}]", newClip.name));
+            source = newSource;
             source.clip = newClip;
             source.volume = startVolume;
             maxVolume = newMaxVolume;
@@ -160,7 +215,7 @@ public class AudioManager : MonoBehaviour
         public void DestroySong()
         {
             AudioManager.allSongs.Remove(this);
-            Destroy(source.gameObject);
+            //Destroy(source.gameObject);
         }
     }
 }

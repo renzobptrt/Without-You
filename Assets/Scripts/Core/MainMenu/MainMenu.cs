@@ -19,6 +19,14 @@ public class MainMenu : MonoBehaviour
     public RectTransform[] PanelsOption = null;
 
     public GameSavePanel saveLoadPanel;
+
+    [Header("Audio Componentes")]
+    public Slider musicSlider;
+    public Slider sfxSlider;
+
+    public TextMeshProUGUI musicText;
+    public TextMeshProUGUI sfxText;
+
     int currentSaveLoadPage
     {
         get { return saveLoadPanel.currentSaveLoadPage; }
@@ -48,6 +56,27 @@ public class MainMenu : MonoBehaviour
                 ChoiceOptionMenuOptions(temp);
             });
         }
+
+        AudioManager.instance.SetSlidersAndText(musicSlider, sfxSlider, musicText, sfxText);
+        Command_PlayMusic("StrangeMelody");
+    }
+
+    void Command_PlaySfx(string data)
+    {
+        AudioClip clip = Resources.Load("Audio/SFX/" + data) as AudioClip;
+        if (clip != null)
+            AudioManager.instance.PlaySfx(clip);
+        else
+            Debug.LogError("Clip does not exits: " + data);
+    }
+
+    void Command_PlayMusic(string data)
+    {
+        AudioClip clip = Resources.Load("Audio/Music/" + data) as AudioClip;
+        if (clip != null)
+            AudioManager.instance.PlayMusic(clip);
+        else
+            Debug.LogError("Clip does not exits: " + data);
     }
 
     void ChoiceOption(int indexButton)
