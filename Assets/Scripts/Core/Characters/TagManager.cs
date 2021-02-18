@@ -11,8 +11,8 @@ public class TagManager : MonoBehaviour
             return;
 
         //Reemplaza mainCharName con el nombre actual del jugador
-        s = s.Replace("[mainCharName]", "Favio");
-
+        s = s.Replace("[mainCharacterName]", NovelManager.instance.mainCharacterName);
+        
     }
 
     public static string[] SplitByTags(string targetText)

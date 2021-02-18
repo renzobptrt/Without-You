@@ -10,7 +10,7 @@ MC "¡¡Maldición, eso dolió!!"
 
 Airi "[setExpression(Airi,body,annoyed,4)]¿Y?{c}¿Para ti es normal dejar tiradas revistas porno en la misma casa que vive tu hermana?"
 
-narrator "Mi nombre es [mainCharName], la niña que está gritando es mi hermana menor (Airi), y al parecer ya es el primer día de mi último año de preparatoria."
+narrator "Mi nombre es [mainCharacterName], la niña que está gritando es mi hermana menor (Airi), y al parecer ya es el primer día de mi último año de preparatoria."
 
 Airi "[setExpression(Airi,body,angry,4)]si no te levantas esa ‘revista’ no será lo único que vuele por esta habitación, porque si llegas tarde mama y papa pensaran que es mi culpa."
 

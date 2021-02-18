@@ -24,3 +24,132 @@ narrator "[setBackground(Kitchen_MC_1,false,1)]"
 
 MC "*Bosteza*"
 
+father "Con esa actitud haces que dude sobre mi decisión de darte educación..."
+
+narrator "Ni siquiera llego a la mesa y ya me están atacando"
+
+MC "¿Acaso  han confabulado para estar todos en contra de mi autoestima el día de hoy?"
+
+mother "Es la forma que tiene tu papa de darte ánimos para que comiences bien tu último año escolar"
+
+narrator "Y ¿Cómo es que tratándome mal me darán ánimos?"
+
+MC "Ayudaría mucho más a mis ganas de estudiar, el que me dieran más libertad"
+
+mother "Te paseas libremente por la ciudad con tus amigos, y siempre llegas tarde a casa, no sé qué más libertad quieres."
+
+MC "Me encantaría que me dejaran tener una novia…"
+
+mother "..."
+
+father "Yo no me opondré si con eso dejas de hacer tanto ruido por las noches"
+
+MC "..."
+
+father "..."
+
+mother "..."
+
+Airi "..."
+
+narrator "Decidí retirarme con la moral destruida [exit(Airi)] {c}[setBackground(HouseStreet_0,false,1)] Doy un largo suspiro tratando de liberarme de todas las heridas emocionales dejadas por mi familia."
+
+MC "Haaa…"
+
+narrator "No es que no haya tratado, por alguna razón siempre que trato de acercarme a una chica solamente termina aumentando nuestra distancia,{c} como si estuviera destinado a permanecer solo y virgen de por vida."
+
+MC "aaaaaah, lo peor de todo es que el próximo año debo ir a la universidad.{c}¡No tendré tiempo para coquetear con chicas!"
+
+narrator "Grito con todas mis fuerzas mi único deseo antes de terminar la preparatoria"
+
+MC "¡¡¡Maldición quiero una novia!!!"
+
+narrator "Mientras caminaba por la calle vi a lo lejos a una chica delgada y con lentes, una figura que ya se me hacía bastante familiar.{c}Empiezo a correr hacia mi amiga de la infancia gritando su nombre."
+
+MC "¡¡Tachibana!!"
+
+narrator "Tachibana sigue caminando mirando el suelo"
+
+MC "¿Sin respuesta eh?"
+
+narrator "Al acercarme más logro notar que tiene una expresión de remordimiento en su rostro {c}Voy a molestarla un poco, ojala que con eso disminuya un poco su desánimo{c}[enter(Tachibana)]Cuando estoy demasiado cerca de ella decido susurrarle al oído su nombre"
+
+MC "Hey, Tachi-"
+
+Tachibana "¡Hiiii!"
+
+narrator "Llego a oír un fuerte golpe seco antes de sentir un dolor muy agudo en mi mejilla"
+
+Tachibana "[mainCharacterName] ¿Es-estas bien?"
+
+MC "Sí, sí, estoy bien, fue mi culpa por acercarme sigilosamente a ti."
+
+narrator "La chica que está desesperadamente disculpándose por haberme abofeteado es Tachibana Hitomi, y como pueden ver es muy linda…{c}Saldría con ella si no fuera porque todas las veces que he tratado de acercarme a ella románticamente, he sido ignorado."
+
+MC "Siempre que parece que estoy progresando, se aleja de mí..."
+
+Tachibana "¿?"
+
+MC "¡Nada! ¡Nada! ¡Olvida todo lo que escuchaste!"
+
+Tachibana "¿Seguro que estás bien?"
+
+narrator "Con un suspiro interno, le ruego al universo que no deje que me quede solo.{c}Haaa, todo me ha salido mal el día de hoy, ojala que sea porque toda mi suerte se está acumulando para un encuentro predestinado.{c}Tachibana parece empezar a preocuparse porque no le volví a responder"
+
+MC "Maldición animarla está siendo más difícil de lo que pensé.{c}jajá, no te preocupes solo parece que estoy delirando un poco…"
+
+narrator "Tachibana hace una gran expresión de sorpresa.[setExpression(Tachibana,body,o,6)]"
+
+Tachibana "Lo- *snif*, Lo si- *snif* [setExpression(Tachibana,body,sad,6)]"
+
+narrator "Pequeñas lágrimas empiezan a formarse en los ojos de Tachibana {c}¡Mierda! Parece más parece que soy el que la está haciendo sufrir"
+
+MC "Va-vamos, te dije que fue mi culpa, no tienes que preocuparte, fue solo una broma…"
+
+Tachibana "¿De verdad estás bien?"
+
+MC "Como si nada hubiera pasado, además si en algún momento sientes que me estoy sobrepasando puedes golpearme todo lo que quieras."
+
+Tachibana "¿En serio estás bien con que te golpee?"
+
+MC "Si con eso logro que te desahogues y te sientas más segura, entonces resistiré hasta una paliza."
+
+narrator "Tachibana empieza a apretar su puño"
+
+MC "Oy, oy era solo una expresión, ¡no tienes que noquearme ahora!"
+
+Tachibana "jajaja no tienes que ofrecerte a algo si luego vas a ser un cobarde.[setExpression(Tachibana,body,smile2,6)]"
+
+narrator "De ahora en adelante debo tener más cuidado con las bromas."
+
+MC "¿Pero logro animarte, no es así?"
+
+Tachibana "Sí. [setExpression(Tachibana,body,laugh,6)]"
+
+narrator "Tachibana ríe mientras su rostro se ruboriza, y su cabello empieza brillar afirmando mi idea de que es muy linda, hasta pareciera que una luz empieza a emanar de ella"
+
+MC "¡Maldición como es que eres tan linda! {c}¿Lo ves?, puedes estar tranquila junto a mí."
+
+narrator "Empiezo a tocar mi mejilla con la intención de hacer desaparecer el dolor."
+
+MC "Y hasta puedes desahogarte conmigo… ¡ay!"
+
+narrator "Mientras trato de esconder el dolor de haber recibido una cachetada por segunda vez hoy, sigo bromeando con Tachibana."
+
+Tachibana "jeje, muchas gracias [mainCharacterName]. [setExpression(Tachibana,body,normal,6)]"
+
+narrator "Parece que ya está mejor {c}pero ha estado teniendo muchos problemas en su casa últimamente…{c}Antes de que pudiera pensar en otra forma de molestarla, Tachibana hace el gesto de recordar algo y empezó a  correr de vuelta hacia su casa."
+
+Tachibana "¡Es verdad! Me olvide mi almuerzo.{c}Puedes adelantarte sin mí… [setExpression(Tachibana,body,sad,6)]"
+
+MC "¿Qué? ¡Espera!"
+
+narrator "Tachibana empieza a desaparecer de mi vista [exit(Tachibana)]"
+
+choice ""
+{
+  "Seguir a Tachibana"
+    "[Affinity(Tachibana,1) Load(chapter_1_ab_a)]"
+  "Ir al colegio"
+    "[Affinity(Chitose,1) Affinity(Akiko,1) Load(chapter_1_ab_b)]"
+}
