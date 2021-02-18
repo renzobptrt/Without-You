@@ -56,7 +56,7 @@ public class MainMenu : MonoBehaviour
                 ChoiceOptionMenuOptions(temp);
             });
         }
-
+        saveLoadPanel.LoadFilesOntoScreen(currentSaveLoadPage);
         AudioManager.instance.SetSlidersAndText(musicSlider, sfxSlider, musicText, sfxText);
         Command_PlayMusic("StrangeMelody");
     }
@@ -91,7 +91,7 @@ public class MainMenu : MonoBehaviour
                 ShowOptionPanel(0);
                 TransitionMenuOptions(true);
                 ButtonsOptionsMenu[1].GetComponent<Image>().sprite = ButtonsOptionsMenu[1].spriteState.pressedSprite;
-                saveLoadPanel.LoadFilesOntoScreen(currentSaveLoadPage);
+                //saveLoadPanel.LoadFilesOntoScreen(currentSaveLoadPage);
                 break;
             case 2:
                 ShowOptionPanel(1);
@@ -139,6 +139,7 @@ public class MainMenu : MonoBehaviour
 
     public void GoToExitGame()
     {
+        AudioManager.instance.SaveVolume();
         #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
         #else

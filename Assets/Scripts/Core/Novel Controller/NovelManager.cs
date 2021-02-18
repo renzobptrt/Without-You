@@ -51,6 +51,9 @@ public class NovelManager : MonoBehaviour
     public TextMeshProUGUI musicText;
     public TextMeshProUGUI sfxText;
 
+    public RectTransform SavePanel;
+    public RectTransform SettingsPanel;
+
     private void Awake()
     {
         instance = this;
@@ -678,6 +681,18 @@ public class NovelManager : MonoBehaviour
         if (!saveLoadPanel.gameObject.activeInHierarchy)
         {
             saveLoadPanel.gameObject.SetActive(true);
+            SavePanel.anchoredPosition = Vector2.zero;
+            SettingsPanel.anchoredPosition = new Vector2(2000f, 0);
+        }
+    }
+
+    public void OpenSettingsLayer()
+    {
+        if (!saveLoadPanel.gameObject.activeInHierarchy)
+        {
+            saveLoadPanel.gameObject.SetActive(true);
+            SavePanel.anchoredPosition = new Vector2(2000f, 0);
+            SettingsPanel.anchoredPosition = Vector2.zero;
         }
     }
 }

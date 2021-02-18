@@ -146,7 +146,6 @@ public class GameSavePanel : MonoBehaviour
     {
         if (gameObject.activeInHierarchy)
             gameObject.SetActive(false);//GetComponent<Animator>().SetTrigger("deactivate");
-
     }
     Coroutine savingFile = null;
     public void SaveToSelectedSlot()
