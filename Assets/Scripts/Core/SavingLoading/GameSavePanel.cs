@@ -13,10 +13,6 @@ public class GameSavePanel : MonoBehaviour
 
     public CanvasGroup canvasGroup;
 
-    public Button loadButton;
-    public Button saveButton;
-    public Button deleteButton;
-
     public enum TASK
     {
         saveToSlot,
@@ -52,12 +48,29 @@ public class GameSavePanel : MonoBehaviour
 
                     //need to read date and time information from file.
                     b.dateTimeText.text = file.modificationDate;
+                    b.deleteButton.interactable = true;
+                    b.deleteButton.transform.localScale = Vector2.one;
+                    b.deleteButton.onClick.RemoveAllListeners();
+                    b.deleteButton.onClick.AddListener(() =>
+                    {
+                        string  temp = expectedFile;
+                        System.IO.File.Delete(temp);
+                        /*b.button.interactable = allowSavingFromThisScreen;
+                        b.previewDisplay.texture = Resources.Load<Texture2D>("images/UI/GameGUI/Settings/SwitchBackground");
+                        b.dateTimeText.text = "Empty file...";
+                        b.deleteButton.interactable = false;
+                        b.deleteButton.transform.localScale = Vector2.zero;*/
+                        RefreshBox(b);
+                    });
                 }
                 else
                 {
-                    b.button.interactable = allowSavingFromThisScreen;
+                    /*b.button.interactable = allowSavingFromThisScreen;
                     b.previewDisplay.texture = Resources.Load<Texture2D>("images/UI/GameGUI/Settings/SwitchBackground");
                     b.dateTimeText.text = "Empty file...";
+                    b.deleteButton.interactable = false;
+                    b.deleteButton.transform.localScale = Vector2.zero;*/
+                    RefreshBox(b);
                 }
             }
         }
@@ -66,11 +79,23 @@ public class GameSavePanel : MonoBehaviour
             for (int i = 0; i < buttons.Count; i++)
             {
                 BUTTON b = buttons[i];
-                b.button.interactable = allowSavingFromThisScreen;
+                /*b.button.interactable = allowSavingFromThisScreen;
                 b.previewDisplay.texture = Resources.Load<Texture2D>("images/UI/GameGUI/Settings/SwitchBackground");
                 b.dateTimeText.text = "Empty file...";
+                b.deleteButton.interactable = false;
+                b.deleteButton.transform.localScale = Vector2.zero;*/
+                RefreshBox(b);
             }
         }
+    }
+
+    void RefreshBox(BUTTON b)
+    {
+        b.button.interactable = allowSavingFromThisScreen;
+        b.previewDisplay.texture = Resources.Load<Texture2D>("images/UI/GameGUI/Settings/SwitchBackground");
+        b.dateTimeText.text = "Empty file...";
+        b.deleteButton.interactable = false;
+        b.deleteButton.transform.localScale = Vector2.zero;
     }
 
     [HideInInspector]
@@ -91,27 +116,6 @@ public class GameSavePanel : MonoBehaviour
 
         selectedGameFile = currentSaveLoadPage.ToString() + "/" + (buttons.IndexOf(selectedButton) + 1).ToString();
         selectedFilePath = FileManager.savPath + "savData/gameFiles/" + selectedGameFile + ".txt";
-
-        //Run an error check just to be sure the file has not been removed since load.
-        if (System.IO.File.Exists(selectedFilePath))
-        {
-            if(loadButton!=null)
-                loadButton.interactable = allowLoadingFromThisScreen;
-            if(saveButton!=null)
-                saveButton.interactable = allowSavingFromThisScreen;
-            if(deleteButton!=null)
-                deleteButton.interactable = allowDeletingFromThisScreen;
-        }
-        else
-        {
-            //selectedButton.dateTimeText.text = "<color=red>FILE NOT FOUND!";
-            if (loadButton != null)
-                loadButton.interactable = false;
-            if (saveButton != null)
-                saveButton.interactable = allowSavingFromThisScreen;
-            if (deleteButton != null)
-                deleteButton.interactable = true;
-        }
     }
 
     public void LoadFromSelectedSlot()
@@ -171,7 +175,14 @@ public class GameSavePanel : MonoBehaviour
         yield return new WaitForEndOfFrame();
         selectedButton.dateTimeText.text = GameFile.activeFile.modificationDate;
         selectedButton.previewDisplay.texture = GameFile.activeFile.previewImage;
-
+        selectedButton.deleteButton.interactable = true;
+        selectedButton.deleteButton.transform.localScale = Vector2.one;
+        selectedButton.deleteButton.onClick.RemoveAllListeners();
+        selectedButton.deleteButton.onClick.AddListener(() =>
+        {
+            System.IO.File.Delete(selectedFilePath);
+            RefreshBox(selectedButton);
+        });
         //render this part of the screen visible again after the screenshot is taken.
         SaveLoadingAnimator.SetTrigger("instantVisible");
 
@@ -189,5 +200,6 @@ public class GameSavePanel : MonoBehaviour
         public Button button;
         public RawImage previewDisplay;
         public TextMeshProUGUI dateTimeText;
+        public Button deleteButton;
     }
 }

@@ -1,4 +1,4 @@
-narrator "[playSfx(door)]"
+narrator ""
 
 narrator "Antes de poder entender qué es lo que pasaba recibo el golpe de una gruesa revista lanzada con mucha fuerza"
 
