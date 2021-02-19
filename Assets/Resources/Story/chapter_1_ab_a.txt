@@ -1,4 +1,4 @@
-narrator ""
+narrator "[Next()]"
 
 narrator "¡Eso es!{c}¡Ella me preocupa!{c}Así que no sería raro seguirla para ver que todo esté bien.{c}Si, ella me preocupa, y como me preocupa no quiero volverla a ver triste{c}Así que si la sigo es porque quiero cuidarla.{c}Pero ella me dijo que me adelantara…{c}Aunque… puedo decirle que no la escuche…{c}Y no debería molestarse, ya que siempre que nos encontramos terminamos yendo juntos al colegio…{c}Y como no la escuche pensé que debía seguirla para ir juntos.{c}Una vez llegado a un acuerdo conmigo mismo, y con una especie de sonrisa malvada en mi rostro, decidí caminar en dirección de la casa de Tachibana.{c}[setBackground(HouseStreet_3_1,false,1)]Después de correr por unos 5 minutos llegue a alcanzar a Tachibana."
 
@@ -20,4 +20,4 @@ Tachibana "Está bien… entonces me apresurare[setExpression(Tachibana,body,smi
 
 MC "No tienes que ir tan rapido, seria divertido si en la escuela piensan que nos fugamos[setExpression(Tachibana,body,normal,6)]"
 
-narrator "No parece que se haya molestado, pero ya no están teniendo efecto mis bromas, asi que parare por ahora.{c}Llegamos rápidamente a la entrada de la casa de Tachibana"
+narrator "No parece que se haya molestado, pero ya no están teniendo efecto mis bromas, asi que parare por ahora.{c}Llegamos rápidamente a la entrada de la casa de Tachibana."

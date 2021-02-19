@@ -128,7 +128,7 @@ public class ControllerLineManager : MonoBehaviour
 
                 string[] parts = dialogue.Split('[', ']');
 
-                for(int i = 0; i < parts.Length; i++)
+                for (int i = 0; i < parts.Length; i++)
                 {
                     bool isOdd = i % 2 != 0;
 
@@ -141,7 +141,8 @@ public class ControllerLineManager : MonoBehaviour
 
                     string targDialogue = parts[i];
 
-                    if (line.speaker != "narrator" && line.speaker != "MC" && line.speaker != "father" && line.speaker != "mother")
+                    if (line.speaker != "narrator" && line.speaker != "MC" && line.speaker != "father" && line.speaker != "mother"
+                        && line.speaker != "RandomGirl1" && line.speaker != "RandomGirl2")
                     {
                         Character character = CharacterManager.instance.GetCharacter(line.speaker);
                         character.Say(targDialogue, i > 0 ? true : pretext != "");

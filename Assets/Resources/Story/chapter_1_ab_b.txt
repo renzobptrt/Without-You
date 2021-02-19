@@ -1,4 +1,4 @@
-narrator ""
+narrator "[Next()]"
 
 MC "Haaa, no tiene caso, se molestara si la sigo, ya que me ha dicho que me adelante.{c}Mientras que nada la vuelva a molestar hoy, puedo estar más tranquilo."
 
@@ -6,7 +6,7 @@ narrator "Una vez que me resigne a que no alcanzaría a Tachibana, retome mi rum
 
 MC "¿Serán nuevas?"
 
-narrator "Una de ellas tenía el cabello largo y castaño mientras que la otra tenía cabello corto y de un tono rosado.[enter(Chitose) move(Chitose,0,0,5,false) enter(Akiko) move(Akiko,1,0,5,false)]{c}Como una de ellas era bastante ruidosa podía escuchar parte de la conversación."
+narrator "Una de ellas tenía el cabello largo y castaño mientras que la otra tenía cabello corto y de un tono rosado.[enter(Chitose) moveCharacter(Chitose,0,0,3) enter(Akiko) moveCharacter(Akiko,1,0,3)]{c}Como una de ellas era bastante ruidosa podía escuchar parte de la conversación."
 
 RandomGirl1 "¡En esta escuela también nos irá bien!"
 
@@ -22,13 +22,13 @@ narrator "¿Acaso ella se quedó mirándome?{c}El contacto visual está durando 
 
 RandomGirl1 "¿Ese chico no te parece extraño?"
 
-narrator "guuhh, parece que me vine demasiado arriba otra vez{c}Hummm, aunque quizá... si hago bien las cosas, pueda tener una oportunidad.{c}[setBackground(School_Entrance_0,false,1)]Llego a la puerta de la preparatoria."
+narrator "guuhh, parece que me vine demasiado arriba otra vez{c}Hummm, aunque quizá... si hago bien las cosas, pueda tener una oportunidad.{c}[setBackground(School_Entrance_0,false,1)]Llego a la puerta de la preparatoria. [exit(Chitose) exit(Akiko)]"
 
 MC "Todavía faltan 20 minutos para que suene la campana, ojalá Tachibana consiga llegar a tiempo…"
 
 narrator "Mientras le deseaba suerte a mi amiga, una chica delgada y tímida llegó corriendo."
 
-Tachibana "ahh ahh."
+Tachibana "[enter(Tachibana)] ahh ahh."
 
 MC "jajá, hiciste un buen tiempo desde tu casa hasta aquí."
 

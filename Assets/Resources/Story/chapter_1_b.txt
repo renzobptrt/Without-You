@@ -1,4 +1,4 @@
-narrator "" 
+narrator "[Next()]"
 
 narrator "Me levanto lo más rápido que puedo para que mi hermana me deje de molestar [setExpression(Airi,body,angry,6)]"
 

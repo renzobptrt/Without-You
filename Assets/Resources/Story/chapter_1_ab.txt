@@ -1,22 +1,22 @@
-narrator ""
+narrator "[Next()]"
 
 MC "Se preocupan demasiado solo porque este año son los exámenes de admisión, pero... {c}¿debería importarme eso?, he estado todos los años matándome estudiando y he dejado a las chicas de lado, mientras todos los demás se divertían con sus parejas, yo me mataba estudiando."
 
-Airi "si de verdad estudiaras como dices, tus notas no serían tan horribles…"
+Airi "Si de verdad estudiaras como dices, tus notas no serían tan horribles…"
 
 MC "-guuhh"
 
-Airi "[setExpression(Airi,body,normal,4)]y que todas las chicas te rechacen no significa que voluntariamente las hayas dejado de lado, después de todo no eres para nada popular."
+Airi "[setExpression(Airi,body,normal,4)]Y que todas las chicas te rechacen no significa que voluntariamente las hayas dejado de lado, después de todo no eres para nada popular."
 
 MC "----gaahhhhhhhh, aún si se me da mal coquetear me esfuerzo, además hay una chica con la que todavía tengo oportunidad."
 
-Airi "no sé cómo Tachibana no te ha mandado a volar ya"
+Airi "No sé cómo Tachibana no te ha mandado a volar ya"
 
 MC "¡¡¡Y no es que las demás me hayan rechazado porque no resalte!!!{c}¡Es porque no he tenido oportunidad de acortar mi distancia con ellas!{c}Si,  así es.{c}Es porque he estado dejando pasar cada oportunidad que he tenido de estrechar lazos con una chica."
 
 Airi "¿Y aquella de la que fuiste prácticamente esclavo durante una semana?{c}¿Acaso no estuviste junto a ella todo ese tiempo?"
 
-MC "aaaaaah!!!"
+MC "Aaaaaah!!!"
 
 narrator "Me aliste lo más rápido que pude, gritando para que las palabras de mi hermana no me siguieran haciendo daño. [exit(Airi)]"
 
@@ -136,7 +136,7 @@ MC "Y hasta puedes desahogarte conmigo… ¡ay!"
 
 narrator "Mientras trato de esconder el dolor de haber recibido una cachetada por segunda vez hoy, sigo bromeando con Tachibana."
 
-Tachibana "jeje, muchas gracias [mainCharacterName]. [setExpression(Tachibana,body,normal,6)]"
+Tachibana "Jeje, muchas gracias [mainCharacterName]. [setExpression(Tachibana,body,normal,6)]"
 
 narrator "Parece que ya está mejor {c}pero ha estado teniendo muchos problemas en su casa últimamente…{c}Antes de que pudiera pensar en otra forma de molestarla, Tachibana hace el gesto de recordar algo y empezó a  correr de vuelta hacia su casa."
 

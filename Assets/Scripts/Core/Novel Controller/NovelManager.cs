@@ -503,6 +503,11 @@ public class NovelManager : MonoBehaviour
                     Command_SavePlayerName();
                     break;
                 }
+            case "Next":
+                {
+                    _next = true;
+                    break;
+                }
         }
     }
 
