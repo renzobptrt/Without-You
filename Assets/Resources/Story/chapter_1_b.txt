@@ -2,7 +2,7 @@ narrator " {c} Me levanto lo más rápido que puedo para que mi hermana me deje 
 
 MC "Maldición, como es que ya es mi ultimo año…"
 
-narrator "Mi nombre es (Nombre) y este año son los exámenes de admisión"
+narrator "Mi nombre es [mainCharacterName] y este año son los exámenes de admisión"
 
 Airi "¿Vas a alistarte? O tengo que patearte para que te muevas…"
 
