@@ -1,3 +1,5 @@
+narrator ""
+
 MC "Haaa, no tiene caso, se molestara si la sigo, ya que me ha dicho que me adelante.{c}Mientras que nada la vuelva a molestar hoy, puedo estar más tranquilo."
 
 narrator "Una vez que me resigne a que no alcanzaría a Tachibana, retome mi rumbo hacia la academia.{c}[setBackground(HouseStreet_2_0,false,1)] En el camino me percate que al otro lado de la acera, caminaban dos chicas con el mismo uniforme de mi escuela.(¿No sería mejor de la escuela?)"
