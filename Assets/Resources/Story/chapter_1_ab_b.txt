@@ -1,0 +1,33 @@
+MC "Haaa, no tiene caso, se molestara si la sigo, ya que me ha dicho que me adelante.{c}Mientras que nada la vuelva a molestar hoy, puedo estar más tranquilo."
+
+narrator "Una vez que me resigne a que no alcanzaría a Tachibana, retome mi rumbo hacia la academia.{c}[setBackground(HouseStreet_2_0,false,1)] En el camino me percate que al otro lado de la acera, caminaban dos chicas con el mismo uniforme de mi escuela.(¿No sería mejor de la escuela?)"
+
+MC "¿Serán nuevas?"
+
+narrator "Una de ellas tenía el cabello largo y castaño mientras que la otra tenía cabello corto y de un tono rosado.[enter(Chitose) move(Chitose,0,0,5,false) enter(Akiko) move(Akiko,1,0,5,false)]{c}Como una de ellas era bastante ruidosa podía escuchar parte de la conversación."
+
+RandomGirl1 "¡En esta escuela también nos irá bien!"
+
+RandomGirl2 "Ojala tengas razón, pero extrañare a los de (Nombre de escuela)"
+
+RandomGirl1 "No te preocupes ellos seguirán divirtiéndose allá, deberías preocuparte más por nosotras, no vamos a conocer a nadie durante el primer día."
+
+narrator "'Divertirse' ¿eh?, vaya forma de llamar a la vida escolar.{c}En un momento dado nuestras miradas se cruzan"
+
+MC "ah"
+
+narrator "¿Acaso ella se quedó mirándome?{c}El contacto visual está durando más de un simple momento.{c}¿Le habré llamado la atención? Acaso este será el momento que tanto he estado esperando…{c} ¿Por fin le ha llegado la primavera a mi vida amorosa?{c}La chica de cabello castaño, al notar que nos habíamos quedado mirando, se voltea y sigue su rumbo junto a su amiga.{c}Parece que de verdad mi suerte se estaba juntando para un encuentro predestinado.{c}Puedo escuchar cómo mientras caminan siguen hablando, pero en un tono más bajo."
+
+RandomGirl1 "¿Ese chico no te parece extraño?"
+
+narrator "guuhh, parece que me vine demasiado arriba otra vez{c}Hummm, aunque quizá... si hago bien las cosas, pueda tener una oportunidad.{c}[setBackground(School_Entrance_0,false,1)]Llego a la puerta de la preparatoria."
+
+MC "Todavía faltan 20 minutos para que suene la campana, ojalá Tachibana consiga llegar a tiempo…"
+
+narrator "Mientras le deseaba suerte a mi amiga, una chica delgada y tímida llegó corriendo."
+
+Tachibana "ahh ahh."
+
+MC "jajá, hiciste un buen tiempo desde tu casa hasta aquí."
+
+"[Load(chapter_1_ab_ab)]"
