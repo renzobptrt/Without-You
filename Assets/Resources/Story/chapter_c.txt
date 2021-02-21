@@ -1,14 +1,14 @@
 narrator "[Next()]"
 
-MC "Se preocupan demasiado solo porque este año son los exámenes de admisión, pero... {c}¿debería importarme eso?, he estado todos los años matándome estudiando y he dejado a las chicas de lado, mientras todos los demás se divertían con sus parejas, yo me mataba estudiando."
+MC "Se preocupan demasiado solo porque este año son los exámenes de admisión, pero... {c}¿Debería importarme eso?, he estado todos los años matándome estudiando y he dejado a las chicas de lado, mientras todos los demás se divertían con sus parejas, yo me mataba estudiando."
 
-Airi "Si de verdad estudiaras como dices, tus notas no serían tan horribles…"
+Airi "[setExpression(Airi,body,annoyed,4)]Si de verdad estudiaras como dices, tus notas no serían tan horribles…"
 
-MC "-guuhh"
+MC "[Buzz()]-guuhh"
 
 Airi "[setExpression(Airi,body,normal,4)]Y que todas las chicas te rechacen no significa que voluntariamente las hayas dejado de lado, después de todo no eres para nada popular."
 
-MC "----gaahhhhhhhh, aún si se me da mal coquetear me esfuerzo, además hay una chica con la que todavía tengo oportunidad."
+MC "[Buzz()]----gaahhhhhhhh, aún si se me da mal coquetear me esfuerzo, además hay una chica con la que todavía tengo oportunidad."
 
 Airi "No sé cómo Tachibana no te ha mandado a volar ya"
 
@@ -16,11 +16,9 @@ MC "¡¡¡Y no es que las demás me hayan rechazado porque no resalte!!!{c}¡Es 
 
 Airi "¿Y aquella de la que fuiste prácticamente esclavo durante una semana?{c}¿Acaso no estuviste junto a ella todo ese tiempo?"
 
-MC "Aaaaaah!!!"
+MC "[Buzz()]Aaaaaah!!!"
 
-narrator "Me aliste lo más rápido que pude, gritando para que las palabras de mi hermana no me siguieran haciendo daño. [exit(Airi)]"
-
-narrator "[setBackground(Kitchen_MC_1,false,1)]"
+narrator "Me aliste lo más rápido que pude, gritando para que las palabras de mi hermana no me siguieran haciendo daño. [exit(Airi)]{w 1}[setBackground(Kitchen_MC_1,false,1)]"
 
 MC "*Bosteza*"
 
@@ -52,15 +50,15 @@ mother "..."
 
 Airi "..."
 
-narrator "Decidí retirarme con la moral destruida [exit(Airi)] {c}[setBackground(HouseStreet_0,false,1)] Doy un largo suspiro tratando de liberarme de todas las heridas emocionales dejadas por mi familia."
+narrator "Decidí retirarme con la moral destruida [exit(Airi)] {c}[setBackground(HouseStreet_0,false,1)]Doy un largo suspiro tratando de liberarme de todas las heridas emocionales dejadas por mi familia."
 
 MC "Haaa…"
 
-narrator "No es que no haya tratado, por alguna razón siempre que trato de acercarme a una chica solamente termina aumentando nuestra distancia,{c} como si estuviera destinado a permanecer solo y virgen de por vida."
+narrator "No es que no haya tratado, por alguna razón siempre que trato de acercarme a una chica solamente termina aumentando nuestra distancia,{c}Como si estuviera destinado a permanecer solo y virgen de por vida."
 
-MC "aaaaaah, lo peor de todo es que el próximo año debo ir a la universidad.{c}¡No tendré tiempo para coquetear con chicas!"
+MC "Aaaaaah, lo peor de todo es que el próximo año debo ir a la universidad.{c}¡No tendré tiempo para coquetear con chicas!"
 
-narrator "Grito con todas mis fuerzas mi único deseo antes de terminar la preparatoria"
+narrator "Grito con todas mis fuerzas mi único deseo antes de terminar la preparatoria."
 
 MC "¡¡¡Maldición quiero una novia!!!"
 
@@ -72,13 +70,13 @@ narrator "Tachibana sigue caminando mirando el suelo"
 
 MC "¿Sin respuesta eh?"
 
-narrator "Al acercarme más logro notar que tiene una expresión de remordimiento en su rostro {c}Voy a molestarla un poco, ojala que con eso disminuya un poco su desánimo{c}[enter(Tachibana)]Cuando estoy demasiado cerca de ella decido susurrarle al oído su nombre"
+narrator "Al acercarme más logro notar que tiene una expresión de remordimiento en su rostro.{c}Voy a molestarla un poco, ojala que con eso disminuya un poco su desánimo{c}[enter(Tachibana)]Cuando estoy demasiado cerca de ella decido susurrarle al oído su nombre"
 
 MC "Hey, Tachi-"
 
 Tachibana "¡Hiiii!"
 
-narrator "Llego a oír un fuerte golpe seco antes de sentir un dolor muy agudo en mi mejilla"
+narrator "Llego a oír un fuerte golpe seco antes de sentir un dolor muy agudo en mi mejilla."
 
 Tachibana "[mainCharacterName] ¿Es-estas bien?"
 

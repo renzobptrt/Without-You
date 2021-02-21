@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using DG.Tweening;
+using static Callbacks;
 
 public class DialogueSystem : MonoBehaviour
 {   
@@ -135,6 +137,47 @@ public class DialogueSystem : MonoBehaviour
         speechText.text = speech;
     }
 
+    public void Buzz()
+    {
+        StopBuzz();
+        currentBuzzing = StartCoroutine(Buzzing());
+    }
+
+    void StopBuzz()
+    {
+        if (isBuzzing)
+            StopCoroutine(currentBuzzing);
+        currentBuzzing = null;
+    }
+
+    Coroutine currentBuzzing = null;
+    bool isBuzzing { get { return currentBuzzing != null; } }
+    IEnumerator Buzzing()
+    {
+        buzzPanel.GetComponent<Animator>().SetTrigger("isEffect");
+        yield return new WaitForEndOfFrame();
+        BuzzPanels(0,3,()=> {
+            buzzPanel.GetComponent<Animator>().SetTrigger("isEffect");
+        });
+        yield return new WaitForEndOfFrame();
+    }
+
+    void BuzzPanels(int ini, int max,OnComplete onComplete)
+    {
+        if (ini < max)
+        {
+            speechPanel.GetComponent<RectTransform>().DOAnchorPosX(10, 0.05f).OnComplete(() =>
+            {
+                speechPanel.GetComponent<RectTransform>().DOAnchorPosX(-10, 0.05f).OnComplete(()=>BuzzPanels(ini+1,max, onComplete)
+                );
+            });
+        }
+        else
+        {
+            onComplete();
+        }
+    }
+
     public bool isClosed
     {
         get { return !speechBox.activeInHierarchy; }
@@ -154,7 +197,7 @@ public class DialogueSystem : MonoBehaviour
     public TextMeshProUGUI speechText { get { return elements.speechText; } }
 
     public GameObject speakerNamePanel { get { return elements.speakerNamePanel; } }
-
+    public GameObject buzzPanel;
     public GameObject[] SpeechPanelRequeriments;
     public GameObject speechBox;
 }

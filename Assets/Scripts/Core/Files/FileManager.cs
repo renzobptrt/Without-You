@@ -19,11 +19,11 @@ public class FileManager : MonoBehaviour
 	{
 		get
 		{
-#if UNITY_EDITOR
+			#if UNITY_EDITOR
 			return "Assets/";
-#else
+			#else
 			return Application.persistentDataPath + "/";
-#endif
+			#endif
 		}
 	}
 

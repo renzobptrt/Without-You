@@ -54,6 +54,9 @@ public class NovelManager : MonoBehaviour
     public RectTransform SavePanel;
     public RectTransform SettingsPanel;
 
+    public Button CheckInput;
+    public bool isCheck;
+
     private void Awake()
     {
         instance = this;
@@ -69,6 +72,18 @@ public class NovelManager : MonoBehaviour
         saveLoadPanel.LoadFilesOntoScreen(saveLoadPanel.currentSaveLoadPage);
         AudioManager.instance.SetSlidersAndText(musicSlider, sfxSlider, musicText, sfxText);
         Command_PlayMusic("Relax");
+        isCheck = false;
+        CheckInput.onClick.RemoveAllListeners();
+
+        CheckInput.onClick.AddListener(() =>
+        {
+            if (InputScreen.currentInput != "")
+            {
+                isCheck = true;
+                CheckInput.transform.localScale = Vector2.zero;
+                CheckInput.interactable = false;
+            }
+        });
     }
 
     // Update is called once per frame
@@ -114,8 +129,8 @@ public class NovelManager : MonoBehaviour
         }
 
         //Load the file
-        data = FileManager.LoadFile(FileManager.savPath + "Resources/Story/" + activeGameFile.chapterName);
-
+        //data = FileManager.LoadFile(FileManager.savPath + "Resources/Story/" + activeGameFile.chapterName);
+        data = FileManager.ReadTextAsset(Resources.Load<TextAsset>($"Story/{activeGameFile.chapterName}"));
         activeChapterName = activeGameFile.chapterName;
         cachedLastSpeaker = activeGameFile.cachedLastSpeaker;
         mainCharacterName = activeGameFile.playerName;
@@ -226,7 +241,19 @@ public class NovelManager : MonoBehaviour
     {
         activeChapterName = fileName;
 
-        data = FileManager.LoadFile(FileManager.savPath + "Resources/Story/"+fileName);
+        data = FileManager.ReadTextAsset(Resources.Load<TextAsset>($"Story/{fileName}"));
+        if(Resources.Load<TextAsset>($"Story/{fileName}") == null)
+        {
+            DialogueSystem.instance.speechText.text = "No encuentro";
+        }
+        else
+        {
+            DialogueSystem.instance.speechText.text = "Si encuentro "+data;
+            
+        }
+
+
+        //data = FileManager.LoadFile(FileManager.savPath + "Resources/Story/"+fileName);
         cachedLastSpeaker = "";
 
         if (handlingChapterFile != null)
@@ -298,14 +325,21 @@ public class NovelManager : MonoBehaviour
 
         //we have the title and the ending commands to execute. Now we need to bring up the input screen.
         InputScreen.Show(title);
+        CheckInput.transform.localScale = Vector2.one;
+        CheckInput.interactable = true;
+        isCheck = false;
         while (InputScreen.isShowingInputField || InputScreen.isRevaling)
         {
             //wait for the input screen to finish revealing before being able to accept input.
-            if (Input.GetKey(KeyCode.Return) && !InputScreen.isRevaling)
+            if (isCheck && !InputScreen.isRevaling)
             {
                 //if the input is not empty, accept it.
                 if (InputScreen.currentInput != "")
+                {
                     InputScreen.instance.Accept();
+                    isCheck = false;
+                }
+
             }
 
             yield return new WaitForEndOfFrame();
@@ -508,7 +542,17 @@ public class NovelManager : MonoBehaviour
                     _next = true;
                     break;
                 }
+            case "Buzz":
+                {
+                    Command_Buzz();
+                    break; 
+                }
         }
+    }
+
+    void Command_Buzz()
+    {
+        DialogueSystem.instance.Buzz();
     }
 
     void Command_SavePlayerName()

@@ -9,8 +9,6 @@ using TMPro;
 
 public class MainMenu : MonoBehaviour
 {
-    public Animator TransitionAnimator;
-
     public RectTransform[] MainContainers = null;
     public Button[] ButtonsOptionsMainMenu = null;
     public Button[] ButtonsOptionsMenu = null;
@@ -26,6 +24,8 @@ public class MainMenu : MonoBehaviour
 
     public TextMeshProUGUI musicText;
     public TextMeshProUGUI sfxText;
+
+    public Animator TransitionPanel;
 
     int currentSaveLoadPage
     {
@@ -152,15 +152,15 @@ public class MainMenu : MonoBehaviour
         selectedGameFile = "chapter_1";
         FileManager.SaveFile(FileManager.savPath + "savData/file", selectedGameFile);
         StartCoroutine(TransitionScene(() =>
-        {
+        {   
             SceneManager.LoadScene(nameNextScene);
         }));
     }
 
     IEnumerator TransitionScene(OnComplete onComplete)
     {
-        //TransitionAnimator.SetTrigger("IsOut");
-        yield return new WaitForSeconds(0.35f);
+        TransitionPanel.SetTrigger("TransitionT");
+        yield return new WaitForSeconds(1f);
         onComplete();
     }
 

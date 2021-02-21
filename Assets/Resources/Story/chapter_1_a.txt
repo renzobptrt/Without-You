@@ -2,9 +2,11 @@ narrator "[Next()]"
 
 narrator "Antes de poder entender qué es lo que pasaba recibo el golpe de una gruesa revista lanzada con mucha fuerza"
 
-Airi "¡¡¡Maldito pervertido!!!"
+Airi "[Buzz()]¡¡¡Maldito pervertido!!![setExpression(Airi,body,angry,4)]"
 
 narrator "Por querer cubrirme de un posible segundo ataque me cubro y ruedo, cayéndome por el costado de la cama"
+
+narrator "[Buzz()]"
 
 MC "¡¡Maldición, eso dolió!!"
 
@@ -14,8 +16,8 @@ narrator "Mi nombre es [mainCharacterName], la niña que está gritando es mi he
 
 Airi "[setExpression(Airi,body,angry,4)]si no te levantas esa ‘revista’ no será lo único que vuele por esta habitación, porque si llegas tarde mama y papa pensaran que es mi culpa."
 
-"Me empiezo a levantar de mala gana [setExpression(Airi,body,smug,4)]"
+narrator "Me empiezo a levantar de mala gana [setExpression(Airi,body,smug,4)]"
 
-MC "Apurate, que mama y papa no me dejaran desayunar tranquila si no bajo contigo…"
+Airi "Apurate, que mama y papa no me dejaran desayunar tranquila si no bajo contigo…"
 
-"[Load(chapter_1_ab)]"
+"[Load(chapter_c)]"

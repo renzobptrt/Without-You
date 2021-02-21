@@ -20,10 +20,20 @@ public class InputScreen : MonoBehaviour
     public static bool isWaitingForUserInput { get { return instance.root.activeInHierarchy; } }
     public static bool isRevaling { get { return revealing != null; } }
 
+
+
     void Awake()
     {
         instance = this;
         Hide();
+    }
+
+    private void Start()
+    {
+        inputField.onSubmit.AddListener(delegate
+        {
+
+        });
     }
 
     public static void Show(string title, bool clearCurrentInput = true)

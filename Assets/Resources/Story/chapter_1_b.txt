@@ -16,14 +16,14 @@ narrator "Para acelerar las cosas trato de pedirle a mi hermana que me alcance m
 
 Airi "¿Qué cosa?"
 
-narrator "Antes de que Airi de un paso dentro de mi habitación me lanzo hacia la revista para cubrirla con mi cuerpo."
+narrator "[Buzz()]{c}Antes de que Airi de un paso dentro de mi habitación me lanzo hacia la revista para cubrirla con mi cuerpo."
 
-MC "nada, nada ya la encontré yo"
+MC "Nada, nada ya la encontré yo"
 
 Airi "Haces cosas muy raras onii-san [setExpression(Airi,body,annoyed,6)]"
 
 MC "A salvo"
 
-Airi "¿Quieres apurarte? no voy a poder desayunar si no bajas conmigo [setExpression(Airi,body,angry,6)]{c}ya que mama y papa estarán molestando si ven que no estás listo…"
+Airi "¿Quieres apurarte? no voy a poder desayunar si no bajas conmigo [setExpression(Airi,body,angry,6)]{c}Ya que mama y papa estarán molestando si ven que no estás listo…"
 
 "[Load(chapter_1_ab)]"
