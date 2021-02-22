@@ -8,7 +8,7 @@ narrator "Por querer cubrirme de un posible segundo ataque me cubro y ruedo, cay
 
 narrator "[Buzz()]"
 
-MC "¡¡Maldición, eso dolió!!"
+MC "[playSfx(fall)]¡¡Maldición, eso dolió!!"
 
 Airi "[setExpression(Airi,body,annoyed,4)]¿Y?{c}¿Para ti es normal dejar tiradas revistas porno en la misma casa que vive tu hermana?"
 

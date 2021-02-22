@@ -74,11 +74,11 @@ narrator "Al acercarme más logro notar que tiene una expresión de remordimient
 
 MC "Hey, Tachi-"
 
-Tachibana "¡Hiiii!"
+Tachibana "[setExpression(Tachibana,body,shocked,4)]¡Hiiii!"
 
-narrator "Llego a oír un fuerte golpe seco antes de sentir un dolor muy agudo en mi mejilla."
+narrator "[playSfx(punch)]Llego a oír un fuerte golpe seco antes de sentir un dolor muy agudo en mi mejilla."
 
-Tachibana "[mainCharacterName] ¿Es-estas bien?"
+Tachibana "[mainCharacterName] ¿Es-estas bien?[setExpression(Tachibana,body,normal,4)]"
 
 MC "Sí, sí, estoy bien, fue mi culpa por acercarme sigilosamente a ti."
 
@@ -92,7 +92,7 @@ MC "¡Nada! ¡Nada! ¡Olvida todo lo que escuchaste!"
 
 Tachibana "¿Seguro que estás bien?"
 
-narrator "Con un suspiro interno, le ruego al universo que no deje que me quede solo.{c}Haaa, todo me ha salido mal el día de hoy, ojala que sea porque toda mi suerte se está acumulando para un encuentro predestinado.{c}Tachibana parece empezar a preocuparse porque no le volví a responder"
+narrator "Con un suspiro interno, le ruego al universo que no deje que me quede solo.{c}Haaa, todo me ha salido mal el día de hoy, ojala que sea porque toda mi suerte se está acumulando para un encuentro predestinado.{c}[setExpression(Tachibana,body,sad,4)]Tachibana parece empezar a preocuparse porque no le volví a responder"
 
 MC "Maldición animarla está siendo más difícil de lo que pensé.{c}jajá, no te preocupes solo parece que estoy delirando un poco…"
 
@@ -108,11 +108,11 @@ Tachibana "¿De verdad estás bien?"
 
 MC "Como si nada hubiera pasado, además si en algún momento sientes que me estoy sobrepasando puedes golpearme todo lo que quieras."
 
-Tachibana "¿En serio estás bien con que te golpee?"
+Tachibana "¿En serio estás bien con que te golpee?[setExpression(Tachibana,body,normal,6)]"
 
 MC "Si con eso logro que te desahogues y te sientas más segura, entonces resistiré hasta una paliza."
 
-narrator "Tachibana empieza a apretar su puño"
+narrator "Tachibana empieza a apretar su puño."
 
 MC "Oy, oy era solo una expresión, ¡no tienes que noquearme ahora!"
 
@@ -126,7 +126,7 @@ Tachibana "Sí. [setExpression(Tachibana,body,laugh,6)]"
 
 narrator "Tachibana ríe mientras su rostro se ruboriza, y su cabello empieza brillar afirmando mi idea de que es muy linda, hasta pareciera que una luz empieza a emanar de ella"
 
-MC "¡Maldición como es que eres tan linda! {c}¿Lo ves?, puedes estar tranquila junto a mí."
+MC "¡Maldición como es que eres tan linda![setExpression(Tachibana,body,shocked,6)]{c}[playSfx(punch) setExpression(Tachibana,body,normal,6)]{c}¿Lo ves?, puedes estar tranquila junto a mí."
 
 narrator "Empiezo a tocar mi mejilla con la intención de hacer desaparecer el dolor."
 
@@ -134,7 +134,7 @@ MC "Y hasta puedes desahogarte conmigo… ¡ay!"
 
 narrator "Mientras trato de esconder el dolor de haber recibido una cachetada por segunda vez hoy, sigo bromeando con Tachibana."
 
-Tachibana "Jeje, muchas gracias [mainCharacterName]. [setExpression(Tachibana,body,normal,6)]"
+Tachibana "Jeje, muchas gracias [mainCharacterName]. [setExpression(Tachibana,body,smile2,6)]"
 
 narrator "Parece que ya está mejor {c}pero ha estado teniendo muchos problemas en su casa últimamente…{c}Antes de que pudiera pensar en otra forma de molestarla, Tachibana hace el gesto de recordar algo y empezó a  correr de vuelta hacia su casa."
 
@@ -142,7 +142,7 @@ Tachibana "¡Es verdad! Me olvide mi almuerzo.{c}Puedes adelantarte sin mí… [
 
 MC "¿Qué? ¡Espera!"
 
-narrator "Tachibana empieza a desaparecer de mi vista [exit(Tachibana)]"
+narrator "Tachibana empieza a desaparecer de mi vista.[exit(Tachibana)]{c}Creí que estaba logrando un avance…{c}Y también está la posibilidad que se vuelva a deprimir…con lo que me tomo hacerla reír…{c}Aunque si la vuelvo a animar ganaré muchos puntos con ella.{c}Pero eso es a costa de que pase un mal momento primero…{c}¡Ahhh!, ¡¿qué debería hacer?!"
 
 choice ""
 {
