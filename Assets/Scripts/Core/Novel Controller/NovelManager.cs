@@ -21,7 +21,7 @@ public class NovelManager : MonoBehaviour
 
     bool _next = false;
 
-    private int chapterProgress = 0;
+    [SerializeField] private int chapterProgress = 0;
 
     public string activeGameFileName = "";
 
@@ -56,6 +56,7 @@ public class NovelManager : MonoBehaviour
 
     public Button CheckInput;
     public bool isCheck;
+    public bool isAuto;
 
     private void Awake()
     {
@@ -270,6 +271,14 @@ public class NovelManager : MonoBehaviour
         _next = true;
     }
 
+    public void Auto()
+    {
+        isAuto = !isAuto;
+
+        if (isAuto)
+            Next();
+    }
+
     IEnumerator HandlingChapterFile()
     {
         chapterProgress = 0;
@@ -297,6 +306,12 @@ public class NovelManager : MonoBehaviour
                     while (isHandlingLine)
                     {
                         yield return new WaitForEndOfFrame();
+                    }
+
+                    if (isAuto)
+                    {
+                        yield return new WaitForSeconds(0.5f);
+                        Next();
                     }
                 }
 
@@ -425,7 +440,14 @@ public class NovelManager : MonoBehaviour
         int lineProgress = 0;
         while (lineProgress < line.segments.Count)
         {
-            _next = false;
+            if (isAuto)
+            {
+                yield return new WaitForSeconds(0.5f);
+                Next();
+            }
+
+            else
+                _next = false;
             ControllerLineManager.LINE.SEGMENT segment = line.segments[lineProgress];
             if (lineProgress > 0)
             {

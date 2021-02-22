@@ -4495,6 +4495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab6a3484bd678940a89c4969bfdecf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chapterProgress: 0
   activeGameFileName: 
   saveLoadPanel: {fileID: 2111912137}
   encrypGameFile: 1
@@ -4511,6 +4512,7 @@ MonoBehaviour:
   SettingsPanel: {fileID: 1411299628}
   CheckInput: {fileID: 503951547}
   isCheck: 0
+  isAuto: 0
 --- !u!82 &694993775
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5241,7 +5243,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 799420713}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 694993774}
+        m_MethodName: Auto
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &799420713
 MonoBehaviour:
   m_ObjectHideFlags: 0
