@@ -1,11 +1,31 @@
 narrator "[Next()]"
 
-narrator "No podía soportar la presión que ocasiona el estar frente al padre de Tachibana, sabiendo que en ese momento estaba juzgando."
+narrator "No podía soportar la presión que ocasiona el estar frente al padre de Tachibana, sabiendo que en ese momento me estaba juzgando."
 
-father "¿Y?[setExpression(Tachibana,body,sad,6)]"
+tachibanaFather "¿Y?[setExpression(Tachibana,body,sad,6)]"
 
-Tachibana "Y-yo"
+Tachibana "Y-yo.."
 
-father "Si olvidaste algo tómalo.{c}Yo iré a trabajar."
+tachibanaFather "Si olvidaste algo tómalo.{a} Yo iré a trabajar."
 
-narrator "Y con esas palabras retomó su marcha a su trabajo.{c}Creo que lo mejor seria tratar de animarla"
+narrator "Y con esas palabras retomó su marcha a su trabajo.{a}Creo que lo mejor seria tratar de animarla."
+
+MC "No te preocupes, no fue tu culpa que lo olvidaras, y tampoco creo que tu papa te odie, solo esta...{a} algo estresado."
+
+narrator "Después de que su papa se alejará, retomamos el rumbo a la escuela."
+
+Tachibana "[setExpression(Tachibana,body,normal,6)]Lamento que vieras eso."
+
+MC "No te preocupes por eso, más bien...{a} Lo siento por no haber podido ser de utilidad."
+
+Tachibana "No había nada que puedas hacer, no te preocupes."
+
+narrator "Creo que si pude haber hecho más...{a} la próxima vez, haré algo, por ahora lo siento..."
+
+Tachibana "Con que te preocuparas y me acompañaras...{a}[setExpression(Tachibana,body,smile2,6)]Es, de mucha ayuda.{w 1}Gracias..."
+
+narrator "Parece que ya esta mejor...{c}[setBackground(School_Entrance_0,false,1)Luego de un rato caminando en silencio, llegamos al colegio."
+
+MC "¿Quieres ir a ver en que salon estaremos?"
+
+"[Load(chapter_1_ab_ab)]"

@@ -2,7 +2,7 @@ narrator "[Next()]"
 
 narrator "Creo que puedo ir con Renji a dar una vuelta, no es como si tuviera algo más para hacer."
 
-MC "Claro, vamos, con un poco de suerte encontramos chicas lindas en los clubes…"
+MC "Claro, vamos, con un poco de suerte encontramos chicas lindas en los clubes..."
 
 Renji "No necesitaremos tanta suerte, conozco a algunas personas del club de arte, por lo que se es el club con más chicas del colegio."
 

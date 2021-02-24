@@ -1,32 +1,32 @@
 narrator "[Next()]"
 
-narrator "¡Eso es!{c}¡Ella me preocupa!{c}Así que no sería raro seguirla para ver que todo esté bien.{c}Si, ella me preocupa, y como me preocupa no quiero volverla a ver triste{c}Así que si la sigo es porque quiero cuidarla.{c}Pero ella me dijo que me adelantara…{c}Aunque… puedo decirle que no la escuche…{c}Y no debería molestarse, ya que siempre que nos encontramos terminamos yendo juntos al colegio…{c}Y como no la escuche pensé que debía seguirla para ir juntos.{c}Una vez llegado a un acuerdo conmigo mismo, y con una especie de sonrisa malvada en mi rostro, decidí caminar en dirección de la casa de Tachibana.{c}[setBackground(HouseStreet_3_1,false,1)]Después de correr por unos 5 minutos llegue a alcanzar a Tachibana."
+narrator "¡Eso es!{a}¡Ella me preocupa!{c}Así que no sería raro seguirla para ver que todo esté bien.{c}Si, ella me preocupa, y como me preocupa no quiero volverla a ver triste{a}Así que si la sigo es porque quiero cuidarla.{c}Pero ella me dijo que me adelantara…{a}Aunque… puedo decirle que no la escuche…{c}Y no debería molestarse, ya que siempre que nos encontramos terminamos yendo juntos al colegio…{c}Y como no la escuche pensé que debía seguirla para ir juntos.{c}Una vez llegado a un acuerdo conmigo mismo, y con una especie de sonrisa malvada en mi rostro, decidí caminar en dirección de la casa de Tachibana.{c}[setBackground(HouseStreet_3_1,false,1)]Después de correr por unos 5 minutos llegue a alcanzar a Tachibana."
 
 MC "[enter(Tachibana)]¡Heeeeey! ¡Tachibanaaa!"
 
-Tachibana "[setExpression(Tachibana,body,shocked,6)]¿Eh?¿[mainCharacterName]?{c}No te dije que te adelantaras?"
+Tachibana "[setExpression(Tachibana,body,shocked,6)]¿Eh?¿[mainCharacterName]?{a}No te dije que te adelantaras?"
 
-MC "¿Que? Me dijiste eso?"
+MC "¿Que? ¿Me dijiste eso?"
 
 narrator "Hasta ahora todo de acuerdo al plan"
 
 Tachibana "[setExpression(Tachibana,body,angry,6)]¡Vas a llegar tarde!"
 
-narrator "Parece que si se molestó un poco, pero… no pensé que se iba a molestar por eso…"
+narrator "Parece que si se molestó un poco, pero… no pensé que se iba a molestar por eso..."
 
 MC "Si es por eso no te preocupes, tu casa está a unos cuantos minutos de la mía, así que serán máximo unos 10 más tarde que llegaremos"
 
-Tachibana "Está bien… entonces me apresurare[setExpression(Tachibana,body,smile2,6)]"
+Tachibana "Está bien… entonces me apresurare.[setExpression(Tachibana,body,normal,6)]"
 
-MC "No tienes que ir tan rapido, seria divertido si en la escuela piensan que nos fugamos[setExpression(Tachibana,body,normal,6)]"
+MC "No tienes que ir tan rapido, seria divertido si en la escuela piensan que nos fugamos.[setExpression(Tachibana,body,o,6)]"
 
-narrator "No parece que se haya molestado, pero ya no están teniendo efecto mis bromas, asi que parare por ahora.{c}Llegamos rápidamente a la entrada de la casa de Tachibana.{c}[playSfx(door_open_2)]De la casa de Tachibana se puede ver salir a un adulto, alto y con una expresión de estar malhumorado."
+narrator "No parece que se haya molestado, pero ya no están teniendo efecto mis bromas, asi que parare por ahora.{c}Llegamos rápidamente a la entrada de la casa de Tachibana.{c}[playSfx(door_open_2) setExpression(Tachibana,body,normal,6)]]De la casa de Tachibana se puede ver salir a un adulto, alto y con una expresión de estar malhumorado."
 
 Tachibana "[setExpression(Tachibana,body,sad,6)]..."
 
-narrator "al parecer Tachibana estaba triste porque se volvió a pelear con su papá"
+narrator "Al parecer Tachibana estaba triste porque se volvió a pelear con su papá."
 
-father "¿todavía no has ido al colegio?"
+tachibanaFather "¿Todavía no has ido al colegio?"
 
 choice " "
 {
