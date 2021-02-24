@@ -2,7 +2,7 @@ narrator "[Next()]"
 
 narrator "No creo que Tachibana pueda responderle, parece estar demasiado nerviosa como para decir algo.{c}[setExpression(Tachibana,body,sad,6)]Pero tampoco sé si debería hablar con él, puede ser que se moleste más…"
 
-Father "¿Y?"
+father "¿Y?"
 
 narrator "Pero ahora lo que más importa es que Tachibana no se deprima más.{c}Me arme de valor y trate de hablar claro para sonar formal frente a su papá."
 
@@ -10,7 +10,7 @@ MC "Tachibana no pudo guardar su almuerzo antes de salir, así que la estoy acom
 
 narrator "Puedo ver cómo es el papá de Tachibana hace con una expresión de molestia, como si esperara que Tachibana fuera la que respondiera."
 
-Father "Que no te vuelva a pasar…"
+father "Que no te vuelva a pasar…"
 
 narrator "Y con una expresión fría retoma su camino a su trabajo.{c}Sabía que no se estaban llevando bien últimamente, pero no pensé que fuera tan serio…{c}Conforme se alejaba su papá, Tachibana recobraba su tranquilidad[setExpression(Tachibana,body,normal,6)]"
 

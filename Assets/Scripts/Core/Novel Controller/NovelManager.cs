@@ -39,6 +39,8 @@ public class NovelManager : MonoBehaviour
     public string cachedLastSpeaker = "";
     public string mainCharacterName = "";
 
+    public string[] listIgnoreInTxt;
+
     [Header("Heroines Affinity")]
     public int tachibanaAffinity = 0;
     public int chitoseAffinity = 0;
@@ -94,21 +96,19 @@ public class NovelManager : MonoBehaviour
         {
             Next();
         }
+    }
 
-        /*if (Input.GetKeyDown(KeyCode.S))
+    public bool IsSpeakerIgnore(string speaker)
+    {
+        for(int i = 0; i < listIgnoreInTxt.Length; i++)
         {
-            SaveGameFile();
-        }*/
-
-        /*if (Input.GetKeyDown(KeyCode.Mouse1))
-        {   
-            if (!saveLoadPanel.gameObject.activeInHierarchy)
+            if(speaker == listIgnoreInTxt[i])
             {
-                saveLoadPanel.gameObject.SetActive(true);
-                print(saveLoadPanel.currentSaveLoadPage);
-                saveLoadPanel.LoadFilesOntoScreen(saveLoadPanel.currentSaveLoadPage);
+                return true;
             }
-        }*/
+        }
+
+        return false;
     }
 
     public void LoadGameFile(string gameFileName)

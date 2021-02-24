@@ -1,0 +1,5 @@
+narrator "[Next()]"
+
+MC "jajá, no puedo evitarlo, eres muy linda cuando te asustas."
+
+Tachibana ""

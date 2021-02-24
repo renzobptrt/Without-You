@@ -1,0 +1,13 @@
+narrator "[Next()]"
+
+narrator "Seguiría a Renji, pero no quiero estar por ahí revisando los clubes…"
+
+MC "En otra ocasión será."
+
+Renji "entonces,¿Iras con Tachibana?"
+
+MC "No creo.{c}Creo que estoy con ganas de ir a estar solo a la azotea."
+
+narrator "Llego y me echo a descansar en las bancas que están colocadas en la azotea.{c}Llegan 2 chicas."
+
+Kyoko

@@ -2449,165 +2449,6 @@ MonoBehaviour:
   m_EffectColor: {r: 1, g: 1, b: 1, a: 1}
   m_EffectDistance: {x: 3, y: -3}
   m_UseGraphicAlpha: 1
---- !u!1 &421889789
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 421889792}
-  - component: {fileID: 421889791}
-  - component: {fileID: 421889790}
-  - component: {fileID: 421889793}
-  - component: {fileID: 421889794}
-  - component: {fileID: 421889795}
-  - component: {fileID: 421889796}
-  - component: {fileID: 421889797}
-  m_Layer: 0
-  m_Name: Test
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &421889790
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 421889789}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ea88e926f3b6b54eab314b760d3d62d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Tachibana:
-    characterName: 
-    root: {fileID: 0}
-    renderers:
-      bodyRenderer: {fileID: 0}
-      allBodyRenderers: []
-    targetPosition: {x: 0, y: 0}
-  speech: []
-  moveTarget: {x: 0, y: 0}
-  moveSpeed: 1
-  smooth: 0
-  newEmotion: Shocked
-  speed: 5
-  smoothTransitions: 1
---- !u!114 &421889791
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 421889789}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a357f3131b45754199e1d2e39810411, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  s: []
---- !u!4 &421889792
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 421889789}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &421889793
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 421889789}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7aacda8e6d8d79418bacab5ef267a9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  texture: {fileID: 0}
-  speed: 0.5
-  smooth: 0
---- !u!114 &421889794
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 421889789}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c02b3aa0c7a3c74484c9232a2700036, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  volume: 1
-  pitch: 1
-  sfx:
-  - {fileID: 8300000, guid: 5902e3fb358ffe54b9ee6a94e51fc840, type: 3}
-  music:
-  - {fileID: 8300000, guid: b83de32af3ec29d4e9e03a76812f80f2, type: 3}
-  - {fileID: 8300000, guid: e5532aa834ccf994c945b811e54f05d8, type: 3}
-  - {fileID: 8300000, guid: aef7492657a286d4db8b8eee5587db73, type: 3}
---- !u!114 &421889795
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 421889789}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c92f15423d60717438ae6135b8a3edfd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textMPro: {fileID: 1815059079}
-  say: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-  charactersPerFrame: 1
-  speed: 1
-  additive: holaaaaaaaaaaaaaaaaaaaaaaaaaaaa
---- !u!114 &421889796
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 421889789}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55e439e6670208d4b92af6c0fe5e2a81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  displayText: Tu nombre es...?
---- !u!114 &421889797
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 421889789}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c42d9d417c10984da0a666e59ae9426, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  title: Make a choice
-  choices:
-  - Tachibana
-  - Akiko
-  - Chitose
-  - Airi
 --- !u!1 &447989683
 GameObject:
   m_ObjectHideFlags: 0
@@ -4501,6 +4342,15 @@ MonoBehaviour:
   encrypGameFile: 1
   cachedLastSpeaker: 
   mainCharacterName: 
+  listIgnoreInTxt:
+  - narrator
+  - MC
+  - father
+  - mother
+  - RandomGirl1
+  - RandomGirl2
+  - nn
+  - tachibanaFather
   tachibanaAffinity: 0
   chitoseAffinity: 0
   akikoAffinity: 0

@@ -1,0 +1,25 @@
+narrator "[Next()]"
+
+narrator "Creo que seguiré a Tachibana, después de todo estábamos hablando sobre unirme a su club…"
+
+MC "Lo siento Renji, creo  que iré con Tachibana."
+
+Renji "¿Así que ahora tú me abandonas por una chica?"
+
+narrator "Aunque decía lo contrario pareció no importarle a Renji que decidiera no ir con él, probablemente siga con la culpa de abandonarme...{c}Renji desde siempre me ha apoyado con Tachibana, aunque lamentablemente no ha dado frutos…{c}Una vez avisado a Renji de mis intenciones decidí salir del salon.{c}La academia cuenta con varios jardines, pero hay uno de ellos que no es muy popular.{c}Excepto para una persona…{c}Camino rumbo al jardín trasero.{c}Encuentro a Tachibana comiendo un pedazo de pastel."
+
+MC "Así que aquí estabas."
+
+Tachibana "Hiiii."
+
+narrator "Creo que me estoy acostumbrando a que haga ese sonido."
+
+Tachibana "Mouu, no me asustes asi quieres.{c}Ya han sido varias veces este día…"
+
+choice " "
+{
+  "Eres linda cuando te asustas"
+    "[Load(chapter_1_ab_ab_a_a)]"
+  "No deberías comer tantos dulces"
+    "[Load(chapter_1_ab_ab_a_b)]"
+}

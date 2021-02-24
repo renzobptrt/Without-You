@@ -2,10 +2,10 @@ narrator "[Next()]"
 
 narrator "No podía soportar la presión que ocasiona el estar frente al padre de Tachibana, sabiendo que en ese momento estaba juzgando."
 
-Father "¿Y?[setExpression(Tachibana,body,sad,6)]"
+father "¿Y?[setExpression(Tachibana,body,sad,6)]"
 
 Tachibana "Y-yo"
 
-Father "Si olvidaste algo tómalo.{c}Yo iré a trabajar."
+father "Si olvidaste algo tómalo.{c}Yo iré a trabajar."
 
 narrator "Y con esas palabras retomó su marcha a su trabajo.{c}Creo que lo mejor seria tratar de animarla"
