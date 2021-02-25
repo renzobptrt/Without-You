@@ -2,7 +2,7 @@ narrator "[Next()]"
 
 MC "jajá, no puedo evitarlo, eres muy linda cuando te asustas."
 
-Tachibana "No deberías bromear tanto así…"
+Tachibana "No deberías bromear tanto así…[setExpression(Tachibana,body,annoyed,6)]"
 
 MC "No sé porque sigues pensando que estoy bromeando…"
 
@@ -12,13 +12,13 @@ MC "..."
 
 narrator "Quise decir algo pero su argumento era simplemente perfecto."
 
-MC "Bu-{a}bueno puede que siempre hable así pero...{c}Eso no es-"
+MC "Bu-{wa 1}bueno puede que siempre hable así pero...{c}Eso no es-"
 
 narrator "Sus argumentos estaban convenciéndome, así que decidí arremeter una vez más."
 
 MC "En serio pienso que eres linda..."
 
-Tachibana "Creo que es porque soy tu  única opción para decirle esas cosas a una chica."
+Tachibana "[setExpression(Tachibana,body,normal,6)]Creo que es porque soy tu única opción para decirle esas cosas a una chica."
 
 narrator "Ya no me está escuchando…{c}Y lo peor es que se está llevando la idea equivocada."
 

@@ -18,9 +18,9 @@ Airi "[setExpression(Airi,body,normal,4)]¿Y aquella de la que fuiste prácticam
 
 MC "[Buzz()]Aaaaaah!!!"
 
-narrator "Me aliste lo más rápido que pude, gritando para que las palabras de mi hermana no me siguieran haciendo daño.[exit(Airi)]{w 1}[setBackground(Kitchen_MC_1,false,1)]"
+narrator "Me aliste lo más rápido que pude, gritando para que las palabras de mi hermana no me siguieran haciendo daño.[exit(Airi)]"
 
-MC "*Bosteza*"
+MC "*Bosteza*[setBackground(Kitchen_MC_1,false,1)]"
 
 father "Con esa actitud haces que dude sobre mi decisión de darte educación..."
 

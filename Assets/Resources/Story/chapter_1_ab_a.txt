@@ -4,7 +4,7 @@ narrator "¡Eso es!{a}¡Ella me preocupa!{c}Así que no sería raro seguirla par
 
 MC "[enter(Tachibana)]¡Heeeeey! ¡Tachibanaaa!"
 
-Tachibana "[setExpression(Tachibana,body,shocked,6)]¿Eh?¿[mainCharacterName]?{a}No te dije que te adelantaras?"
+Tachibana "[setExpression(Tachibana,body,shocked,6)]¿Eh? ¿[mainCharacterName]?{a} No te dije que te adelantaras?"
 
 MC "¿Que? ¿Me dijiste eso?"
 

@@ -6,11 +6,11 @@ tachibanaFather "¿Y?[setExpression(Tachibana,body,sad,6)]"
 
 Tachibana "Y-yo.."
 
-tachibanaFather "Si olvidaste algo tómalo.{a} Yo iré a trabajar."
+tachibanaFather "Si olvidaste algo tómalo.{wa 1} Yo iré a trabajar."
 
 narrator "Y con esas palabras retomó su marcha a su trabajo.{a}Creo que lo mejor seria tratar de animarla."
 
-MC "No te preocupes, no fue tu culpa que lo olvidaras, y tampoco creo que tu papa te odie, solo esta...{a} algo estresado."
+MC "No te preocupes, no fue tu culpa que lo olvidaras, y tampoco creo que tu papá te odie, solo esta...{wa 1} algo estresado."
 
 narrator "Después de que su papa se alejará, retomamos el rumbo a la escuela."
 

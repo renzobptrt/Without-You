@@ -1,6 +1,6 @@
 narrator "[Next()]"
 
-narrator "Es muy linda cuando hace ese sonido…{c}Aunque me da algo de verguenza decirselo. {w 1}Creo que la molestaré un poco con el pastel que está comiendo."
+narrator "Es muy linda cuando hace ese sonido...{c}Aunque me da algo de verguenza decirselo. {w 1}Creo que la molestaré un poco con el pastel que está comiendo."
 
 MC "Vamos, sabes que si sigues comiendo tantos dulces no le harás bien a tu salud…"
 
@@ -12,7 +12,7 @@ narrator "Trato de zafarme con lo primero que se me viene a la mente."
 
 MC "Bueno… Tu sabes…  Si comes demasiados dulces tu nivel de azúcar subirá, también puede causarte malestar…"
 
-Tachibana "¿Solo a eso te referias?"
+Tachibana "¿Solo a eso te referias?[setExpression(Tachibana,body,annoyed,6)]"
 
 narrator "¡Quiere sacarme la verdad con la mirada!{c}Maldición su mirada me está analizando, y hasta puedo sentir como estoy empezando a sudar.{c}Si sigue así terminaré confesando todo…"
 

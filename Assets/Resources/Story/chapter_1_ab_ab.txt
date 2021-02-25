@@ -102,7 +102,7 @@ narrator "Aunque no me gusta mucho la lectura, creo que puedo acercarme mas a el
 
 MC "¿Solo se necesitan 3 como mínimo, no?"
 
-Tachibana "[setExpression(Tachibana,body,sad,4)]Si."
+Tachibana "Si."
 
 MC "Entonces si convenzo a Renji, contigo y conmigo seriamos 3, este año seré el salvador de tu club."
 
@@ -122,9 +122,9 @@ Tachibana "[setExpression(Tachibana,body,normal,4)]Entonces si necesito miembros
 
 MC "Parece que al final solo le queda aceptar."
 
-narrator "Mientras terminaba de hablar con Tachibana, sonó el timbre.{c}[exit(Tachibana)]Tachibana tiene la costumbre de ir al jardín de la escuela para comer su almuerzo, generalmente cambia de sitio cuando la sigo, parece que le gusta comer sola.{c}En lo personal me gusta más la azotea, está permitido el paso, pero por alguna razón a las demás personas no les gusta, parece que no aguantan estar sin aire acondicionado..."
+narrator "Mientras terminaba de hablar con Tachibana, sonó el timbre.{c}[exit(Tachibana)]Tachibana tiene la costumbre de ir al jardín de la escuela para comer su almuerzo, generalmente cambia de sitio cuando la sigo, parece que le gusta comer sola.{c}En lo personal me gusta más la azotea, está permitido el paso, pero por alguna razón a las demás personas no les gusta, parece que no aguantan estar sin aire acondicionado...[moveCharacter(Renji,0.5,0)]"
 
-Renji "[enter(Renji) setPosition(Renji,0.5,0) moveCharacter(Renji,0.5,0) setExpression(Renji,body,normal,4)][mainCharacterName], quieres ir a visitar la sala de los clubes?"
+Renji "[enter(Renji) setPosition(Renji,0.5,0) setExpression(Renji,body,normal,4)][mainCharacterName], quieres ir a visitar la sala de los clubes?"
 
 narrator "Creo que tengo tiempo para hacer un par de cosas en este receso."
 

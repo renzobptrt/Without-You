@@ -10,9 +10,9 @@ narrator "Una de ellas tenía el cabello largo y castaño mientras que la otra t
 
 RandomGirl1 "¡En esta escuela también nos irá bien![setExpression(Chitose,body,smile2,6)]"
 
-RandomGirl2 "[setExpression(Akiko,body,smile1,6)]Ojala tengas razón, pero extrañare a los de (Nombre de escuela)"
+RandomGirl2 "[setExpression(Akiko,body,smile1,6)]Ojala tengas razón, pero extrañare a los de [LastSchoolAkiko]"
 
-RandomGirl1 "No te preocupes ellos seguirán divirtiéndose allá, deberías preocuparte más por nosotras, no vamos a conocer a nadie durante el primer día."
+RandomGirl1 "[setExpression(Chitose,body,normal,6)]No te preocupes ellos seguirán divirtiéndose allá, deberías preocuparte más por nosotras, no vamos a conocer a nadie durante el primer día."
 
 narrator "'Divertirse' ¿eh?, vaya forma de llamar a la vida escolar.{c}En un momento dado nuestras miradas se cruzan"
 
@@ -28,7 +28,7 @@ MC "Todavía faltan 20 minutos para que suene la campana, ojalá Tachibana consi
 
 narrator "Mientras le deseaba suerte a mi amiga, una chica delgada y tímida llegó corriendo."
 
-Tachibana "[enter(Tachibana)]Ahh... Ahh..."
+Tachibana "[enter(Tachibana) setExpression(Tachibana,body,sad,6)]Ahh... Ahh..."
 
 MC "Jajá, hiciste un buen tiempo desde tu casa hasta aquí."
 

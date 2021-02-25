@@ -1,6 +1,6 @@
 narrator "[Next()]"
 
-MC "Lo siento…"
+MC "Lo siento…[setExpression(Tachibana,body,annoyed,6)]"
 
 narrator "Creo que  me excedi un poco."
 

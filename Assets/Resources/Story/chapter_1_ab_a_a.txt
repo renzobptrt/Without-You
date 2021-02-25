@@ -34,7 +34,7 @@ narrator "[setBackground(School_Entrance_0,false,1) setExpression(Tachibana,body
 
 MC "Eh… Tachibana…"
 
-Tachibana "Si [mainCharacterName]?"
+Tachibana "¿Si [mainCharacterName]?"
 
 MC "Creo que deberíamos ir a ver qué salon nos tocó."
 
