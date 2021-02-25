@@ -1,0 +1,47 @@
+narrator "[Next()]"
+
+narrator "Creo que seguiré escuchando un poco más.{a} Tal vez llegue a escuchar algo útil…{c}Algo que me ayude a iniciar una conversación también serviría."
+
+Chitose "Pero tienes razón creo que si hace demasiado calor aquí, y no hay nada donde cubrirnos…"
+
+narrator "Tiene razón, pero si te sientas en las bancas, las rejas harán ligera sombra."
+
+Akiko "Te dije que subir era una mala idea..."
+
+Chitose "Pero el lado bueno es que es muy tranquilo, creo que podría acostumbrarme a esta calma..."
+
+narrator "Así que a Chitose no le gusta perder.{a} Eso es un buen dato."
+
+Akiko "¿Si te gusta la calma porque vinimos?"
+
+Chitose "Tu sabes porque vinimos."
+
+narrator "Parece que siempre tiene esa expresión de calma sin importar lo que está diciendo."
+
+Akiko "¿De verdad con tal de encontrar a alguien que sea compatible contigo vinimos hasta aquí?"
+
+narrator "Escucho que Chitose, al igual que yo, quiere conseguir a alguien para acabar el año."
+
+Akiko "En [LastSchoolAkiko] había varios chicos mejores que los de aquí, más apuestos e inteligentes."
+
+Chitose "Ojala las razones fueran así de simples…{c}No me sirve de nada si su “inteligencia” es solo resolver ejercicios, necesito que me ayude a vencer a mi hermana."
+
+Akiko "Bien, bien, entiendo, dejaré de quejarme."
+
+Chitose "Muchas gracias en verdad Akiko, por acompañarme hasta aquí."
+
+Akiko "Ya lo repetiste varias veces...{c}Y siempre te respondo lo mismo, eres mi amiga, te ayudare en cuanto pueda."
+
+Chitose "Gracias.{wa 1} Entonces me voy adelantando a comprar algo para almorzar."
+
+narrator "Parece que Chitose se quedara un momento más y luego se separaran.{c} ¿Que debería hacer?{c}Ya tengo una mejor idea de la situación, parece que Chitose necesita alguien que le ayude a derrotar a otra persona, y por lo que parece necesita que sea alguien que pueda entender algo y chantajear…"
+
+choice " "
+{
+  "Esperar a que Chitose se vaya"
+    "[Load(chapter_1_ab_ab_c_b_a)]"
+  "Chantajear a Chitose"
+    "[Load(chapter_1_ab_ab_c_b_b)]"
+  "Tratar de escapar"
+    "[Load(chapter_1_ab_ab_c_b_c)]"
+}

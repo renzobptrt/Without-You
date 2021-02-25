@@ -1,0 +1,11 @@
+narrator "[Next()]"
+
+Tachibana "Hummm."
+
+MC "Jaja, lo siento, lo siento."
+
+narrator "Aunque no haya hecho nada malo, me disculpe por inercia."
+
+MC "Aunque lo dije mas que nada por tu salud, porque si subieras de peso seguirías siendo linda.{c}Más me preocupa tu salud."
+
+"[Load(Chapter_1_ab_ab_a_ab1)]"

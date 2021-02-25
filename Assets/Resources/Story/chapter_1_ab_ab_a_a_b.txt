@@ -1,0 +1,17 @@
+narrator "[Next()]"
+
+narrator "No puedo ocultar el hecho de que si pienso que todas las chicas son lindas.{c}Pero piensa que se lo estoy diciendo porque estoy desesperado."
+
+MC "Tachibana, eres linda, muy linda."
+
+narrator "Trate de sonar lo más serio posible."
+
+MC "Se que con Renji siempre bromeamos sobre las demás chicas y todo eso.{c}Y es porque pienso que todas las chicas tienen su encanto.{wa 1} Por eso te digo con toda seguridad que eres linda."
+
+narrator "Tachibana está escuchando de manera indiferente."
+
+Tachibana "..."
+
+narrator "Parece que las cosas se pusieron incómodas."
+
+"[Load(chapter_1_ab_ab_a_ab2)]"

@@ -20,7 +20,7 @@ Tachibana "Está bien… entonces me apresurare.[setExpression(Tachibana,body,no
 
 MC "No tienes que ir tan rapido, seria divertido si en la escuela piensan que nos fugamos.[setExpression(Tachibana,body,o,6)]"
 
-narrator "No parece que se haya molestado, pero ya no están teniendo efecto mis bromas, asi que parare por ahora.{c}Llegamos rápidamente a la entrada de la casa de Tachibana.{c}[playSfx(door_open_2) setExpression(Tachibana,body,normal,6)]]De la casa de Tachibana se puede ver salir a un adulto, alto y con una expresión de estar malhumorado."
+narrator "No parece que se haya molestado, pero ya no están teniendo efecto mis bromas, asi que parare por ahora.{c}Llegamos rápidamente a la entrada de la casa de Tachibana.{c}[playSfx(door_open_2) setExpression(Tachibana,body,normal,6)]De la casa de Tachibana se puede ver salir a un adulto, alto y con una expresión de estar malhumorado."
 
 Tachibana "[setExpression(Tachibana,body,sad,6)]..."
 

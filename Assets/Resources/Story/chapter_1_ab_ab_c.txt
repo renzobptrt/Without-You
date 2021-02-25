@@ -4,10 +4,24 @@ narrator "Seguiría a Renji, pero no quiero estar por ahí revisando los clubes�
 
 MC "En otra ocasión será."
 
-Renji "entonces,¿Iras con Tachibana?"
+Renji "[setExpression(Renji,body,smile1,6)]Entonces,¿Iras con Tachibana?"
 
 MC "No creo.{c}Creo que estoy con ganas de ir a estar solo a la azotea."
 
-narrator "Llego y me echo a descansar en las bancas que están colocadas en la azotea.{c}Llegan 2 chicas."
+narrator "[exit(Renji) setBackground(school_rooftop_0,false,1)]Llego y me echo a descansar en las bancas que están colocadas en la azotea.{a}Llegan 2 chicas."
 
-Kyoko
+Akiko "Creí que sería como en [LastSchoolAkiko], pero aquí no hay sombrillas..."
+
+Chitose "[moveCharacter(Akiko,0,0,3) moveCharacter(Chitose,1,0,3) setExpression(Chitose,body,smile1,6)]Esta azotea también tiene su encanto."
+
+Akiko "[setExpression(Akiko,body,annoyed,6)]Sí pero preferiría que también tuviera algo con lo que cubrirnos del sol..."
+
+narrator "Parece que no notaron que también estaba aquí."
+
+choice " "
+{
+  "Saludar"
+    "[Load(chapter_1_ab_ab_c_a)]"
+  "Seguir escuchando"
+    "[Load(chapter_1_ab_ab_c_b)]"
+}

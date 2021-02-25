@@ -1,0 +1,21 @@
+narrator "[Next()]"
+
+MC "Quiero saber qué tipo de persona está buscando Chitose…"
+
+Akiko "¿Porque será que me esperaba esa pregunta?"
+
+narrator "Dijo Akiko de manera sarcástica mientras mantenía una sonrisa burlona en su rostro."
+
+Akiko "No puedo hablar todo sobre mi amiga a sus espaldas."
+
+narrator "Tampoco esperaba enterarme de todo."
+
+Akiko "Si quieres una oportunidad con ella demuéstrale que puedes llegar a manipular a las personas."
+
+narrator "¿Y para qué necesita a alguien así?, bueno no es que no pudiera intentarlo…"
+
+Akiko "Es lo único que te puedo decir."
+
+narrator "Me quede pensando tan profundamente que no me di cuenta de que Akiko ya se había ido."
+
+"[Load(chapter_1_ab_ab_c_ab1)]"

@@ -1,6 +1,6 @@
 narrator "[Next()]"
 
-narrator "[setBackground(School_Entrance_0,false,1) setExpression(Tachibana,body,normal,6)]Me acerque con Tachibana a los tablones donde están escritas a que secciones nos asignaron este año."
+narrator "[setBackground(School_first_floor_0,false,1) setExpression(Tachibana,body,normal,6)]Me acerque con Tachibana a los tablones donde están escritas a que secciones nos asignaron este año."
 
 MC "Waaa, no encuentro mi nombre.{c}¿Crees que haya repetido de año y nadie me lo haya dicho hasta ahora?"
 
@@ -22,9 +22,9 @@ narrator "Parece que no funcionó..."
 
 Tachibana "Ya esta siendo hora de ir al salon."
 
-narrator "Así que 3ero B...{c}[playSfx(door)]Mientras abría la puerta pude sentir que alguien apoyaba su brazo con todo su peso sobre mi."
+narrator "Así que 3ero B...{c}[setBackground(School_third_floor_0,false,1) playSfx(door)]Mientras abría la puerta pude sentir que alguien apoyaba su brazo con todo su peso sobre mi."
 
-nn "[moveCharacter(Tachibana,0.25,0,3) enter(Renji) moveCharacter(Renji,0.75,0,3) setExpression(Renji,body,smile1,6) [setExpression(Tachibana,body,normal,6)]]Sabia que estarias llegando con Tachibana."
+nn "[moveCharacter(Tachibana,0,0,3) enter(Renji) moveCharacter(Renji,1,0,3) setExpression(Renji,body,smile1,6) [setExpression(Tachibana,body,normal,6)]]Sabia que estarias llegando con Tachibana."
 
 narrator "Reconozco esa voz.{c}Era Renji, junto con Tachibana nos conocemos desde pequeños."
 
@@ -60,9 +60,9 @@ Renji "[setExpression(Renji,body,smile1,6)]Pertenecían al club de escultura, pe
 
 MC "Siento que he en alguna parte he visto chicas que encajan con esa descripción..."
 
-narrator "Mientras hablábamos entro la profesora al salon."
+narrator "Mientras hablábamos entro la profesora al salon.[setBackground(Classroom_0,false,1)]"
 
-Sensei "[setExpression(Sensei,body,smug,6) moveCharacter(Tachibana,0,0,3) enter(Renji) moveCharacter(Renji,1,0,3) setExpression(Tachibana,body,normal,6) setExpression(Renji,body,normal,6)]Bienvenidos chicos, a su último año de preparatoria, soy Suzume-sensei y estaré a cargo de ustedes.{c}Hoy  tendremos 3 períodos de clase, y antes del receso les daré un anuncio."
+Sensei "[setExpression(Sensei,body,smug,6) setExpression(Tachibana,body,normal,6) setExpression(Renji,body,normal,6)]Bienvenidos chicos, a su último año de preparatoria, soy Suzume-sensei y estaré a cargo de ustedes.{c}Hoy  tendremos 3 períodos de clase, y antes del receso les daré un anuncio."
 
 MC "¿Humm? parece que nos tocó una sensei muy hermosa esta vez, tu que opinas Renji."
 
@@ -72,7 +72,7 @@ Tachibana "[setExpression(Tachibana,body,annoyed,6)]¿En serio están hablando s
 
 Sensei "Procedere tomar lista y a la repartición de los sitios."
 
-narrator "...{c}[exit(Renji) moveCharacter(Sensei,0.25,0,3) moveCharacter(Tachibana,0.75,0,3) setExpression(Tachibana,body,normal,6)]Tuve mucha suerte junto con Tachibana, nos mandaron a la fila del fondo.{a}Renji solo esta 2 asientos adelante nuestro."
+narrator "...{c}[exit(Renji) moveCharacter(Sensei,0.85,0,3) moveCharacter(Tachibana,0.15,0,3) setExpression(Tachibana,body,normal,6)]Tuve mucha suerte junto con Tachibana, nos mandaron a la fila del fondo.{a}Renji solo esta 2 asientos adelante nuestro."
 
 MC "No está mal, al menos tengo algo que admirar si me aburro de la clase..."
 
@@ -92,7 +92,7 @@ narrator "Algunas expresiones de sorpresa se podían oír a lo largo de la clase
 
 MC "Hey Tachibana..."
 
-narrator "[exit(sensei) moveCharacter(Tachibana,0,0,3) setExpression(Tachibana,body,normal,6)]Tachibana voltea a verme ni bien escucha que la llamó."
+narrator "[exit(Sensei) moveCharacter(Tachibana,0.5,0,3) setExpression(Tachibana,body,normal,6)]Tachibana voltea a verme ni bien escucha que la llamó."
 
 MC "¿Ibas a unirte a algún club?"
 
@@ -124,7 +124,7 @@ MC "Parece que al final solo le queda aceptar."
 
 narrator "Mientras terminaba de hablar con Tachibana, sonó el timbre.{c}[exit(Tachibana)]Tachibana tiene la costumbre de ir al jardín de la escuela para comer su almuerzo, generalmente cambia de sitio cuando la sigo, parece que le gusta comer sola.{c}En lo personal me gusta más la azotea, está permitido el paso, pero por alguna razón a las demás personas no les gusta, parece que no aguantan estar sin aire acondicionado..."
 
-Renji "[enter(Renji) setPosition(Renji,0,0) setExpression(Renji,body,normal,4)][mainCharacterName], quieres ir a visitar la sala de los clubes?"
+Renji "[enter(Renji) setPosition(Renji,0.5,0) moveCharacter(Renji,0.5,0) setExpression(Renji,body,normal,4)][mainCharacterName], quieres ir a visitar la sala de los clubes?"
 
 narrator "Creo que tengo tiempo para hacer un par de cosas en este receso."
 

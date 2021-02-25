@@ -1,0 +1,31 @@
+narrator "[Next()]"
+
+narrator "Es muy linda cuando hace ese sonido…{c}Aunque me da algo de verguenza decirselo. {w 1}Creo que la molestaré un poco con el pastel que está comiendo."
+
+MC "Vamos, sabes que si sigues comiendo tantos dulces no le harás bien a tu salud…"
+
+Tachibana "¿A que te refieres?"
+
+MC "Creo que pise una mina..."
+
+narrator "Trato de zafarme con lo primero que se me viene a la mente."
+
+MC "Bueno… Tu sabes…  Si comes demasiados dulces tu nivel de azúcar subirá, también puede causarte malestar…"
+
+Tachibana "¿Solo a eso te referias?"
+
+narrator "¡Quiere sacarme la verdad con la mirada!{c}Maldición su mirada me está analizando, y hasta puedo sentir como estoy empezando a sudar.{c}Si sigue así terminaré confesando todo…"
+
+Tachibana "Te ibas a referir a que iba a engordar, ¿Verdad?"
+
+narrator "Ya no pude soportar más y simplemente confesé."
+
+MC "Si."
+
+choice " "
+{
+  "Pero aun asi seguiras siendo linda"
+    "[Load(Chapter_1_ab_ab_a_b_a)]"
+  "Disculparse"
+    "[Load(Chapter_1_ab_ab_a_b_b)]"
+}

@@ -1,0 +1,31 @@
+narrator "[Next()]"
+
+narrator "Así que eso era…"
+
+Tachibana "O si fue-"
+
+narrator "Interrumpí a Tachibana tomándola de los hombros."
+
+Tachibana "¿Eh?"
+
+MC "Lo digo cuando estamos a solas porque pensaba que era buen momento…{c}Y no tengo problema con que los demás nos oigan."
+
+Tachibana "¡¿Ehh?! espera, ¿no irás a ...?"
+
+MC "¡¡¡¡¡¡Tachibana eres demasiado lindaaaaaaa!!!!!"
+
+narrator "Lo grite lo suficientemente fuerte para que los que estuvieran en el edificio de la escuela pudieran oírlo."
+
+Tachibana "!¿Eeeeeeeeeehhhhhhhhhhhhhhh?!"
+
+narrator "Por alguna razón fue más vergonzoso de lo que pensé.{c}¡Mucho más vergonzoso de lo que pensé!, pero…"
+
+MC "¿Lo ves?, no me importa que los demás me escuchen diciendote lo linda que eres."
+
+Tachibana "¿De-de verdad no te molesta que los demás te escuchen?"
+
+MC "Y ademas si pudiera elegir a quien mas decirle estas cosas, te volveria a elegir a ti."
+
+narrator "Siento como mi cara y mis orejas me arden, ¡esto es demasiado vergonzoso!"
+
+"[Load(chapter_1_ab_ab_a_ab1)]"

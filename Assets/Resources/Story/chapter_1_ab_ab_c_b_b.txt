@@ -1,0 +1,35 @@
+narrator "[Next()]"
+
+narrator "Si uso lo que se, creo que puedo acercarme a Chitose."
+
+Chitose "Vuelvo en un momento."
+
+narrator "Haré mi movimiento antes que Chitose se marche."
+
+MC "Creo que podemos encontrar que tenemos intereses comunes…"
+
+Chitose "¡¿?!"
+
+Akiko "¡¿?!"
+
+narrator "Al percatarse de que no estuvieron solas este tiempo ambas tienen una expresión de sorpresa en su rostro."
+
+Akiko "¡¡Oye no deberías escuchar las conversaciones de los demás!!"
+
+Chitose "Está bien Akiko, fue nuestra culpa por hablar sin saber si había alguien más."
+
+MC "Bueno admito que también es un poco maleducado de mi parte haber escuchado su conversación."
+
+narrator "Hasta ahora todo bien, pero siento que en cualquier momento me voy a trabar.{a} Es demasiada presión."
+
+MC "Al principio solo estaba descansando aquí, pero ahora creo que he escuchado algo que realmente llamo mi atención... {wa 1}y creo que podemos llegar a un acuerdo."
+
+Chitose "Me interesa tu argumento, pero siento que todavía es muy pronto para empezar algo."
+
+narrator "Eh? Pensé que estaba marchando bien todo."
+
+Chitose "Pero digamos que, ya que entendiste que tipo de persona estoy buscando…{c}Empezaste bien."
+
+narrator "Luego de eso Chitose y Akiko bajaron por las escaleras."
+
+"[Load(chapter_1_ab_ab_c_ab1)]"

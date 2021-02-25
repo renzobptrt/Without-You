@@ -1,6 +1,6 @@
 narrator "[Next()]"
 
-narrator "Antes de poder entender qué es lo que pasaba recibo el golpe de una gruesa revista lanzada con mucha fuerza"
+narrator "Antes de poder entender qué es lo que pasaba recibo el golpe de una gruesa revista lanzada con mucha fuerza."
 
 Airi "[Buzz()]¡¡¡Maldito pervertido!!![setExpression(Airi,body,angry,4)]"
 
@@ -8,7 +8,7 @@ narrator "Por querer cubrirme de un posible segundo ataque me cubro y ruedo, cay
 
 MC "[Buzz() playSfx(fall)]¡¡Maldición, eso dolió!!"
 
-Airi "[setExpression(Airi,body,annoyed,4)]¿Y?{c}¿Para ti es normal dejar tiradas revistas porno en la misma casa que vive tu hermana?"
+Airi "[setExpression(Airi,body,annoyed,4)]¿Y?{a}¿Para ti es normal dejar tiradas revistas porno en la misma casa que vive tu hermana?"
 
 narrator "Mi nombre es [mainCharacterName], la niña que está gritando es mi hermana menor (Airi), y al parecer ya es el primer día de mi último año de preparatoria."
 

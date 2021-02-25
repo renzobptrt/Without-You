@@ -12,7 +12,7 @@ MC "[Buzz()]----gaahhhhhhhh, aún si se me da mal coquetear me esfuerzo, además
 
 Airi "No sé cómo Tachibana no te ha mandado a volar ya"
 
-MC "¡¡¡Y no es que las demás me hayan rechazado porque no resalte!!!{a}¡Es porque no he tenido oportunidad de acortar mi distancia con ellas!{c}Si,  así es.{a}Es porque he estado dejando pasar cada oportunidad que he tenido de estrechar lazos con una chica."
+MC "¡¡¡Y no es que las demás me hayan rechazado porque no resalte!!!{a}¡Es porque no he tenido oportunidad de acortar mi distancia con ellas!{c}Si, así es.{a}Es porque he estado dejando pasar cada oportunidad que he tenido de estrechar lazos con una chica."
 
 Airi "[setExpression(Airi,body,normal,4)]¿Y aquella de la que fuiste prácticamente esclavo durante una semana?{c}¿Acaso no estuviste junto a ella todo ese tiempo?"
 
@@ -108,7 +108,7 @@ Tachibana "¿De verdad estás bien?"
 
 MC "Como si nada hubiera pasado, además si en algún momento sientes que me estoy sobrepasando puedes golpearme todo lo que quieras."
 
-Tachibana "¿En serio estás bien con que te golpee?[setExpression(Tachibana,body,smile,6)]"
+Tachibana "¿En serio estás bien con que te golpee?[setExpression(Tachibana,body,smile1,6)]"
 
 MC "Si con eso logro que te desahogues y te sientas más segura, entonces resistiré hasta una paliza."
 

@@ -2,12 +2,12 @@ narrator "[Next()]"
 
 narrator "Creo que puedo ir con Renji a dar una vuelta, no es como si tuviera algo más para hacer."
 
-MC "Claro, vamos, con un poco de suerte encontramos chicas lindas en los clubes..."
+MC "[setExpression(Renji,body,smile3,6)]Claro, vamos, con un poco de suerte encontramos chicas lindas en los clubes..."
 
-Renji "No necesitaremos tanta suerte, conozco a algunas personas del club de arte, por lo que se es el club con más chicas del colegio."
+Renji "[setBackground(Art_club,false,1)]No necesitaremos tanta suerte, conozco a algunas personas del club de arte, por lo que se es el club con más chicas del colegio."
 
 MC "¡Ese es mi mejor amigo!"
 
-narrator "Fuimos a revisar el club de arte pero nos rechazaron, porque ya tenían demasiados miembros.{c}Así que junto con mi amigo decidimos volver al salón derrotados."
+narrator "Fuimos a revisar el club de arte pero nos rechazaron, porque ya tenían demasiados miembros.{c}[setExpression(Renji,body,sad,6) setBackground(Classroom_0,false,1)]Así que junto con mi amigo decidimos volver al salón derrotados."
 
 "[Load(chapter_1_ab_ab_abc)]"

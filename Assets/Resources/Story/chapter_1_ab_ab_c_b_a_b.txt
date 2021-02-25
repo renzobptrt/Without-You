@@ -1,0 +1,25 @@
+narrator "[Next()]"
+
+MC "¿También estás en la misma situación que Chitose?"
+
+narrator "Si le pregunto tal vez entienda mejor…"
+
+Akiko "Sé lo que intentas…"
+
+narrator "Parece que vio completamente a través de mi."
+
+Akiko "Pero ya que te atreviste a preguntar te responderé."
+
+narrator "Me respondió con una sonrisa burlona en su rostro."
+
+Akiko "Bueno ya te respondí, así que iré a buscar a Chitose."
+
+MC "¿No la ibas a esperar?"
+
+Akiko "Si, pero sería raro que nos encuentre hablando…{c}Aunque me gustaría ver que expresión haría si ve que me le adelante en conocer a más personas."
+
+MC "Me gusta como piensas."
+
+narrator "Y así se despidió."
+
+"[Load(chapter_1_ab_ab_c_ab1)]"
