@@ -2,34 +2,34 @@ narrator "[Next()]"
 
 narrator "Si uso lo que se, creo que puedo acercarme a Chitose."
 
-Chitose "Vuelvo en un momento."
+Chitose "Vuelvo en un momento.[setExpression(Chitose,body,smile2,6)]"
 
 narrator "Haré mi movimiento antes que Chitose se marche."
 
 MC "Creo que podemos encontrar que tenemos intereses comunes…"
 
-Chitose "¡¿?!"
+Chitose "¡¿?![setExpression(Chitose,body,shocked,6)]"
 
-Akiko "¡¿?!"
+Akiko "¡¿?![setExpression(Akiko,body,shocked,6)]"
 
 narrator "Al percatarse de que no estuvieron solas este tiempo ambas tienen una expresión de sorpresa en su rostro."
 
-Akiko "¡¡Oye no deberías escuchar las conversaciones de los demás!!"
+Akiko "¡¡Oye no deberías escuchar las conversaciones de los demás!![setExpression(Akiko,body,angry,6)]"
 
-Chitose "Está bien Akiko, fue nuestra culpa por hablar sin saber si había alguien más."
+Chitose "Está bien Akiko, fue nuestra culpa por hablar sin saber si había alguien más.[setExpression(Chitose,body,smile2,6)]"
 
 MC "Bueno admito que también es un poco maleducado de mi parte haber escuchado su conversación."
 
 narrator "Hasta ahora todo bien, pero siento que en cualquier momento me voy a trabar.{a} Es demasiada presión."
 
-MC "Al principio solo estaba descansando aquí, pero ahora creo que he escuchado algo que realmente llamo mi atención... {wa 1}y creo que podemos llegar a un acuerdo."
+MC "Al principio solo estaba descansando aquí, pero ahora creo que he escuchado algo que realmente llamo mi atención... {wa 1}y creo que podemos llegar a un acuerdo.[setExpression(Akiko,body,annoyed,6) setExpression(Chitose,body,normal,6)]"
 
 Chitose "Me interesa tu argumento, pero siento que todavía es muy pronto para empezar algo."
 
 narrator "Eh? Pensé que estaba marchando bien todo."
 
-Chitose "Pero digamos que, ya que entendiste que tipo de persona estoy buscando…{c}Empezaste bien."
+Chitose "Pero digamos que, ya que entendiste que tipo de persona estoy buscando…{c}Empezaste bien.[setExpression(Chitose,body,laugh,6)]"
 
-narrator "Luego de eso Chitose y Akiko bajaron por las escaleras."
+narrator "Luego de eso Chitose y Akiko bajaron por las escaleras.[exit(Chitose;Akiko)]"
 
 "[Load(chapter_1_ab_ab_c_ab1)]"

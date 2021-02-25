@@ -6,14 +6,14 @@ MC "Maldici-"
 
 narrator "Después de un estruendoso ruido ambas chicas voltearon a verme."
 
-Chitose "..."
+Chitose "...[setExpression(Chitose,body,o,6)]"
 
-Akiko "..."
+Akiko "...[setExpression(Akiko,body,o,6)]"
 
 MC "Jaja, jaja, siento haber interrumpido su conversación."
 
-Chitose "No te preocupes no revisamos si había alguien, así que es en parte nuestra culpa."
+Chitose "No te preocupes no revisamos si había alguien, así que es en parte nuestra culpa.[setExpression(Chitose,body,smile2,6) setExpression(Akiko,body,annoyed,6)]"
 
-narrator "Después de eso ambas bajaron por la escalera."
+narrator "Después de eso ambas bajaron por la escalera.[exit(Chitose;Akiko)]"
 
 "[Load(chapter_1_ab_ab_c_ab2)]"

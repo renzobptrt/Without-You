@@ -1,18 +1,18 @@
 narrator "[Next()]"
 
-narrator "Creo que esperaré a que Chitose baje.{a}Si hablo a solas con Akiko puede ser que llegue a sacar aún más información.{c}Chitose empieza a bajar por las escaleras."
+narrator "Creo que esperaré a que Chitose baje.{a}Si hablo a solas con Akiko puede ser que llegue a sacar aún más información.{c}Chitose empieza a bajar por las escaleras.[exit(Chitose) moveCharacter(Akiko,0.5,0,3)]"
 
-Akiko "Haaa, a veces tratar contigo también es un poco pesado."
+Akiko "Haaa, a veces tratar contigo también es un poco pesado.[setExpression(Akiko,body,annoyed,6)]"
 
 narrator "Creo que puedo acercarme más fácil a ella ahora que está sola."
 
 MC "Creo que deberías ser más sincera con ella."
 
-Akiko "¿?"
+Akiko "¿?[setExpression(Akiko,body,shocked,6)]"
 
 narrator "Me levanto para que sea más evidente que estuve ahí todo el tiempo."
 
-Akiko "Así que escuchaste todo, ¿no?"
+Akiko "Así que escuchaste todo, ¿no?[setExpression(Akiko,body,angry,6)]"
 
 narrator "Creo que sería mejor que le explique de manera calmada."
 
@@ -20,7 +20,7 @@ MC "Bueno, algunas cosas, al principio estaba dormido.{c}Y cuando me desperté e
 
 narrator "Mentí, pero creo que eso ayuda más en este momento."
 
-Akiko "Así que así fue, entonces mis disculpas por pensar que estabas espiando."
+Akiko "Así que así fue, entonces mis disculpas por pensar que estabas espiando.[setExpression(Akiko,body,normal,6)]"
 
 narrator "¿Ehhh? Por alguna razón sentí que era más agresiva cuando estaba cerca de Chitose.{c}No parece que Akiko vaya a bajar todavía, ¿qué debería preguntarle?"
 
