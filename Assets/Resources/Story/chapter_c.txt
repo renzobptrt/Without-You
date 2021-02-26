@@ -1,6 +1,6 @@
 narrator "[Next()]"
 
-MC "Se preocupan demasiado solo porque este año son los exámenes de admisión, pero...{a}¿Debería importarme eso?.{c}He estado todos los años matándome estudiando y he dejado a las chicas de lado, mientras todos los demás se divertían con sus parejas, yo me mataba estudiando."
+MC "[playMusic(Shera)]Se preocupan demasiado solo porque este año son los exámenes de admisión, pero...{a}¿Debería importarme eso?.{c}He estado todos los años matándome estudiando y he dejado a las chicas de lado, mientras todos los demás se divertían con sus parejas, yo me mataba estudiando."
 
 Airi "[setExpression(Airi,body,angry,4)]Si de verdad estudiaras como dices, tus notas no serían tan horribles…"
 
@@ -40,7 +40,7 @@ MC "Me encantaría que me dejaran tener una novia..."
 
 mother "..."
 
-father "Yo no me opondré si con eso dejas de hacer tanto ruido por las noches."
+father "Yo no me opondré si con eso dejas de hacer tanto ruido por las noches.[playMusic(MagicalSecun)]"
 
 MC "..."
 
@@ -50,7 +50,7 @@ mother "..."
 
 Airi "..."
 
-narrator "Decidí retirarme con la moral destruida.[exit(Airi)] {c}[setBackground(HouseStreet_0,false,1)]Doy un largo suspiro tratando de liberarme de todas las heridas emocionales dejadas por mi familia."
+narrator "Decidí retirarme con la moral destruida.[exit(Airi)] {c}[setBackground(HouseStreet_0,false,1) playMusic(Relax)]Doy un largo suspiro tratando de liberarme de todas las heridas emocionales dejadas por mi familia."
 
 MC "Haaa…"
 
@@ -62,7 +62,7 @@ narrator "Grito con todas mis fuerzas mi único deseo antes de terminar la prepa
 
 MC "¡¡¡Maldición quiero una novia!!!"
 
-narrator "Mientras caminaba por la calle vi a lo lejos a una chica delgada y con lentes, una figura que ya se me hacía bastante familiar.{c}Empiezo a correr hacia mi amiga de la infancia gritando su nombre."
+narrator "Mientras caminaba por la calle vi a lo lejos a una chica delgada y con lentes, una figura que ya se me hacía bastante familiar.{c}[playMusic(Time)]Empiezo a correr hacia mi amiga de la infancia gritando su nombre."
 
 MC "¡¡Tachibana!!"
 
@@ -88,7 +88,7 @@ MC "Siempre que parece que estoy progresando, se aleja de mí..."
 
 Tachibana "[setExpression(Tachibana,body,normal,4)]¿?"
 
-MC "¡Nada! ¡Nada! ¡Olvida todo lo que escuchaste!"
+MC "¡Nada! ¡Nada! ¡Olvida todo lo que escuchaste![playMusic(Shera)]"
 
 Tachibana "¿Seguro que estás bien?"
 
@@ -96,7 +96,7 @@ narrator "Con un suspiro interno, le ruego al universo que no deje que me quede 
 
 MC "Maldición animarla está siendo más difícil de lo que pensé.{c}Jajá, no te preocupes solo parece que estoy delirando un poco…"
 
-narrator "Tachibana hace una gran expresión de sorpresa.[setExpression(Tachibana,body,o,6)]"
+narrator "Tachibana hace una gran expresión de sorpresa.[setExpression(Tachibana,body,o,6) playMusic(Time)]"
 
 Tachibana "Lo- *snif*, Lo si- *snif* [setExpression(Tachibana,body,sad,6)]"
 
@@ -124,7 +124,7 @@ MC "¿Pero logro animarte, no es así?"
 
 Tachibana "Sí.[setExpression(Tachibana,body,smile2,6)]"
 
-narrator "[setExpression(Tachibana,body,laugh,6)]Tachibana ríe mientras su rostro se ruboriza, y su cabello empieza brillar afirmando mi idea de que es muy linda, hasta pareciera que una luz empieza a emanar de ella"
+narrator "[setExpression(Tachibana,body,laugh,6) playMusic(MagicalMain)]Tachibana ríe mientras su rostro se ruboriza, y su cabello empieza brillar afirmando mi idea de que es muy linda, hasta pareciera que una luz empieza a emanar de ella"
 
 MC "¡Maldición como es que eres tan linda![setExpression(Tachibana,body,shocked,6)]{c}[playSfx(punch) setExpression(Tachibana,body,annoyed,6)]{c}¿Lo ves?, puedes estar tranquila junto a mí."
 
@@ -136,7 +136,7 @@ narrator "Mientras trato de esconder el dolor de haber recibido una cachetada po
 
 Tachibana "Jeje, muchas gracias [mainCharacterName]. [setExpression(Tachibana,body,smile2,6)]"
 
-narrator "Parece que ya está mejor.{a}Pero ha estado teniendo muchos problemas en su casa últimamente…{c}Antes de que pudiera pensar en otra forma de molestarla, Tachibana hace el gesto de recordar algo y empezó a  correr de vuelta hacia su casa."
+narrator "[playMusic(Time)]Parece que ya está mejor.{a}Pero ha estado teniendo muchos problemas en su casa últimamente…{c}Antes de que pudiera pensar en otra forma de molestarla, Tachibana hace el gesto de recordar algo y empezó a  correr de vuelta hacia su casa."
 
 Tachibana "¡Es verdad! Me olvide mi almuerzo.{a}Puedes adelantarte sin mí...[setExpression(Tachibana,body,sad,6)]"
 

@@ -1,12 +1,12 @@
 narrator "[Next()]"
 
-MC "Haaa, no tiene caso, se molestará si la sigo, ya que me ha dicho que me adelante.{c}Mientras que nada la vuelva a molestar hoy, puedo estar más tranquilo."
+MC "[playMusic(Relax)]Haaa, no tiene caso, se molestará si la sigo, ya que me ha dicho que me adelante.{c}Mientras que nada la vuelva a molestar hoy, puedo estar más tranquilo."
 
-narrator "Una vez que me resigne a que no alcanzaría a Tachibana, retome mi rumbo hacia la academia.{c}[setBackground(HouseStreet_2_0,false,1)] En el camino me percate que al otro lado de la acera, caminaban dos chicas con el mismo uniforme de mi escuela."
+narrator "Una vez que me resigne a que no alcanzaría a Tachibana, retome mi rumbo hacia la academia.{c}[setBackground(HouseStreet_2_0,false,1) [playMusic(Time)] En el camino me percate que al otro lado de la acera, caminaban dos chicas con el mismo uniforme de mi escuela."
 
 MC "¿Serán nuevas?"
 
-narrator "Una de ellas tenía el cabello largo y castaño mientras que la otra tenía cabello corto y de un tono rosado.[enter(Chitose) moveCharacter(Chitose,0,0,3) enter(Akiko) moveCharacter(Akiko,1,0,3)]{c}Como una de ellas era bastante ruidosa podía escuchar parte de la conversación."
+narrator "Una de ellas tenía el cabello largo y castaño mientras que la otra tenía cabello corto y de un tono rosado.[enter(Chitose) moveCharacter(Chitose,0,0,3) enter(Akiko) moveCharacter(Akiko,1,0,3)]{c}Como una de ellas era bastante ruidosa podía escuchar parte de la conversación.[playMusic(Shera)]"
 
 RandomGirl1 "¡En esta escuela también nos irá bien![setExpression(Chitose,body,smile2,6)]"
 
@@ -16,15 +16,15 @@ RandomGirl1 "[setExpression(Chitose,body,normal,6)]No te preocupes ellos seguir�
 
 narrator "'Divertirse' ¿eh?, vaya forma de llamar a la vida escolar.{c}En un momento dado nuestras miradas se cruzan"
 
-MC "Ah"
+MC "[playMusic(Time)]Ah"
 
 narrator "¿Acaso ella se quedó mirándome?{a} El contacto visual está durando más de un simple momento.{c}¿Le habré llamado la atención? Acaso este será el momento que tanto he estado esperando…{a} ¿Por fin le ha llegado la primavera a mi vida amorosa?{c}La chica de cabello castaño, al notar que nos habíamos quedado mirando, se voltea y sigue su rumbo junto a su amiga.{c}Parece que de verdad mi suerte se estaba juntando para un encuentro predestinado.{c}Puedo escuchar cómo mientras caminan siguen hablando, pero en un tono más bajo."
 
 RandomGirl1 "[setExpression(Chitose,body,sleepy,6) setExpression(Akiko,body,o,6)]¿Ese chico no te parece extraño?"
 
-narrator "[Buzz()]Guuhh, parece que me vine demasiado arriba otra vez{c}Hummm, aunque quizá... si hago bien las cosas, pueda tener una oportunidad.{c}[setBackground(School_Entrance_0,false,1)]Llego a la puerta de la preparatoria. [exit(Chitose) exit(Akiko)]"
+narrator "[Buzz() playMusic(MagicalMain)]Guuhh, parece que me vine demasiado arriba otra vez{c}Hummm, aunque quizá... si hago bien las cosas, pueda tener una oportunidad.{c}[setBackground(School_Entrance_0,false,1)]Llego a la puerta de la preparatoria. [exit(Chitose) exit(Akiko)]"
 
-MC "Todavía faltan 20 minutos para que suene la campana, ojalá Tachibana consiga llegar a tiempo…"
+MC "Todavía faltan 20 minutos para que suene la campana, ojalá Tachibana consiga llegar a tiempo…[playMusic(Time)]"
 
 narrator "Mientras le deseaba suerte a mi amiga, una chica delgada y tímida llegó corriendo."
 
@@ -42,12 +42,12 @@ Tachibana "[setExpression(Tachibana,body,shocked,6) playSfx(punch) Buzz()]Hiii..
 
 narrator "[setExpression(Tachibana,body,o,6)]Un poco adolorido quise confirmar si funciono."
 
-MC "¿Estas mejor?"
+MC "[playMusic(Shera)]¿Estas mejor?"
 
 Tachibana "[setExpression(Tachibana,body,sad,6)]¿Eh? ¿Ah? S-si"
 
 narrator "[setExpression(Tachibana,body,normal,6)]Una vez confirmado que se tranquilizo un poco, quise que continuaramos con nuestras labores."
 
-MC "Entonces vamos, tenemos que ver en que salon vamos a estar."
+MC "[playMusic(Time)]Entonces vamos, tenemos que ver en que salon vamos a estar."
 
 "[Load(chapter_1_ab_ab)]"

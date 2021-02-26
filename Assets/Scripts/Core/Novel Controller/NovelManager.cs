@@ -74,7 +74,7 @@ public class NovelManager : MonoBehaviour
 
         saveLoadPanel.LoadFilesOntoScreen(saveLoadPanel.currentSaveLoadPage);
         AudioManager.instance.SetSlidersAndText(musicSlider, sfxSlider, musicText, sfxText);
-        Command_PlayMusic("Relax");
+        Command_PlayMusic("Time");
         isCheck = false;
         CheckInput.onClick.RemoveAllListeners();
 

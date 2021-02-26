@@ -16,11 +16,11 @@ narrator "Y con una expresión fría retoma su camino a su trabajo.{c}Sabía que
 
 MC "Haaaaa"
 
-narrator "Pensé que me iba ha devorar en cualquier momento…{c}Tachibana parece haber terminado de asimilar lo ocurrido."
+narrator "Pensé que me iba ha devorar en cualquier momento… [playMusic(Relax)]{c}Tachibana parece haber terminado de asimilar lo ocurrido."
 
 MC "Lamento haber hablado por ti...{a}[setExpression(Tachibana,body,o,6)]¿Eh?"
 
-Tachibana "Gr-{a}gracias…[setExpression(Tachibana,body,normal,6)]"
+Tachibana "Gr-{a}gracias…[setExpression(Tachibana,body,normal,6) playMusic(Here)]"
 
 narrator "E- Espera…{c}Acaso… ¡¿¿Esto me consiguió más puntos que animarla?!!"
 
@@ -30,7 +30,7 @@ MC "¿Eh? Ah, si, si no empezamos a caminar no llegaremos a tiempo."
 
 narrator "Una vez empezamos caminar uno al lado del otro, note que la atmósfera era diferente a cuando nos encontramos por primera vez esta mañana.{c}Y aunque no estemos conversando… de alguna manera se siente…{w 1}Más emocionante..."
 
-narrator "[setBackground(School_Entrance_0,false,1) setExpression(Tachibana,body,normal,6)]Una vez llegado al colegio, tal vez por que ya no estabamos solos, o porque teníamos que apurarnos, pero la situación entre nosotros se calmó un poco…"
+narrator "[setBackground(School_Entrance_0,false,1) setExpression(Tachibana,body,normal,6) playMusic(Time)]Una vez llegado al colegio, tal vez por que ya no estabamos solos, o porque teníamos que apurarnos, pero la situación entre nosotros se calmó un poco…"
 
 MC "Eh… Tachibana…"
 

@@ -16,15 +16,15 @@ narrator "Después de que su papa se alejará, retomamos el rumbo a la escuela."
 
 Tachibana "[setExpression(Tachibana,body,normal,6)]Lamento que vieras eso."
 
-MC "No te preocupes por eso, más bien...{a} Lo siento por no haber podido ser de utilidad."
+MC "No te preocupes por eso, más bien...[playMusic(Here)]{a} Lo siento por no haber podido ser de utilidad."
 
 Tachibana "No había nada que puedas hacer, no te preocupes."
 
 narrator "Creo que si pude haber hecho más...{a} la próxima vez, haré algo, por ahora lo siento..."
 
-Tachibana "Con que te preocuparas y me acompañaras...{a}[setExpression(Tachibana,body,smile2,6)]Es, de mucha ayuda.{w 1}Gracias..."
+Tachibana "Con que te preocuparas y me acompañaras... {a}[setExpression(Tachibana,body,smile2,6)]Es, de mucha ayuda.{w 1}Gracias..."
 
-narrator "Parece que ya esta mejor...{c}[setBackground(School_Entrance_0,false,1)Luego de un rato caminando en silencio, llegamos al colegio."
+narrator "Parece que ya esta mejor...[playMusic(Time)]{c}[setBackground(School_Entrance_0,false,1)Luego de un rato caminando en silencio, llegamos al colegio."
 
 MC "¿Quieres ir a ver en que salon estaremos?"
 
