@@ -58,12 +58,14 @@ public class AudioManager : MonoBehaviour
     public void SetMusicVolume()
     {
         masterMixer.SetFloat("MusicVolume", -80f + (80f * volumeCurve.Evaluate(musicSlider.value)));
+        //masterMixer.SetFloat("MusicVolume", -80f + (80f * musicSlider.value));
         musicText.text = $"{(Mathf.RoundToInt(musicSlider.value * 100f))}%";
     }
 
     public void SetSfxVolume()
     {
         masterMixer.SetFloat("SfxVolume", -80f + (80f * volumeCurve.Evaluate(sfxSlider.value)));
+        //masterMixer.SetFloat("SfxVolume", -80f + (80f * sfxSlider.value));
         sfxText.text = $"{(Mathf.RoundToInt(sfxSlider.value * 100f))}%";
     }
     
@@ -136,8 +138,9 @@ public class AudioManager : MonoBehaviour
             {
                 if (song.volume < song.maxVolume)
                 {
-                    song.volume = songSmoothTransitions ? Mathf.Lerp(song.volume, song.maxVolume, speed) :
-    Mathf.MoveTowards(song.volume, song.maxVolume, speed);
+                    song.volume = 1f;
+                    //song.volume = songSmoothTransitions ? Mathf.Lerp(song.volume, song.maxVolume, speed) :
+                    //Mathf.MoveTowards(song.volume, song.maxVolume, speed);
                     anyValueChanged = true;
                 }
 
@@ -146,8 +149,9 @@ public class AudioManager : MonoBehaviour
             {
                 if (song.volume > 0)
                 {
-                    song.volume = songSmoothTransitions ? Mathf.Lerp(song.volume, 0f, speed) :
-    Mathf.MoveTowards(song.volume, 0f, speed);
+                    song.volume = 1f;
+                    //song.volume = songSmoothTransitions ? Mathf.Lerp(song.volume, 0f, speed) :
+   // Mathf.MoveTowards(song.volume, 0f, speed);
                     anyValueChanged = true;
                 }
 

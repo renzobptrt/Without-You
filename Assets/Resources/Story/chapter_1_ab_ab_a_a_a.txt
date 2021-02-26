@@ -12,7 +12,7 @@ MC "Lo digo cuando estamos a solas porque pensaba que era buen momento…{c}Y no
 
 Tachibana "¡¿Ehh?! espera, ¿no irás a ...?"
 
-MC "¡¡¡¡¡¡Tachibana eres demasiado lindaaaaaaa!!!!!"
+MC "[playMusic(Time)]¡¡¡¡¡¡Tachibana eres demasiado lindaaaaaaa!!!!!"
 
 narrator "Lo grite lo suficientemente fuerte para que los que estuvieran en el edificio de la escuela pudieran oírlo."
 

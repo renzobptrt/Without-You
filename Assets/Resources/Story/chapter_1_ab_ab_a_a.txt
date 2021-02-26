@@ -1,6 +1,6 @@
 narrator "[Next()]"
 
-MC "jajá, no puedo evitarlo, eres muy linda cuando te asustas."
+MC "[playMusic(Relax)]jajá, no puedo evitarlo, eres muy linda cuando te asustas."
 
 Tachibana "No deberías bromear tanto así…[setExpression(Tachibana,body,annoyed,6)]"
 

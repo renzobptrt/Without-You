@@ -1,8 +1,8 @@
 narrator "[Next()]"
 
-narrator "[setBackground(School_first_floor_0,false,1) setExpression(Tachibana,body,normal,6)]Me acerque con Tachibana a los tablones donde están escritas a que secciones nos asignaron este año."
+narrator "[setBackground(School_first_floor_0,false,1) setExpression(Tachibana,body,normal,6) playMusic(Relax)]Me acerque con Tachibana a los tablones donde están escritas a que secciones nos asignaron este año."
 
-MC "Waaa, no encuentro mi nombre.{c}¿Crees que haya repetido de año y nadie me lo haya dicho hasta ahora?"
+MC "[playMusic(Shera)]Waaa, no encuentro mi nombre.{c}¿Crees que haya repetido de año y nadie me lo haya dicho hasta ahora?"
 
 Tachibana "Tus notas no son tan malas... probablemente solo estas a la derecha del tablero."
 
@@ -26,7 +26,7 @@ narrator "Así que 3ero B...{c}[setBackground(School_third_floor_0,false,1) play
 
 nn "[moveCharacter(Tachibana,0,0,3) enter(Renji) moveCharacter(Renji,1,0,3) setExpression(Renji,body,smile1,6) [setExpression(Tachibana,body,normal,6)]]Sabia que estarias llegando con Tachibana."
 
-narrator "Reconozco esa voz.{c}Era Renji, junto con Tachibana nos conocemos desde pequeños."
+narrator "[playMusic(Time)]Reconozco esa voz.{c}Era Renji, junto con Tachibana nos conocemos desde pequeños."
 
 MC "Así que otra vez mismo salon..."
 
@@ -60,7 +60,7 @@ Renji "[setExpression(Renji,body,smile1,6)]Pertenecían al club de escultura, pe
 
 MC "Siento que he en alguna parte he visto chicas que encajan con esa descripción..."
 
-narrator "Mientras hablábamos entro la profesora al salon.[setBackground(Classroom_0,false,1)]"
+narrator "Mientras hablábamos entro la profesora al salon.[playMusic(Relax) setBackground(Classroom_0,false,1)]"
 
 Sensei "[setExpression(Sensei,body,smug,6) setExpression(Tachibana,body,normal,6) setExpression(Renji,body,normal,6)]Bienvenidos chicos, a su último año de preparatoria, soy Suzume-sensei y estaré a cargo de ustedes.{c}Hoy  tendremos 3 períodos de clase, y antes del receso les daré un anuncio."
 
@@ -88,7 +88,7 @@ narrator "Con las declaraciones de Suzune-Sensei me comenzaron a aumentar ánimo
 
 Sensei "También se establecerá la regla de que, cualquier club que tenga menos de 3 integrantes será obligado a cerrar."
 
-narrator "Algunas expresiones de sorpresa se podían oír a lo largo de la clase.{c}Deben de ser aquellos a los cuales de verdad les agrada desperdiciar su tarde en la escuela...{c}[setExpression(Tachibana,body,o,6)]Pude ver que Tachibana era una de esas personas."
+narrator "[playMusic(Shera)]Algunas expresiones de sorpresa se podían oír a lo largo de la clase.{c}Deben de ser aquellos a los cuales de verdad les agrada desperdiciar su tarde en la escuela...{c}[setExpression(Tachibana,body,o,6)]Pude ver que Tachibana era una de esas personas."
 
 MC "Hey Tachibana..."
 
@@ -108,7 +108,7 @@ MC "Entonces si convenzo a Renji, contigo y conmigo seriamos 3, este año seré 
 
 Tachibana "No lo se… No se si el club de lectura sea el adecuado para ti..."
 
-MC "Oy-"
+MC "[playMusic(Time)]Oy-"
 
 narrator "Otra vez nada sale como lo planeado."
 

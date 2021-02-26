@@ -1,6 +1,6 @@
 narrator "[Next()]"
 
-Tachibana "Hummm."
+Tachibana "[playMusic(Time)]Hummm.[setExpression(Tachibana,body,annoyed,6)]"
 
 MC "Jaja, lo siento, lo siento."
 

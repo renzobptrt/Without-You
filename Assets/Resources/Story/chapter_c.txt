@@ -124,7 +124,7 @@ MC "¿Pero logro animarte, no es así?"
 
 Tachibana "Sí.[setExpression(Tachibana,body,smile2,6)]"
 
-narrator "[setExpression(Tachibana,body,laugh,6) playMusic(MagicalMain)]Tachibana ríe mientras su rostro se ruboriza, y su cabello empieza brillar afirmando mi idea de que es muy linda, hasta pareciera que una luz empieza a emanar de ella"
+narrator "[setExpression(Tachibana,body,laugh,6)]Tachibana ríe mientras su rostro se ruboriza, y su cabello empieza brillar afirmando mi idea de que es muy linda, hasta pareciera que una luz empieza a emanar de ella"
 
 MC "¡Maldición como es que eres tan linda![setExpression(Tachibana,body,shocked,6)]{c}[playSfx(punch) setExpression(Tachibana,body,annoyed,6)]{c}¿Lo ves?, puedes estar tranquila junto a mí."
 

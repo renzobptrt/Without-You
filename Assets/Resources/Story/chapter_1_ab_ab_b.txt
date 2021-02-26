@@ -1,10 +1,10 @@
 narrator "[Next()]"
 
-narrator "Creo que puedo ir con Renji a dar una vuelta, no es como si tuviera algo más para hacer."
+narrator "[playMusic(Relax)]Creo que puedo ir con Renji a dar una vuelta, no es como si tuviera algo más para hacer."
 
 MC "[setExpression(Renji,body,smile3,6)]Claro, vamos, con un poco de suerte encontramos chicas lindas en los clubes..."
 
-Renji "[setBackground(Art_club,false,1)]No necesitaremos tanta suerte, conozco a algunas personas del club de arte, por lo que se es el club con más chicas del colegio."
+Renji "[setBackground(Art_club,false,1) playMusic(Time)]No necesitaremos tanta suerte, conozco a algunas personas del club de arte, por lo que se es el club con más chicas del colegio."
 
 MC "¡Ese es mi mejor amigo!"
 

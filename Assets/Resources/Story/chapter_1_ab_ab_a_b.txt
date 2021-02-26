@@ -10,7 +10,7 @@ MC "Creo que pise una mina..."
 
 narrator "Trato de zafarme con lo primero que se me viene a la mente."
 
-MC "Bueno… Tu sabes…  Si comes demasiados dulces tu nivel de azúcar subirá, también puede causarte malestar…"
+MC "Bueno... Tu sabes... Si comes demasiados dulces tu nivel de azúcar subirá, también puede causarte malestar…"
 
 Tachibana "¿Solo a eso te referias?[setExpression(Tachibana,body,annoyed,6)]"
 
@@ -24,7 +24,7 @@ MC "Si."
 
 choice " "
 {
-  "Pero aun asi seguiras siendo linda"
+  "Pero aun así seguiras siendo linda"
     "[Load(Chapter_1_ab_ab_a_b_a)]"
   "Disculparse"
     "[Load(Chapter_1_ab_ab_a_b_b)]"
