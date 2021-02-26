@@ -6,7 +6,7 @@ Chitose "¿¡!?[setExpression(Chitose,body,shocked,6)]"
 
 narrator "Parece que ya me notaron."
 
-MC "Buenas..."
+MC "Buenas...[playMusic(Time)]"
 
 Chitose "[setExpression(Chitose,body,normal,6) setExpression(Akiko,body,normal,6)]Disculpa no notamos que estabas aquí con nosotras."
 

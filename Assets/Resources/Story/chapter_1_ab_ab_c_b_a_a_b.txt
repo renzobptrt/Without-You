@@ -1,6 +1,6 @@
 narrator "[Next()]"
 
-MC "Tu, ¡Quiero saber más de ti!"
+MC "[playMusic(Shera)]Tu, ¡Quiero saber más de ti!"
 
 Akiko "¡¿?![setExpression(Akiko,body,shocked,6)]"
 
@@ -16,7 +16,7 @@ Akiko "Ya que captaste mi atención te contare algo de mí."
 
 narrator "Mantener una apariencia relajada es difícil con todos estos nervios, pero parece que valió la pena."
 
-Akiko "Has conseguido llamar mi atención, pero ese truco no funcionará 2 veces seguidas, así que será que pienses en algo mejor si nos volvemos a encontrar…{c}Bueno ya te respondí así que iré retirándome.[setExpression(Akiko,body,smile2,6)]"
+Akiko "[playMusic(Time)]Has conseguido llamar mi atención, pero ese truco no funcionará 2 veces seguidas, así que será que pienses en algo mejor si nos volvemos a encontrar…{c}Bueno ya te respondí así que iré retirándome.[setExpression(Akiko,body,smile2,6)]"
 
 MC "¿No estabas esperando a Chitose?"
 

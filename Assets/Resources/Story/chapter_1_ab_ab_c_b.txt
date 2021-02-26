@@ -40,7 +40,7 @@ choice " "
 {
   "Esperar a que Chitose se vaya"
     "[Load(chapter_1_ab_ab_c_b_a)]"
-  "Chantajear a Chitose"
+  "Ofrecerte a ayudar a Chitose"
     "[Load(chapter_1_ab_ab_c_b_b)]"
   "Tratar de escapar"
     "[Load(chapter_1_ab_ab_c_b_c)]"

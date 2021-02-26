@@ -2,7 +2,7 @@ narrator "[Next()]"
 
 narrator "Parece estar de buen humor, creo que puedo preguntarle algunas cosas."
 
-MC "¿Te molestarias si pregunto por los gustos de cierta persona?"
+MC "[playMusic(Relax)]¿Te molestarias si pregunto por los gustos de cierta persona?"
 
 Akiko "¿Hummm, y quién podría ser esa persona?[setExpression(Akiko,body,smile2,6)]"
 

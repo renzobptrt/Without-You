@@ -1,12 +1,12 @@
 narrator "[Next()]"
 
-narrator "Si uso lo que se, creo que puedo acercarme a Chitose."
+narrator "Si uso lo que sé, creo que puedo acercarme a Chitose."
 
 Chitose "Vuelvo en un momento.[setExpression(Chitose,body,smile2,6)]"
 
 narrator "Haré mi movimiento antes que Chitose se marche."
 
-MC "Creo que podemos encontrar que tenemos intereses comunes…"
+MC "[playMusic(Shera)]Creo que podemos encontrar que tenemos intereses comunes…"
 
 Chitose "¡¿?![setExpression(Chitose,body,shocked,6)]"
 
@@ -28,7 +28,7 @@ Chitose "Me interesa tu argumento, pero siento que todavía es muy pronto para e
 
 narrator "Eh? Pensé que estaba marchando bien todo."
 
-Chitose "Pero digamos que, ya que entendiste que tipo de persona estoy buscando…{c}Empezaste bien.[setExpression(Chitose,body,laugh,6)]"
+Chitose "[playMusic(Time)]Pero digamos que, ya que entendiste que tipo de persona estoy buscando…{c}Empezaste bien.[setExpression(Chitose,body,laugh,6)]"
 
 narrator "Luego de eso Chitose y Akiko bajaron por las escaleras.[exit(Chitose;Akiko)]"
 

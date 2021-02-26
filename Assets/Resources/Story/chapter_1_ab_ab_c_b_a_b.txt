@@ -1,6 +1,6 @@
 narrator "[Next()]"
 
-MC "¿También estás en la misma situación que Chitose?"
+MC "[playMusic(Shera)]¿También estás en la misma situación que Chitose?"
 
 narrator "Si le pregunto tal vez entienda mejor…"
 

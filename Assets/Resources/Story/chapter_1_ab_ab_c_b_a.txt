@@ -6,7 +6,7 @@ Akiko "Haaa, a veces tratar contigo también es un poco pesado.[setExpression(Ak
 
 narrator "Creo que puedo acercarme más fácil a ella ahora que está sola."
 
-MC "Creo que deberías ser más sincera con ella."
+MC "[playMusic(Time)]Creo que deberías ser más sincera con ella."
 
 Akiko "¿?[setExpression(Akiko,body,shocked,6)]"
 

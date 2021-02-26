@@ -2,7 +2,7 @@ narrator "[Next()]"
 
 narrator "Creo que escuche lo suficiente, no creo que pueda decir algo ahora.{a} Incomodaría a todos si ahora se sabe que estuve aquí todo el tiempo.{c}Me levanté despacio tratando de no hacer ruido.{c}Pero no me percate de mi mano estaba mal apoyada por lo que rodé y me caí de la banca"
 
-MC "Maldici-"
+MC "[Buzz()]Maldici-"
 
 narrator "Después de un estruendoso ruido ambas chicas voltearon a verme."
 
