@@ -22,7 +22,7 @@ narrator "¿Acaso ella se quedó mirándome?{a} El contacto visual está durando
 
 RandomGirl1 "[setExpression(Chitose,body,sleepy,6) setExpression(Akiko,body,o,6)]¿Ese chico no te parece extraño?"
 
-narrator "[Buzz() playMusic(MagicalMain)]Guuhh, parece que me vine demasiado arriba otra vez{c}Hummm, aunque quizá... si hago bien las cosas, pueda tener una oportunidad.{c}[setBackground(School_Entrance_0,false,1)]Llego a la puerta de la preparatoria. [exit(Chitose) exit(Akiko)]"
+narrator "[Buzz()]Guuhh, parece que me vine demasiado arriba otra vez{c}Hummm, aunque quizá... si hago bien las cosas, pueda tener una oportunidad.{c}[setBackground(School_Entrance_0,false,1)]Llego a la puerta de la preparatoria. [exit(Chitose) exit(Akiko)]"
 
 MC "Todavía faltan 20 minutos para que suene la campana, ojalá Tachibana consiga llegar a tiempo…[playMusic(Time)]"
 

@@ -22,31 +22,31 @@ narrator "Me aliste lo más rápido que pude, gritando para que las palabras de 
 
 MC "*Bosteza*[setBackground(Kitchen_MC_1,false,1)]"
 
-father "Con esa actitud haces que dude sobre mi decisión de darte educación..."
+mcFather "Con esa actitud haces que dude sobre mi decisión de darte educación..."
 
 narrator "Ni siquiera llego a la mesa y ya me están atacando."
 
 MC "¿Acaso han confabulado para estar todos en contra de mi autoestima el día de hoy?"
 
-mother "Es la forma que tiene tu papa de darte ánimos para que comiences bien tu último año escolar."
+mcMother "Es la forma que tiene tu papa de darte ánimos para que comiences bien tu último año escolar."
 
 narrator "¿Cómo es que tratándome mal me darán ánimos?"
 
 MC "Ayudaría mucho más a mis ganas de estudiar, el que me dieran más libertad."
 
-mother "Te paseas libremente por la ciudad con tus amigos, y siempre llegas tarde a casa, no sé qué más libertad quieres."
+mcMother "Te paseas libremente por la ciudad con tus amigos, y siempre llegas tarde a casa, no sé qué más libertad quieres."
 
 MC "Me encantaría que me dejaran tener una novia..."
 
-mother "..."
+mcMother "..."
 
-father "Yo no me opondré si con eso dejas de hacer tanto ruido por las noches.[playMusic(MagicalSecun)]"
+mcFather "Yo no me opondré si con eso dejas de hacer tanto ruido por las noches.[playMusic(MagicalSecun)]"
 
 MC "..."
 
-father "..."
+mcFather "..."
 
-mother "..."
+mcMother "..."
 
 Airi "..."
 

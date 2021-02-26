@@ -24,7 +24,7 @@ narrator "Creo que si pude haber hecho más...{a} la próxima vez, haré algo, p
 
 Tachibana "Con que te preocuparas y me acompañaras... {a}[setExpression(Tachibana,body,smile2,6)]Es, de mucha ayuda.{w 1}Gracias..."
 
-narrator "Parece que ya esta mejor...[playMusic(Time)]{c}[setBackground(School_Entrance_0,false,1)Luego de un rato caminando en silencio, llegamos al colegio."
+narrator "Parece que ya esta mejor...[playMusic(Time)]{c}[setBackground(School_Entrance_0,false,1)]Luego de un rato caminando en silencio, llegamos al colegio."
 
 MC "¿Quieres ir a ver en que salon estaremos?"
 

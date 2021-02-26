@@ -8,7 +8,7 @@ Renji "[setExpression(Renji,body,smile1,6)]Entonces,¿Iras con Tachibana?"
 
 MC "No creo.{c}Creo que estoy con ganas de ir a estar solo a la azotea."
 
-narrator "[exit(Renji) setBackground(school_rooftop_0,false,1) playMusic(Shera)]Llego y me echo a descansar en las bancas que están colocadas en la azotea.{c}[enter(Chitose;Akiko) setPosition(Chitose,1,0,3) setPosition(Akiko,0,0,3) moveCharacter(Akiko,0,0,3) moveCharacter(Chitose,1,0,3) setExpression(Chitose,body,normal,6) setExpression(Akiko,body,normal,6)]Llegan 2 chicas."
+narrator "[exit(Renji) setBackground(school_rooftop_0,false,1) playMusic(Shera)]Llego y me echo a descansar en las bancas que están colocadas en la azotea.{c}[enter(Chitose) enter(Akiko) setPosition(Chitose,1,0,3) setPosition(Akiko,0,0,3) moveCharacter(Akiko,0,0,3) moveCharacter(Chitose,1,0,3) setExpression(Chitose,body,normal,6) setExpression(Akiko,body,normal,6)]Llegan 2 chicas."
 
 Akiko "Creí que sería como en [LastSchoolAkiko], pero aquí no hay sombrillas..."
 

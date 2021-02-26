@@ -27,6 +27,8 @@ public class NovelManager : MonoBehaviour
 
     public GameSavePanel saveLoadPanel;
 
+    public GameObject FinishLayer;
+
     public GameFile activeGameFile
     {
         get { return GameFile.activeFile; }
@@ -569,7 +571,18 @@ public class NovelManager : MonoBehaviour
                     Command_Buzz();
                     break; 
                 }
+            case "FinishGame":
+                {
+                    Command_Finish();
+                    break;
+                }
         }
+    }
+
+    void Command_Finish()
+    {
+        FinishLayer.SetActive(true);
+        FinishLayer.GetComponent<Animator>().SetTrigger("Finish");
     }
 
     void Command_Buzz()
@@ -752,6 +765,7 @@ public class NovelManager : MonoBehaviour
         if (!saveLoadPanel.gameObject.activeInHierarchy)
         {
             saveLoadPanel.gameObject.SetActive(true);
+            isAuto = false;
             SavePanel.anchoredPosition = Vector2.zero;
             SettingsPanel.anchoredPosition = new Vector2(2000f, 0);
         }
@@ -761,6 +775,7 @@ public class NovelManager : MonoBehaviour
     {
         if (!saveLoadPanel.gameObject.activeInHierarchy)
         {
+            isAuto = false;
             saveLoadPanel.gameObject.SetActive(true);
             SavePanel.anchoredPosition = new Vector2(2000f, 0);
             SettingsPanel.anchoredPosition = Vector2.zero;

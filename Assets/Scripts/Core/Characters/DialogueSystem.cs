@@ -89,17 +89,32 @@ public class DialogueSystem : MonoBehaviour
         string retVal = speakerNameText.text; //default is the current name
         if (s != speakerNameText.text && s != "")
         {
-            if (s.ToLower().Contains("narrator"))
+            if (s.ToLower().Equals("narrator"))
             {
                 retVal = "";
             }
-            else if(s.ToLower().Contains("mc"))
+            else if(s.ToLower().Equals("mc"))
             {
                 retVal = NovelManager.instance.mainCharacterName;
             }
+            else if (s.ToLower().Equals("nn") || s.ToLower().Equals("randomgirl1") || s.ToLower().Equals("randomgirl2"))
+            {
+                retVal = "????";
+            }
+            else if (s.ToLower().Equals("tachibanafather"))
+            {
+                retVal = "Papá de Tachibana";
+            }
+            else if (s.ToLower().Equals("mcfather"))
+            {
+                retVal = "Papá";
+            }
+            else if (s.ToLower().Equals("mcmother"))
+            {
+                retVal = "Mamá";
+            }
             else
             {
-
                 retVal = s;
             }
         }

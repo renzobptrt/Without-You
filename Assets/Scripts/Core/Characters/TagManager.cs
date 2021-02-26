@@ -12,7 +12,7 @@ public class TagManager : MonoBehaviour
 
         //Reemplaza mainCharName con el nombre actual del jugador
         s = s.Replace("[mainCharacterName]", NovelManager.instance.mainCharacterName);
-        
+        s = s.Replace("[LastSchoolAkiko]", "Seika");
     }
 
     public static string[] SplitByTags(string targetText)
