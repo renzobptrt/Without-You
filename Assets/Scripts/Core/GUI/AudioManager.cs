@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
 using TMPro;
+using static Callbacks;
 
 
 public class AudioManager : MonoBehaviour
@@ -28,6 +29,8 @@ public class AudioManager : MonoBehaviour
     public AudioSource sfxSource;
 
     public AnimationCurve volumeCurve;
+
+    public Animator TransitionMusic;
 
     void Awake()
     {
@@ -95,7 +98,7 @@ public class AudioManager : MonoBehaviour
     }
 
     public void PlayMusic(AudioClip song, float maxVolume=1f, float maxPitch=1f,
-        float startingVolume=0f,bool playOnStart = true, bool isLoop=true)
+        float startingVolume=1f,bool playOnStart = true, bool isLoop=true)
     {
         if (song != null)
         {
@@ -109,13 +112,16 @@ public class AudioManager : MonoBehaviour
                 }
             }
             if(activeSong == null || activeSong.clip != song)
-                activeSong = new SONG(musicSource,song, maxVolume, maxPitch, startingVolume, playOnStart, isLoop);
+            {
+                activeSong = new SONG(TransitionMusic, musicSource, song, maxVolume, maxPitch, startingVolume, playOnStart, isLoop);
+            }
+                
         }
         else
             activeSong = null;
 
         StopAllCoroutines();
-        StartCoroutine(VolumeLeveling());
+        //StartCoroutine(VolumeLeveling());
     }
 
     IEnumerator VolumeLeveling()
@@ -178,24 +184,40 @@ public class AudioManager : MonoBehaviour
     public class SONG
     {
         public AudioSource source;
+        public Animator Transition;
         public AudioClip clip { get { return source.clip; } set { source.clip = value; } }
         public float maxVolume = 1f;
         public float volume { get { return source.volume; } set { source.volume = value; } }
         public float pitch { get { return source.pitch; } set { source.pitch = value; } }
-        public SONG(AudioSource newSource,AudioClip newClip, float newMaxVolume, float newPitch, float startVolume, bool playOnStart, bool isNewLoop)
+        public SONG(Animator newTransition,AudioSource newSource,AudioClip newClip, float newMaxVolume, float newPitch, float startVolume, bool playOnStart, bool isNewLoop)
         {
             //source = AudioManager.CreateNewSource(string.Format("SONG [{0}]", newClip.name));
             source = newSource;
-            source.clip = newClip;
+            //source.clip = newClip;
             source.volume = startVolume;
             maxVolume = newMaxVolume;
             source.pitch = newPitch;
             source.loop = isNewLoop;
+            Transition = newTransition;
 
             AudioManager.allSongs.Add(this);
 
-            if (playOnStart)
-                source.Play();
+            if(source.clip != null)
+            {
+                print("Entro");
+                AudioManager.instance.StartCoroutine(TransitionNewMusic(newClip,()=> {
+                    //AudioManager.instance.StopAllCoroutines();
+                }));
+                //source.clip = newClip;
+                //source.Play();
+            }
+            else
+            {
+                source.clip = newClip;
+                if (playOnStart)
+                    source.Play();
+            }
+
         }
 
         public void Play()
@@ -222,6 +244,19 @@ public class AudioManager : MonoBehaviour
         {
             AudioManager.allSongs.Remove(this);
             //Destroy(source.gameObject);
+        }
+
+        IEnumerator TransitionNewMusic(AudioClip newClip,OnComplete onComplete = null)
+        {
+            Transition.SetTrigger("IsTransition");
+            //yield return new WaitForEndOfFrame();
+            //Transition.SetTrigger("IsTransition");
+            //source.clip = newClip;
+            //source.Play();
+            //print(source.clip);
+            
+            yield return new WaitForSeconds(0.5f);
+            onComplete();
         }
     }
 }
