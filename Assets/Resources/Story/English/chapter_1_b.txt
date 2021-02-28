@@ -1,0 +1,27 @@
+narrator "I wake as soon as possible,just to stop my annoying sister.[setExpression(Airi,body,angry,6)]"
+
+MC "Damn,how is this my last year?"
+
+narrator "My name is [mainCharacterName] and this year I have to take an admission test."
+
+Airi "Are you ready? or I have to kick your ass to make you move"
+
+narrator "[setExpression(Airi,body,annoyed,6)]and that girl, who is teasing me from the door is my little sister,Airi."
+
+MC "I am putting my clothes as fast as I can,so you don't have to worry.{c}Airi,could you give that shirt..."
+
+narrator "In order to dress me quickly,I ask my sister to pass my clothes but at that moment, I saw one of my erotic magazines lying inside my room."
+
+Airi "Which one?"
+
+narrator "[Buzz()]{c}Before Airi put a foot inside my room,I jumped to hide the magazine with my body."
+
+MC "Nothing,I find it for myself ."
+
+Airi "You make weird things onii-san.[setExpression(Airi,body,annoyed,6)]"
+
+MC "That was a close one."
+
+Airi "Come on,I`m not going to be able to eat my breakfast if you are not here.[setExpression(Airi,body,annoyed,6)]{c}Mom and Dad are going to annoy me if they see that you are not ready..."
+
+"[Load(chapter_c)]"

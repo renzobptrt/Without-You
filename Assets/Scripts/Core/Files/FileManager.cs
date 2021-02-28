@@ -190,8 +190,9 @@ public class FileManager : MonoBehaviour
 	/// <param name="txt">Text.</param>
 	public static List<string> ReadTextAsset(TextAsset txt)
 	{
+		
 		string[] lines = txt.text.Split('\n', '\r');
-
+		print(lines);
 		return ArrayToList(lines);
 	}
 

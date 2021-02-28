@@ -217,6 +217,11 @@ public class NovelManager : MonoBehaviour
 
         if (!System.IO.File.Exists(filePath))
             Next();
+        else
+        {
+            chapterProgress--;
+            Next();
+        }
     }
 
     public void SaveGameFile()
