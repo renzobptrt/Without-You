@@ -9,9 +9,11 @@ public class InputScreen : MonoBehaviour
     public static InputScreen instance;
 
     public TMP_InputField inputField;
+    public Button Button;
     public static string currentInput { get { return instance.inputField.text; } }
 
     public TitleHeader header;
+
 
     public GameObject root;
 
@@ -26,14 +28,6 @@ public class InputScreen : MonoBehaviour
     {
         instance = this;
         Hide();
-    }
-
-    private void Start()
-    {
-        inputField.onSubmit.AddListener(delegate
-        {
-
-        });
     }
 
     public static void Show(string title, bool clearCurrentInput = true)
@@ -62,12 +56,12 @@ public class InputScreen : MonoBehaviour
     static IEnumerator Revealing()
     {
         instance.inputField.gameObject.SetActive(false);
-
+        instance.Button.gameObject.SetActive(false);
         while (instance.header.isRevealing)
             yield return new WaitForEndOfFrame();
 
         instance.inputField.gameObject.SetActive(true);
-
+        instance.Button.gameObject.SetActive(true);
         revealing = null;
     }
 

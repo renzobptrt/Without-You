@@ -62,6 +62,15 @@ public class NovelManager : MonoBehaviour
     public bool isCheck;
     public bool isAuto;
 
+    [Header("Lenguage Components")]
+    public INTERFACE_NOVELSCENE interfaceLenguage;
+    public TextMeshProUGUI[] TextButtonsOptions = null;
+    public TextMeshProUGUI[] TextSettings = null;
+    public TextMeshProUGUI GoMainMenu = null;
+
+    public TextMeshProUGUI FinalText;
+
+
     private void Awake()
     {
         instance = this;
@@ -92,6 +101,20 @@ public class NovelManager : MonoBehaviour
                 else isAuto = false;
             }
         });
+
+        if (PlayerPrefs.GetString("CurrentLenguage").Equals("Spanish"))
+        {
+            SetLenguageText(0);
+            FinalText.text = "Final Parte 1 - Capítulo 1. Gracias por jugar";
+        }
+        else
+        {
+            SetLenguageText(1);
+            FinalText.text = "End of Part 1 - Chapter 1. Thanks for playing";
+        }
+
+
+
     }
 
     // Update is called once per frame
@@ -101,6 +124,16 @@ public class NovelManager : MonoBehaviour
         {
             Next();
         }
+    }
+
+    void SetLenguageText(int position)
+    {
+        for (int i = 0; i < TextButtonsOptions.Length; i++)
+            TextButtonsOptions[i].text = interfaceLenguage.lenguagesText[position].optionsText[i];
+        for (int i = 0; i < TextSettings.Length; i++)
+            TextSettings[i].text = interfaceLenguage.lenguagesText[position].settingsText[i];
+        GoMainMenu.text = interfaceLenguage.lenguagesText[position].goMenu;
+
     }
 
     public bool IsSpeakerIgnore(string speaker)
@@ -793,5 +826,26 @@ public class NovelManager : MonoBehaviour
             SavePanel.anchoredPosition = new Vector2(2000f, 0);
             SettingsPanel.anchoredPosition = Vector2.zero;
         }
+    }
+
+    [System.Serializable]
+    public class INTERFACE_NOVELSCENE
+    {
+        public LENGUAGETEXT_NOVELSCENE[] lenguagesText;
+    }
+
+    [System.Serializable]
+    public class LENGUAGETEXT_NOVELSCENE
+    {
+        public enum NAMELENGUAGETEXT
+        {
+            spanish,
+            english
+        }
+        public NAMELENGUAGETEXT nameLenguage = NAMELENGUAGETEXT.spanish;
+        public string[] optionsText;
+        public string goMenu = string.Empty;
+        public string[] settingsText = null;
+        public string inputText = null;
     }
 }
