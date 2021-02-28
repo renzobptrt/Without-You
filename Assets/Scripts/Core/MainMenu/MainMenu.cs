@@ -7,22 +7,21 @@ using static Callbacks;
 using DG.Tweening;
 using TMPro;
 
-public enum LENGUAGE
-{
-    spanish,
-    english
-}
-
 public class MainMenu : MonoBehaviour
-{
+{   
+    [Header("General Components")]
     public RectTransform[] MainContainers = null;
     public Button[] ButtonsOptionsMainMenu = null;
     public Button[] ButtonsOptionsMenu = null;
-    public Sprite[] SpriteNormalOptionsMenu = new Sprite[4];
+    [HideInInspector] public Sprite[] SpriteNormalOptionsMenu = new Sprite[4];
 
     public RectTransform[] PanelsOption = null;
 
     public GameSavePanel saveLoadPanel;
+
+    public TextMeshProUGUI[] LoadText;
+    public TextMeshProUGUI[] SettingsText;
+    public TextMeshProUGUI[] HelpText;
 
     [Header("Audio Componentes")]
     public Slider musicSlider;
@@ -39,8 +38,6 @@ public class MainMenu : MonoBehaviour
     }
     public string selectedGameFile = "";
 
-    public LENGUAGE startLenguage = LENGUAGE.spanish;
-
     [Header("Auto and Lenguage")]
     public Button[] AutoButtons = null;
     public Button[] LenguageButtons = null;
@@ -50,6 +47,9 @@ public class MainMenu : MonoBehaviour
 
     public Color DefaultText;
     public Color SelectText;
+
+    [Header("Interface Text")]
+    public INTERFACE_MENUSCENE interfaceText;
 
     private void Start()
     {
@@ -146,19 +146,43 @@ public class MainMenu : MonoBehaviour
         SetSelect(CurrentButtons,position);
         if(position == 0) PlayerPrefs.SetInt("IsAuto", 0);
         else PlayerPrefs.SetInt("IsAuto", 1);
-
-        print("Automatico: " + PlayerPrefs.GetInt("IsAuto"));
     }
 
     void SetLenguage(Button[] CurrentButtons,int position)
     {
         SetSelect(CurrentButtons,position);
-        if (position == 0) PlayerPrefs.SetString("CurrentLenguage", "Spanish");
-        else PlayerPrefs.SetString("CurrentLenguage", "English");
+        if (position == 0)
+        {
+            PlayerPrefs.SetString("CurrentLenguage", "Spanish");
+            SetLenguageText(0);
+        }
+        else { 
+            PlayerPrefs.SetString("CurrentLenguage", "English");
+            SetLenguageText(1);
+        }
 
         print("Idioma actual: " + PlayerPrefs.GetString("CurrentLenguage"));
     }
 
+    void SetLenguageText(int lenguage)
+    {
+        LENGUAGETEXT_MENUSCENE currentLenguageSelect = interfaceText.lenguagesText[lenguage];
+
+        for (int i = 0; i < ButtonsOptionsMainMenu.Length; i++)
+            ButtonsOptionsMainMenu[i].GetComponentInChildren<TextMeshProUGUI>().text = currentLenguageSelect.mainMenuText[i];
+
+        for(int i=0; i < ButtonsOptionsMenu.Length; i++)
+            ButtonsOptionsMenu[i].GetComponentInChildren<TextMeshProUGUI>().text = currentLenguageSelect.optionsButtonSettingText[i];
+
+        for(int i = 0; i < LoadText.Length; i++)
+            LoadText[i].text = currentLenguageSelect.loadText;
+
+        for(int i = 0; i < SettingsText.Length; i++)
+            SettingsText[i].text = currentLenguageSelect.settingsText[i];
+
+        for (int i = 0; i < HelpText.Length; i++)
+            HelpText[i].text = currentLenguageSelect.helpText[i];
+    }
 
     void Command_PlaySfx(string data)
     {
@@ -300,5 +324,27 @@ public class MainMenu : MonoBehaviour
             else
                 PanelsOption[i].anchoredPosition = new Vector2(2000f, 0f);
         }
+    }
+
+    [System.Serializable]
+    public class INTERFACE_MENUSCENE
+    {
+        public LENGUAGETEXT_MENUSCENE[] lenguagesText;
+    }
+
+    [System.Serializable]
+    public class LENGUAGETEXT_MENUSCENE
+    {
+        public enum NAMELENGUAGETEXT
+        {
+            spanish,
+            english
+        }
+        public NAMELENGUAGETEXT nameLenguage = NAMELENGUAGETEXT.spanish;
+        public string[] mainMenuText = null;
+        public string[] optionsButtonSettingText = null;
+        public string loadText = null;
+        public string[] settingsText = null;
+        public string[] helpText = null;
     }
 }
