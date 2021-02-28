@@ -1,3 +1,0 @@
-narrator "[Next()]"
-
-narrator "[playMusic(End2) FinishGame()]..."

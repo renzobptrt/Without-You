@@ -87,6 +87,9 @@ public class NovelManager : MonoBehaviour
                 isCheck = true;
                 CheckInput.transform.localScale = Vector2.zero;
                 CheckInput.interactable = false;
+                if (PlayerPrefs.GetInt("IsAuto") == 0)
+                    isAuto = true;
+                else isAuto = false;
             }
         });
     }
@@ -118,6 +121,7 @@ public class NovelManager : MonoBehaviour
         activeGameFileName = gameFileName;
 
         string filePath = FileManager.savPath + "savData/gameFiles/" + gameFileName + ".txt";
+        print(filePath);
 
         if (!System.IO.File.Exists(filePath))
         {
@@ -133,7 +137,7 @@ public class NovelManager : MonoBehaviour
 
         //Load the file
         //data = FileManager.LoadFile(FileManager.savPath + "Resources/Story/" + activeGameFile.chapterName);
-        data = FileManager.ReadTextAsset(Resources.Load<TextAsset>($"Story/{activeGameFile.chapterName}"));
+        data = FileManager.ReadTextAsset(Resources.Load<TextAsset>($"Story/{PlayerPrefs.GetString("CurrentLenguage")}/{activeGameFile.chapterName}"));
         activeChapterName = activeGameFile.chapterName;
         cachedLastSpeaker = activeGameFile.cachedLastSpeaker;
         mainCharacterName = activeGameFile.playerName;
@@ -150,10 +154,15 @@ public class NovelManager : MonoBehaviour
         for (int i = 0; i < activeGameFile.charactersInScene.Count; i++)
         {
             GameFile.CHARACTERDATA data = activeGameFile.charactersInScene[i];
-            Character character = CharacterManager.instance.CreateCharacter(data.characterName,data.enabled);
-            string rightExpression = data.bodyExpression.Split('_')[1];
-            character.SetNewEmotion(rightExpression);
-            character.SetPosition(data.position);
+
+            if(data.bodyExpression != "AlphaOnly" && data.bodyExpression != string.Empty)
+            {
+                Character character = CharacterManager.instance.CreateCharacter(data.characterName, data.enabled);
+                print(data.bodyExpression);
+                string rightExpression = data.bodyExpression.Split('_')[1];
+                character.SetNewEmotion(rightExpression);
+                character.SetPosition(data.position);
+            }
         }
 
         //Load the layer
@@ -244,7 +253,7 @@ public class NovelManager : MonoBehaviour
     {
         activeChapterName = fileName;
 
-        data = FileManager.ReadTextAsset(Resources.Load<TextAsset>($"Story/{fileName}"));
+        data = FileManager.ReadTextAsset(Resources.Load<TextAsset>($"Story/{PlayerPrefs.GetString("CurrentLenguage")}/{fileName}"));
         if(Resources.Load<TextAsset>($"Story/{fileName}") == null)
         {
             DialogueSystem.instance.speechText.text = "No encuentro";
@@ -278,7 +287,11 @@ public class NovelManager : MonoBehaviour
         isAuto = !isAuto;
 
         if (isAuto)
+        {
             Next();
+            PlayerPrefs.SetInt("IsAuto", 0);
+        }else
+            PlayerPrefs.SetInt("IsAuto", 1);
     }
 
     IEnumerator HandlingChapterFile()

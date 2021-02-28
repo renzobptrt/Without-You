@@ -1,0 +1,11 @@
+MC "Lo siento…[setExpression(Tachibana,body,annoyed,6)]"
+
+narrator "Creo que  me excedi un poco."
+
+MC "Quize hacer un chiste mientras trataba de cuidarte."
+
+Tachibana "..."
+
+narrator "No hay respuesta.{c}Parece que ahora si esta verdaderamente molesta."
+
+"[Load(Chapter_1_ab_ab_a_ab2)]"

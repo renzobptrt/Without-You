@@ -1,0 +1,137 @@
+narrator "[setBackground(School_first_floor_0,false,1) setExpression(Tachibana,body,normal,6) playMusic(Relax)]Me acerque con Tachibana a los tablones donde están escritas a que secciones nos asignaron este año."
+
+MC "[playMusic(Shera)]Waaa, no encuentro mi nombre.{c}¿Crees que haya repetido de año y nadie me lo haya dicho hasta ahora?"
+
+Tachibana "Tus notas no son tan malas... probablemente solo estas a la derecha del tablero."
+
+narrator "Después de buscar durante un minuto entero, encontré mi nombre en la misma sección que la de Tachibana."
+
+MC "Es muy bueno que para la distribución no tomen en cuenta las notas, sino jamás podría estar en el mismo salón que tú."
+
+Tachibana "[mainCharacterName] parece que pasaremos juntos este año también.[setExpression(Tachibana,body,smile2,6)]"
+
+narrator "Trato de usar el mismo truco de Tachibana y encantarla con una cálida sonrisa."
+
+MC "Este año también cuida de mí."
+
+Tachibana "[setExpression(Tachibana,body,laugh,6)]Igualmente, aunque creo que te presionare más para que estudies mas esta vez."
+
+narrator "Parece que no funcionó..."
+
+Tachibana "Ya esta siendo hora de ir al salon."
+
+narrator "Así que 3ero B...{c}[setBackground(School_third_floor_0,false,1) playSfx(door)]Mientras abría la puerta pude sentir que alguien apoyaba su brazo con todo su peso sobre mi."
+
+nn "[moveCharacter(Tachibana,0,0,3) enter(Renji) moveCharacter(Renji,1,0,3) setExpression(Renji,body,smile1,6) setExpression(Tachibana,body,normal,6)]Sabia que estarias llegando con Tachibana."
+
+narrator "[playMusic(Time)]Reconozco esa voz.{c}Era Renji, junto con Tachibana nos conocemos desde pequeños."
+
+MC "Así que otra vez mismo salon..."
+
+Renji "¿Eh? ¿Ni siquiera buscaste mi nombre en el tablón?[setExpression(Renji,body,smirk,6)]"
+
+MC "Ni que fueras mi novia...[setExpression(Tachibana,body,o,6)]"
+
+Renji "[setExpression(Renji,body,laugh,6)]Vamos, no seas tan frío viejo jajaja."
+
+narrator "Al final del año pasado se organizó una fiesta con un par de escuelas vecinas, Renji al ser bien parecido logró que le invitaran.{c}¡Y el maldito no intentó colarme!"
+
+MC "Sería más amigable si me hubieras avisado que lograste conseguir una invitación para la fiesta del año pasado..."
+
+Renji "[setExpression(Renji,body,smile1,6) setExpression(Tachibana,body,normal,6)]Sabes que si te decía ibas a querer que te lleve, además me terminaron botando de todas maneras por intentar coquetear con una de las organizadoras.{c}Quien iba a pensar que tenia enamorado...{c}[setExpression(Renji,body,smile3,6)]Y para disculparme  hasta te consegui informacion sobre un par de bellezas que se unen este año, ademas tu tambien me hubieras abandonado si hubieras tenido esa oportunidad."
+
+MC "¡Renji, viejo amigooo!"
+
+narrator "Decidi perdonarlo por que tiene razón en que lo hubiese abandonado, y en parte porque quería esa información."
+
+Tachibana "[setExpression(Tachibana,body,annoyed,6)]Ustedes solo hablan de chicas todo el tiempo..."
+
+Renji "[setExpression(Renji,body,smile1,6)]Sabes [mainCharacterName] en la fiesta del año pasado escuche que 2 chicas de [schoolName] se iban a transferir este año."
+
+MC "Bastantes personas cambian de escuela todos los año..."
+
+Renji "[setExpression(Renji,body,smirk,6)]¡Si pero ellas son prácticamente modelos!"
+
+narrator "Con una sola frase volvió a captar toda mi atención."
+
+Renji "[setExpression(Renji,body,smile1,6)]Pertenecían al club de escultura, pero todos les decían que debían ser modelos."
+
+MC "Siento que he en alguna parte he visto chicas que encajan con esa descripción..."
+
+narrator "Mientras hablábamos entro la profesora al salon.[playMusic(Relax) setBackground(Classroom_0,false,1)]"
+
+Sensei "[setExpression(Sensei,body,smug,6) setExpression(Tachibana,body,normal,6) setExpression(Renji,body,normal,6)]Bienvenidos chicos, a su último año de preparatoria, soy Suzume-sensei y estaré a cargo de ustedes.{c}Hoy  tendremos 3 períodos de clase, y antes del receso les daré un anuncio."
+
+MC "¿Humm? parece que nos tocó una sensei muy hermosa esta vez, tu que opinas Renji."
+
+Renji "[setExpression(Renji,body,smile1,6)]Un 8 de 10, parece bastante joven."
+
+Tachibana "[setExpression(Tachibana,body,annoyed,6)]¿En serio están hablando sobre la profesora?"
+
+Sensei "Procedere tomar lista y a la repartición de los sitios."
+
+narrator "...{c}[exit(Renji) moveCharacter(Sensei,0.85,0,3) moveCharacter(Tachibana,0.15,0,3) setExpression(Tachibana,body,normal,6)]Tuve mucha suerte junto con Tachibana, nos mandaron a la fila del fondo.{a}Renji solo esta 2 asientos adelante nuestro."
+
+MC "No está mal, al menos tengo algo que admirar si me aburro de la clase..."
+
+narrator "Puedo sentir como Tachibana está tratando de hacerse más pequeña en su silla."
+
+Sensei "[setExpression(Sensei,body,angry,6)]Ahora si empezamos con la clase."
+
+narrator "...{c}Después de 3 aburridas horas de clase, llegó el momento de que Suzume-Sensei diera su anuncio."
+
+Sensei "Como ya saben nuestra escuela tiene un grupo de clubes tanto culturales, como artísticos y deportivos, hasta el año pasado se les exigía a los estudiantes a pertenecer a alguno, este año será opcional..."
+
+narrator "Con las declaraciones de Suzune-Sensei me comenzaron a aumentar ánimos."
+
+Sensei "También se establecerá la regla de que, cualquier club que tenga menos de 3 integrantes será obligado a cerrar."
+
+narrator "[playMusic(Shera)]Algunas expresiones de sorpresa se podían oír a lo largo de la clase.{c}Deben de ser aquellos a los cuales de verdad les agrada desperdiciar su tarde en la escuela...{c}[setExpression(Tachibana,body,o,6)]Pude ver que Tachibana era una de esas personas."
+
+MC "Hey Tachibana..."
+
+narrator "[exit(Sensei) moveCharacter(Tachibana,0.5,0,3) setExpression(Tachibana,body,normal,6)]Tachibana voltea a verme ni bien escucha que la llamó."
+
+MC "¿Ibas a unirte a algún club?"
+
+Tachibana "Este año me tocaba ser la presidenta del club de lectura, pero ya el año pasado tuvimos problemas con la cantidad de miembros...{c}[setExpression(Tachibana,body,sad,6)]Y ahora que no será obligatorio, tengo miedo que no lleguemos ni a los 3 miembros."
+
+narrator "Aunque no me gusta mucho la lectura, creo que puedo acercarme mas a ella si la ayudo."
+
+MC "¿Solo se necesitan 3 como mínimo, no?"
+
+Tachibana "Si."
+
+MC "Entonces si convenzo a Renji, contigo y conmigo seriamos 3, este año seré el salvador de tu club."
+
+Tachibana "No lo se… No se si el club de lectura sea el adecuado para ti..."
+
+MC "[playMusic(Time)]Oy-"
+
+narrator "Otra vez nada sale como lo planeado."
+
+MC "Vamos, aunque no lo parezca soy de los que leen mucho."
+
+Tachibana "..."
+
+narrator "Supongo que intentar engañarla no funcionara..."
+
+Tachibana "[setExpression(Tachibana,body,normal,4)]Entonces si necesito miembros, me ayudaras ¿Verdad?"
+
+MC "Parece que al final solo le queda aceptar."
+
+narrator "Mientras terminaba de hablar con Tachibana, sonó el timbre.{c}[exit(Tachibana)]Tachibana tiene la costumbre de ir al jardín de la escuela para comer su almuerzo, generalmente cambia de sitio cuando la sigo, parece que le gusta comer sola.{c}En lo personal me gusta más la azotea, está permitido el paso, pero por alguna razón a las demás personas no les gusta, parece que no aguantan estar sin aire acondicionado...[moveCharacter(Renji,0.5,0)]"
+
+Renji "[enter(Renji) setPosition(Renji,0.5,0) setExpression(Renji,body,normal,4)][mainCharacterName], quieres ir a visitar la sala de los clubes?"
+
+narrator "Creo que tengo tiempo para hacer un par de cosas en este receso."
+
+choice " "
+{
+  "Seguir a Tachibana"
+    "[Load(chapter_1_ab_ab_a)]"
+  "Seguir a Renji"
+    "[Load(chapter_1_ab_ab_b)]"
+  "Subir a la azotea"
+    "[Load(chapter_1_ab_ab_c)]" 
+}

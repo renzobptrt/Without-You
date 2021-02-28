@@ -1,0 +1,27 @@
+narrator "Me levanto lo más rápido que puedo para que mi hermana me deje de molestar.[setExpression(Airi,body,angry,6)]"
+
+MC "Maldición, como es que ya es mi ultimo año..."
+
+narrator "Mi nombre es [mainCharacterName] y este año son los exámenes de admisión."
+
+Airi "¿Vas a alistarte? O tengo que patearte para que te muevas..."
+
+narrator "[setExpression(Airi,body,annoyed,6)]Y La chica que está molestándome desde la puerta esperándome es mi hermana menor Airi."
+
+MC "Estoy cambiándome lo más rápido que puedo, así que no te preocupes.{c}Airi, puedes pasarme esa cami-"
+
+narrator "Para acelerar las cosas trato de pedirle a mi hermana que me alcance mi ropa, pero me doy cuenta que una de mis revistas eróticas esta tirada cerca de la mi ropero."
+
+Airi "¿Qué cosa?"
+
+narrator "[Buzz()]{c}Antes de que Airi de un paso dentro de mi habitación me lanzo hacia la revista para cubrirla con mi cuerpo."
+
+MC "Nada, nada ya la encontré yo."
+
+Airi "Haces cosas muy raras onii-san.[setExpression(Airi,body,annoyed,6)]"
+
+MC "A salvo."
+
+Airi "¿Quieres apurarte? no voy a poder desayunar si no bajas conmigo.[setExpression(Airi,body,annoyed,6)]{c}Ya que mama y papa estarán molestando si ven que no estás listo..."
+
+"[Load(chapter_c)]"

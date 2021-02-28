@@ -1,0 +1,15 @@
+narrator "Parece estar de buen humor, creo que puedo preguntarle algunas cosas."
+
+MC "[playMusic(Relax)]¿Te molestarias si pregunto por los gustos de cierta persona?"
+
+Akiko "¿Hummm, y quién podría ser esa persona?[setExpression(Akiko,body,smile2,6)]"
+
+narrator "Pregunta Akiko mientras hace una sonrisa burlona, como si ya supiera la respuesta."
+
+choice " "
+{
+  "Quiero saber los gustos de Chitose"
+    "[Load(chapter_1_ab_ab_c_b_a_a_a)]"
+  "Tu, ¡Quiero saber más de tí!"
+    "[Load(chapter_1_ab_ab_c_b_a_a_b)]"
+}

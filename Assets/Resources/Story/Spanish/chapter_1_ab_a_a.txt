@@ -1,0 +1,41 @@
+narrator "No creo que Tachibana pueda responderle, parece estar demasiado nerviosa como para decir algo.{c}Pero tampoco sé si debería hablar con él, puede ser que se moleste más…"
+
+tachibanaFather"¿Y?"
+
+narrator "Pero ahora lo que más importa es que Tachibana no se deprima más.{c}Me arme de valor y trate de hablar claro para sonar formal frente a su papá."
+
+MC "Tachibana no pudo guardar su almuerzo antes de salir, así que la estoy acompañando para que lo recoja y poder volver a la escuela."
+
+narrator "Puedo ver cómo es el papá de Tachibana hace con una expresión de molestia, como si esperara que Tachibana fuera la que respondiera."
+
+tachibanaFather "Que no te vuelva a pasar..."
+
+narrator "Y con una expresión fría retoma su camino a su trabajo.{c}Sabía que no se estaban llevando bien últimamente, pero no pensé que fuera tan serio...{c}Conforme se alejaba su papá, Tachibana recobraba su tranquilidad[setExpression(Tachibana,body,normal,6)]"
+
+MC "Haaaaa"
+
+narrator "Pensé que me iba ha devorar en cualquier momento… [playMusic(Relax)]{c}Tachibana parece haber terminado de asimilar lo ocurrido."
+
+MC "Lamento haber hablado por ti...{a}[setExpression(Tachibana,body,o,6)]¿Eh?"
+
+Tachibana "Gr-{a}gracias…[setExpression(Tachibana,body,normal,6) playMusic(Here)]"
+
+narrator "E- Espera…{c}Acaso… ¡¿¿Esto me consiguió más puntos que animarla?!!"
+
+Tachibana "[setExpression(Tachibana,body,smile1,6)]¿Vamos?"
+
+MC "¿Eh? Ah, si, si no empezamos a caminar no llegaremos a tiempo."
+
+narrator "Una vez empezamos caminar uno al lado del otro, note que la atmósfera era diferente a cuando nos encontramos por primera vez esta mañana.{c}Y aunque no estemos conversando… de alguna manera se siente…{w 1}Más emocionante..."
+
+narrator "[setBackground(School_Entrance_0,false,1) setExpression(Tachibana,body,normal,6) playMusic(Time)]Una vez llegado al colegio, tal vez por que ya no estabamos solos, o porque teníamos que apurarnos, pero la situación entre nosotros se calmó un poco…"
+
+MC "Eh… Tachibana…"
+
+Tachibana "¿Si [mainCharacterName]?"
+
+MC "Creo que deberíamos ir a ver qué salon nos tocó."
+
+Tachibana "Uhm.."
+
+"[Load(chapter_1_ab_ab)]"
