@@ -6,7 +6,7 @@ Akiko "I know what you try to do...[setExpression(Akiko,body,smug,6)]"
 
 narrator "It seems she saw completely through me."
 
-Akiko "But since you dared to ask, I’ll give you a hint…[setExpression(Akiko,body,smile2,6)]{c} Chitose's situation is totally different from mine. "
+Akiko "But since you dared to ask, I’ll give you a hint…[setExpression(Akiko,body,smile2,6)]{c} Chitose's situation is totally different from mine."
 
 narrator "She answered me with a mocking smile on her face."
 

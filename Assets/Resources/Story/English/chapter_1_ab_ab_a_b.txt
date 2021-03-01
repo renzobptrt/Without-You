@@ -2,15 +2,15 @@ narrator "She is very cute when she makes that sound.{c}Although I´m a bit asha
 
 MC "Come on, you know that if you keep eating so many candies it won´t do your health any good."
 
-Tachibana "What are you talking about "
+Tachibana "What are you talking about."
 
 MC "I think I stepped on a mine..."
 
 narrator "I try to get away with the first thing that comes to my mind."
 
-MC "Well…You know… If you eat too many candy, your sugar level will rise".
+MC "Well…You know… If you eat too many candy, your sugar level will rise."
 
-Tachibana "Is that just what you mean[setExpression(Tachibana,body,annoyed,6)]".
+Tachibana "Is that just what you mean.[setExpression(Tachibana,body,annoyed,6)]."
 
 narrator "She wants to get the truth out of me with his eyes!.{c}Damn, her gaze is analyzing me, I feel like I´m breaking into a sweat."
 

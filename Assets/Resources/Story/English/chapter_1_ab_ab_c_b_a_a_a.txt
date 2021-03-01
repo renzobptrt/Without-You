@@ -1,4 +1,4 @@
-MC "I want to know what kind of person Chitose is looking for …"
+MC "I want to know what kind of person Chitose is looking for..."
 
 Akiko "I was expecting that question.[setExpression(Akiko,body,laugh,6)]"
 
@@ -10,7 +10,7 @@ narrator "I did not expect to find out everything."
 
 Akiko "If you want an opportunity with her, show her that you can manipulate people.[setExpression(Akiko,body,smug,6)]"
 
-narrator "And why does she need someone like that? Well, it's not that I couldn't try ..."
+narrator "And why does she need someone like that? Well, it's not that I couldn't try..."
 
 Akiko "It's the only thing I can tell you.[setExpression(Akiko,body,smile2,6)]"
 

@@ -18,7 +18,7 @@ Akiko "[playMusic(Time)]You've managed to get my attention, but that trick won't
 
 MC "Weren't you waiting for Chitose?"
 
-Akiko "Yes, but I think it's funnier if I leave you here thinking…"
+Akiko "Yes, but I think it's funnier if I leave you here thinking..."
 
 narrator "[exit(Akiko)]..."
 

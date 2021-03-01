@@ -1,6 +1,6 @@
 narrator "She seems to be in a good mood, I think I can ask her some questions."
 
-MC "[playMusic(Relax)]Would you mind if I asked about the likes of a certain person? "
+MC "[playMusic(Relax)]Would you mind if I asked about the likes of a certain person?"
 
 Akiko "Hmm, and who could that person be?[setExpression(Akiko,body,smile2,6)]"
 

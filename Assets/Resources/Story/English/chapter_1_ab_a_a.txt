@@ -26,7 +26,7 @@ Tachibana "[setExpression(Tachibana,body,smile1,6)]Shall we go?"
 
 MC "He? Ah, right, if we don't start walking we won't get there on time."
 
-narrator "Once we started walking side by side, I noticed that the atmosphere was different than when we first met this morning.{c}And even though we're not talking… somehow it feels… {w 1}More exciting ..."
+narrator "Once we started walking side by side, I noticed that the atmosphere was different than when we first met this morning.{c}And even though we're not talking… somehow it feels… {w 1}More exciting..."
 
 narrator "[setBackground(School_Entrance_0,false,1) setExpression(Tachibana,body,normal,6) playMusic(Time)]Once we got to school, maybe because we weren't alone anymore, or because we had to hurry, but the situation between us calmed down a bit ..."
 

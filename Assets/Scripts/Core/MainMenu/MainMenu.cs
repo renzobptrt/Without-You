@@ -111,8 +111,8 @@ public class MainMenu : MonoBehaviour
 
         if (!PlayerPrefs.HasKey("CurrentLenguage"))
         {
-            PlayerPrefs.SetString("CurrentLenguage", "Spanish");
-            SetLenguage(LenguageButtons, 0);
+            PlayerPrefs.SetString("CurrentLenguage", "English");
+            SetLenguage(LenguageButtons, 1);
         }
         else
         {

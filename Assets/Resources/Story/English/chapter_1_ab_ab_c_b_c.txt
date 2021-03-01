@@ -8,7 +8,7 @@ Chitose "...[setExpression(Chitose,body,o,6)]"
 
 Akiko "...[setExpression(Akiko,body,o,6)]"
 
-MC "Jaja, jaja,sorry to interrupt your conversation ."
+MC "Jaja, jaja,sorry to interrupt your conversation."
 
 Chitose "Don`t worry it is our fault for not checked if someone was here.[setExpression(Chitose,body,smile2,6) setExpression(Akiko,body,annoyed,6)]"
 

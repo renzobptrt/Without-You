@@ -26,7 +26,7 @@ Chitose "I like your point but I think its too early for began something."
 
 narrator "Eh? I thought that all was going smooth."
 
-Chitose "[playMusic(Time)]But let`s said that you understand what kind of guy I`m looking…{c}You made a good start.[setExpression(Chitose,body,laugh,6)]"
+Chitose "[playMusic(Time)]But let`s said that you understand what kind of guy I`m looking...{c}You made a good start.[setExpression(Chitose,body,laugh,6)]"
 
 narrator "After that Chitose and Akiko go down stairs.[exit(Chitose;Akiko)]"
 

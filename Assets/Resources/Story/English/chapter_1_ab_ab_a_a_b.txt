@@ -1,4 +1,4 @@
-Narrator "I can´t hide the fact that I think that all girls are beautiful.{c}But she think that I´m saying that because I'm desperate"
+narrator "I can´t hide the fact that I think that all girls are beautiful.{c}But she think that I´m saying that because I'm desperate"
 
 MC "Tachibana, you are so beautiful.[setExpression(Tachibana,body,o,6)]"
 
