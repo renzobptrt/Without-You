@@ -1,0 +1,23 @@
+narrator "I think I'll follow Tachibana; after all we were talking about joining his club..."
+
+MC "Sorry Renji, I think I'll go with Tachibana."
+
+Renji "[setExpression(Renji,body,angry1,6)]So now you abandon me for a girl?"
+
+narrator "[playMusic(Shera)]Even though he said otherwise, Renji didn't seem to mind that I decided not to go with him, he probably still guilty of abandoning me...{c}[setExpression(Renji,body,normal,6)]Renji has always supported me with Tachibana, although unfortunately it has not borne fruit...{c}[exit(Renji)]Once Renji was notified of my intentions, I decided to leave the room. {c}The academy has several gardens, but there is one of them that is not very popular.{c}Except for one person...{c}[setBackground(School_garden_0,false,1)]I walk to the back garden.{a}I find Tachibana eating a piece of cake."
+
+MC "So here you were."
+
+Tachibana "[enter(Tachibana) setPosition(Tachibana,0.5,0) setExpression(Tachibana,body,o,6)]Hiiii."
+
+narrator "I think I'm getting used to her making that sound."
+
+Tachibana "[setExpression(Tachibana,body,normal,6)]Mouu, Don't scare me like that,{a} It has already been several times this day..."
+
+choice " "
+{
+  "You are cute when you get scared"
+    "[Load(chapter_1_ab_ab_a_a)]"
+  "You shouldn't eat so many sweets"
+    "[Load(chapter_1_ab_ab_a_b)]"
+}

@@ -1,0 +1,22 @@
+MC "[playMusic(Shera)] Are you also in the same situation as Chitose?"
+
+narrator " If I ask her, maybe her understand better ... "
+
+Akiko "I know what you try to do…[setExpression(Akiko,body,smug,6)]"
+
+narrator " It seems she saw completely through me."
+
+Akiko "But since you dared to ask, I’ll give you a hint…
+[setExpression(Akiko,body,smile2,6)]{c} Chitose’s situation is totally different from mine. "
+narrator " She answered me with a mocking smile on her face."
+
+Akiko "Well, I already answered you, so I'll go find Chitose.[setExpression(Akiko,body,smug,6)]"
+
+MC "Weren't you going to wait for her?"
+Akiko " Yeah, but would be strange if she finds us talking [setExpression(Akiko,body,smile2,6)]…{c} Although I would like to see what expression she would make if she saw me overtake her in meeting more people."
+
+MC "I like the way you think."
+
+narrator "And so, she say goodbye.[exit(Akiko)]"
+
+"[Load(chapter_1_ab_ab_c_ab1)]"

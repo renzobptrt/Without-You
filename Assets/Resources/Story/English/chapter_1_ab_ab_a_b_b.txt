@@ -1,0 +1,11 @@
+MC “Sorry…”
+
+Narrator: “ I think I overdid it a bit.”
+
+MC: “I wanted to make a joke while trying to  take care of you.”
+
+Tachibana "..."
+
+narrator "There’s no answer.{c} It looks like she is very angry”
+
+"[Load(Chapter_1_ab_ab_a_ab2)]"

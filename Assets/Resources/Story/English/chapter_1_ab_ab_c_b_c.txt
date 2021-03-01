@@ -1,0 +1,17 @@
+narrator "I think that I have listened enough but I don't have anything to say.{a} It would be awkward if they discover that I had been here during all the time.{c} I get up slowly in order to avoid make any noise.{c} But I realized that my hand was in a bad position and I fell from the bench."
+
+MC "[Buzz()] Dam(Maldici)-"
+
+narrator "After a sudden noise both girls turn toward me."
+
+Chitose "...[setExpression(Chitose,body,o,6)]"
+
+Akiko "...[setExpression(Akiko,body,o,6)]"
+
+MC "Jaja, jaja,sorry to interrupt your conversation ."
+
+Chitose "Don`t worry it is our fault for not checked if someone was here .[setExpression(Chitose,body,smile2,6) setExpression(Akiko,body,annoyed,6)]"
+
+narrator "After that both girls went the stairs.[exit(Chitose;Akiko)]"
+
+"[Load(chapter_1_ab_ab_c_ab2)]"

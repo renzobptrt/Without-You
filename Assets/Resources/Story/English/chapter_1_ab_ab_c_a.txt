@@ -1,0 +1,28 @@
+narrator " Maybe if I show up now, I will have a chance to join their conversation.{a} And we could start as friends.{c} I try to get up slowly pretending to have been asleep but trying to get noticed."
+		
+Chitose "¿¡!?[setExpression(Chitose,body,shocked,6)]"
+
+narrator "It seems they already noticed me."
+
+MC "Hey...[playMusic(Time)]"
+
+Chitose "[setExpression(Chitose,body,normal,6) setExpression(Akiko,body,normal,6)]Sorry, we didn't notice you were here."	
+
+MC " Haha you don't have to worry about that, by the way, I heard you came from another school...{c} Do you want me to give you a tour? "
+
+Akiko "It's impolite to listen to other people's conversation! [setExpression(Akiko,body,angry,6)]"
+
+narrator " It seems that Akiko is a bit… aggressive… "
+
+Chitose "[setExpression(Chitose,body,smile1,6)] Come on Akiko, he didn't mean to listen to us anyway ... "
+Akiko "Hmm...[setExpression(Akiko,body,annoyed,6)]"
+
+Chitose " This time I think we will pass, but if we ever need you, we will let you know."
+
+narrator " Wow, that hurt more than what Akiko said."
+
+Chitose "[setExpression(Chitose,body,sad,6)] We're sorry to have interrupted your nap, we'll be leaving ... "
+
+narrator " Akiko just gave me a contemptuous look and followed Chitose up the stairs.{wa 1} [exit(Chitose;Akiko)]"
+
+"[Load(chapter_1_ab_ab_c_ab2)]"

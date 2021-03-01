@@ -46,7 +46,7 @@ narrator "Decidi perdonarlo por que tiene razón en que lo hubiese abandonado, y
 
 Tachibana "[setExpression(Tachibana,body,annoyed,6)]Ustedes solo hablan de chicas todo el tiempo..."
 
-Renji "[setExpression(Renji,body,smile1,6)]Sabes [mainCharacterName] en la fiesta del año pasado escuche que 2 chicas de [schoolName] se iban a transferir este año."
+Renji "[setExpression(Renji,body,smile1,6)]Sabes [mainCharacterName] en la fiesta del año pasado escuche que 2 chicas de [LastSchoolAkiko] se iban a transferir este año."
 
 MC "Bastantes personas cambian de escuela todos los año..."
 
@@ -80,7 +80,7 @@ Sensei "[setExpression(Sensei,body,angry,6)]Ahora si empezamos con la clase."
 
 narrator "...{c}Después de 3 aburridas horas de clase, llegó el momento de que Suzume-Sensei diera su anuncio."
 
-Sensei "Como ya saben nuestra escuela tiene un grupo de clubes tanto culturales, como artísticos y deportivos, hasta el año pasado se les exigía a los estudiantes a pertenecer a alguno, este año será opcional..."
+Sensei "Como ya saben nuestra escuela tiene un grupo de clubes tanto culturales, como artísticos y deportivos.{c}Hasta el año pasado se les exigía a los estudiantes a pertenecer a alguno, este año será opcional..."
 
 narrator "Con las declaraciones de Suzune-Sensei me comenzaron a aumentar ánimos."
 

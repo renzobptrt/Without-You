@@ -1,0 +1,35 @@
+narrator "[playMusic(Relax)]That's it!{a} I care about her!{c}So it wouldn't be strange to follow her to see that everything is okay.{c}Yes, she worries me, and since I worry I don't want to see her sad again.{a} So if I follow her it’s because I want to take care of her.{c} But she told me to go ahead... {a} Although... I can tell her that I didn't hear her...{c}And she shouldn't be upset, since whenever we meet we end up going to school together...{c}And since I didn't listen to her, I thought I should follow her to go together.{c}Once I reached an agreement with myself, and with a kind of evil smile on my face, I decided to walk in the direction of Tachibana's house.{c}[setBackground(HouseStreet_3_1,false,1)]After running for about 5 minutes I reached Tachibana."
+
+MC "[playMusic(Time) enter(Tachibana)]Heeeeey! Tachibanaaa!"
+
+Tachibana "[setExpression(Tachibana,body,shocked,6)]Eh? [mainCharacterName]?{a} didn't I tell you to go ahead?"
+
+MC "[playMusic(Shera)]What? You told me that?"
+
+narrator "So far everything is going according to plan."
+
+Tachibana "[setExpression(Tachibana,body,angry,6)]You are going to be late!"
+
+narrator "It seems that she did get upset a bit, but... I didn't think she was going to get upset about that..."
+
+MC "If that's the problem, then don't worry, your house is a few minutes from mine, so it will be a maximum of 10 after we arrive."
+
+Tachibana "Fine... then I'll hurry.[setExpression(Tachibana,body,normal,6)]"
+
+MC "You don't have to go so fast, it would be fun if the school thinks we're skiping classes.[setExpression(Tachibana,body,o,6) playMusic(Time)]"
+
+narrator "She doesn't seem to have bothered, but my jokes are no longer having an effect, so I'll stop for now.{c} We quickly reached the entrance to Tachibana's house.{c}[playSfx(door_open_2) setExpression(Tachibana,body,normal,6)]From Tachibana's house an adult can be seen coming out, tall and with an expression of being moody."
+
+Tachibana "[setExpression(Tachibana,body,sad,6) playMusic(Guitar)]..."
+
+narrator "Apparently Tachibana was sad because she got into a fight with her dad again."
+
+tachibanaFather "Still not on your way to school???"
+
+choice " "
+{
+  "Explain what happened to his dad"
+    "[Affinity(Tachibana,2) Load(Chapter_1_ab_a_a)]"
+  "Say nothing"
+    "[Affinity(Tachibana,1) Load(Chapter_1_ab_a_b)]"
+}

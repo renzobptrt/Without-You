@@ -2,7 +2,7 @@ input "¿So,you are?" SavePlayerName()
 
 narrator "[setBackground(Bethroom_MC_0,false,1) playSfx(door)]{wa 1}[enter(Airi)]"
 
-Airi "[setExpression(Airi,body,angry,6)][mainCharacterName] Wake up…"
+Airi "[setExpression(Airi,body,angry,6)][mainCharacterName] wake up…"
 
 choice " "
 {

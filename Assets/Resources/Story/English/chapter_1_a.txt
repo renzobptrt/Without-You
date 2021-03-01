@@ -1,0 +1,19 @@
+narrator "Before I can understand what was happening I receive the blow of a thick magazine thrown with great amount of force."
+
+Airi "[Buzz()]¡¡¡You damn pervert!!![setExpression(Airi,body,angry,4)]"
+
+narrator "Wanting to cover myself from a possible second attack, I cover myself and roll over, falling off the bed."
+
+MC "[Buzz() playSfx(fall)]¡¡ Damn, that hurt!!"
+
+Airi "[setExpression(Airi,body,annoyed,4)]¿Hm?{a} ¿Is it normal for you to leave porn magazines lying around in the same house as your sister? "
+
+narrator "My name is [mainCharacterName], the girl who's screaming is my young sister (Airi), and it seems it's already the first day of my last year of high school."
+
+Airi "[setExpression(Airi,body,angry,4)]If you don't get up that ‘magazine’ won’t be the only thing that flies through this room, cause if you are late mom and dad will think it’s my fault."
+
+narrator "[setExpression(Airi,body,smug,4)]I start to get up reluctantly."
+
+Airi "[setExpression(Airi,body,annoyed,4)]Hurry up, mom and dad won't let me have breakfast if I don't go with you..."
+
+"[Load(chapter_c)]"

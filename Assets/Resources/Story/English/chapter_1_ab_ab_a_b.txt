@@ -1,0 +1,29 @@
+Narrator:  "She is very cute when she makes that sound. Although I´m a bit ashamed to tell it, I think I´ll her a bit with the cake she´s eating”.
+
+MC: “Come on, you know that if you keep eating so many candies it won´t do your health any good.”
+
+Tachibana: "What are you talking about “
+
+MC "I think I stepped on a mine..."
+
+narrator "I try to get away with the first thing that comes to my mind ."
+
+MC: “Well…You know… If you eat too many candy, your sugar level will rise”.
+
+Tachibana: “Is that just what you mean”.
+
+Narrator: "She wants to get the truth out of me with his eyes!, Damn, her gaze is analyzing me, I feel like I´m breaking into a sweat"
+
+Tachibana: "You mean I would get fat, right?”
+
+Narrator: “I couldn´t take anymore and I just confessed”
+
+MC "Yes"
+
+choice " "
+{
+  "but, you will still be beautiful”.
+    "[Load(Chapter_1_ab_ab_a_b_a)]"
+  "Sorry"
+    "[Load(Chapter_1_ab_ab_a_b_b)]"
+}

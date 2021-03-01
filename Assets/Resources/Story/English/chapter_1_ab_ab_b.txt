@@ -1,0 +1,11 @@
+Narrator "[playMusic(Relax)] I think that I can go with Renji for a walk, I don´t have anything else to do.” 
+
+MC: "[setExpression(Renji,body,smile3,6)]Sure, let’s go, if we are lucky maybe we can meet cute girls in the clubs…”
+
+Renji: “We won´t need luck, I know some people of the art club, It is the club with the most girls in the school.”
+
+MC “ That´s my best friend!”
+
+Narrator: “ We went to the art club but they rejected us, because they are full of members, so we return to the class defeated.” 
+
+"[Load(chapter_1_ab_ab_a_ab1)]"

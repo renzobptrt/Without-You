@@ -1,0 +1,29 @@
+narrator "So that was…"
+
+Tachibana "That it was[setExpression(Tachibana,body,sad,6)]"
+
+narrator "I interrupt Tachibana grabbing her by the shoulders.
+
+Tachibana "Ah?[setExpression(Tachibana,body,o,6)]"
+
+MC "I say it where we are alone because I thought that was a good moment…{c}And I have no problem with others hearing us".
+
+Tachibana "Ah?! wait, won’t you go to ...?"
+
+MC "[playMusic(Time)]Tachibana you are beautiful!!!!"
+
+narrator "I yelled loud enough for those who were in the school could hear me" 
+
+Tachibana "Eeeeeeeeeehhhhhhhhhhhhhhh?![setExpression(Tachibana,body,shocked,6)]"
+
+narrator "For some reason it was more embarrassing than I thought, but…"
+
+MC "You see? I don’t care if others can hear me telling you how beautiful you are."
+
+Tachibana "Don´t you really mind that others can listen you.[setExpression(Tachibana,body,normal,6)]"
+
+MC "And also if I could choose anyone else to say these things, I would choose you again.[setExpression(Tachibana,body,sleepy,6)]"
+
+narrator "I feel how my face and my ears burn, this is too embarrassing!"
+ 
+"[Load(chapter_1_ab_ab_a_ab1)]"

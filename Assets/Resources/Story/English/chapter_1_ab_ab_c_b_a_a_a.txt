@@ -1,0 +1,19 @@
+MC "I want to know what kind of person Chitose is looking for …"
+
+Akiko "I was expecting that question [setExpression(Akiko,body,laugh,6)]"
+
+narrator "Akiko said sarcastically while keeping a mocking smile on her face. "
+
+Akiko "I can't talk all about my friend behind her back.[setExpression(Akiko,body,smile1,6)]"
+
+narrator "I did not expect to find out everything."
+
+Akiko "If you want an opportunity with her, show her that you can manipulate people.[setExpression(Akiko,body,smug,6)]"
+
+narrator "And why does she need someone like that? Well, it's not that I couldn't try ..."
+
+Akiko "It's the only thing I can tell you.[setExpression(Akiko,body,smile2,6)]"
+
+narrator "I was thinking so deeply that I didn't realize that Akiko was already gone.[exit(Akiko)]"
+
+"[Load(chapter_1_ab_ab_c_ab1)]"

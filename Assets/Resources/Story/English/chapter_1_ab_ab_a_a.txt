@@ -1,0 +1,31 @@
+MC "[playMusic(Relax)]Haha, I can't help it, you're so cute when you're scared."
+
+Tachibana "You shouldn't joke around like this...[setExpression(Tachibana,body,annoyed,6)]"
+
+MC "I don't know why you still think I'm joking..."
+
+Tachibana "Maybe it's because you're always talking about girls with Renji?"
+
+MC "..."
+
+narrator "I wanted to say something but her argument was just perfect."
+
+MC "W-{wa 1} Well, I may always speak like that but...{c}That’s not-"
+
+narrator "Her arguments were convincing me, so I decided to lash out one more time."
+
+MC "I really think you're cute ..."
+
+Tachibana "[setExpression(Tachibana,body,normal,6)]I think it's because I'm your only option to say those things to a girl."
+
+narrator "She's not listening to me anymore...{c}And the worst thing is that she's getting the wrong idea."
+
+Tachibana "If someone else was listening, you wouldn't say it."
+
+choice " "
+{
+  "Scream that she's cute"
+    "[Load(chapter_1_ab_ab_a_a_a)]"
+  "All the girls are pretty"
+    "[Load(chapter_1_ab_ab_a_a_b)]"
+}

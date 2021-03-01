@@ -1,0 +1,41 @@
+narrator "I don't think Tachibana can answer him, she seems to be too nervous to say anything.{c}But I don't know if I should talk to him either, it could be that he gets more upset..."
+
+tachibanaFather "So."
+
+narrator "But now what matters most is that Tachibana doesn't get depressed anymore.{c}I plucked up the courage and tried to speak out to sound formal in front of her dad."
+
+MC "Tachibana forgot to pack her lunch before leaving, so I am accompanying her to pick it up so we can go back to school."
+
+narrator "I can see how Tachibana's dad does an annoyed expression, as if expecting Tachibana to be the one to respond."
+
+tachibanaFather "Don't let it happen to you again..."
+
+narrator "And with a cold expression he goes back to work.{c}I knew they weren't getting along lately, but I didn't think it was so serious...{c}As her dad walked away, Tachibana regained her calm.[setExpression(Tachibana,body,normal,6)]"
+
+MC "Haaaaa."
+
+narrator "I thought he was going to devour me at any moment...[playMusic(Relax)]{c}Tachibana seems to have finished assimilating what happened."
+
+MC "I'm sorry I spoke for you...{a}[setExpression(Tachibana,body,o,6)] ¿Eh?"
+
+Tachibana "Th-{a} thank you…[setExpression(Tachibana,body,normal,6) playMusic(Here)]"
+
+narrator "W-wait...{c}Perhaps… This got me more points than cheering her on?!!"
+
+Tachibana "[setExpression(Tachibana,body,smile1,6)]Shall we go?"
+
+MC "He? Ah, right, if we don't start walking we won't get there on time."
+
+narrator "Once we started walking side by side, I noticed that the atmosphere was different than when we first met this morning.{c}And even though we're not talking… somehow it feels… {w 1}More exciting ..."
+
+narrator "[setBackground(School_Entrance_0,false,1) setExpression(Tachibana,body,normal,6) playMusic(Time)]Once we got to school, maybe because we weren't alone anymore, or because we had to hurry, but the situation between us calmed down a bit ..."
+
+MC "Eh... Tachibana..."
+
+Tachibana "Yes [mainCharacterName]?"
+
+MC "I think we should go see which room we got."
+
+Tachibana "Uhm..."
+
+"[Load(chapter_1_ab_ab)]"

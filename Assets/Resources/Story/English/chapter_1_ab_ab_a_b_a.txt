@@ -1,0 +1,11 @@
+Tachibana "[playMusic(Time)]Hummm.[setExpression(Tachibana,body,annoyed,6)]"
+
+MC "Haha, sorry."
+Narrator: “Although I haven’t done anything wrong, I apologize por inertia.” 
+
+MC "Aunque lo dije mas que nada por tu salud, porque si subieras de peso seguirías siendo linda.{c}Más me preocupa tu salud.[setExpression(Tachibana,body,normal,6)]"
+
+MC " I said it more for your health, If you gained weight you would still be beautiful .{c}I am more worried about your health” .[setExpression(Tachibana,body,normal,6)]"
+	
+
+"[Load(Chapter_1_ab_ab_a_ab1)]"

@@ -1,0 +1,137 @@
+narrator "[setBackground(School_first_floor_0,false,1) setExpression(Tachibana,body,normal,6) playMusic(Relax)]I approximated with Tachibana to the news board.It was here that we could see in which section we were assigned."
+
+MC "[playMusic(Shera)]Waaa, I don`t see my name.{c}Do you think that I had failed the year and nobody had told me?"
+
+Tachibana "Your marks are not so bad so probably it's on the next board."
+
+narrator "After search for an entire minute I found my name in Tachibana`s section."
+
+MC "Its nice that they didn't take in consideration the scores to distribute students between sections.If not I couldn`t be in the same section."
+
+Tachibana "[mainCharacterName] apparently we will be in the same classroom this year.[setExpression(Tachibana,body,smile2,6)]"
+
+narrator "I try to make the same trick with Tachibana and I made a warm smile."
+
+MC "Take care of me this year,again."
+
+Tachibana "[setExpression(Tachibana,body,laugh,6)]I hope you will do the same but I think that I`m going to make you study harder this time."
+
+narrator "It looks like it work..."
+
+Tachibana "It is time to enter to the classroom."
+
+narrator "So 3ªB...{c}[setBackground(School_third_floor_0,false,1) playSfx(door)]While I was opening the door I could feel that someone was putting his arm on me and also all his weight."
+
+nn "[moveCharacter(Tachibana,0,0,3) enter(Renji) moveCharacter(Renji,1,0,3) setExpression(Renji,body,smile1,6) setExpression(Tachibana,body,normal,6)]I knew that you will came with Tachibana."
+
+narrator "[playMusic(Time)]I know that voice.{c}It was Renji that with Tachibana were friends from childhood."
+
+MC "The same classroom,again..."
+
+Renji "¿Eh? You didn`t search my name on the board.[setExpression(Renji,body,smirk,6)]"
+
+MC "You are not my girlfriend...[setExpression(Tachibana,body,o,6)]"
+
+Renji "[setExpression(Renji,body,laugh,6)]Come on don't try to look cool bro jajaja."
+
+narrator "At of the last year,there was a party with students from some school which were nearby.Aparently Renji was charm enough to obtain a pass.{c}¡The bastard didn't tried to allow me sneak in it!"
+
+MC "I would had been nice if you had told me that you managed to obtain a pass for the last year party..."
+
+Renji "[setExpression(Renji,body,smile1,6) setExpression(Tachibana,body,normal,6)]You know that If I had told you about the pass.You probably had tried to come with me,in any case they kicked me out because I was trying to flirt with one of managers of the event.{c}I didn`t knew she had a boyfriend...{c}[setExpression(Renji,body,smile3,6)]As an apology I managed to obtain information about two beauty which are going to move this year.Also you have to admit that you would had done the same if you were in my position."
+
+MC "¡Renji,my old friend!"
+
+narrator "I decided to forgive it because it was right left him and also because I needed that information."
+
+Tachibana "[setExpression(Tachibana,body,annoyed,6)]You two talk only about girls..."
+
+Renji "[setExpression(Renji,body,smile1,6)]You know [mainCharacterName] during the year's end party I heard that two girls from [LastSchoolAkiko] will going to transfer for this year."
+
+MC "Many students chang from school each year..."
+
+Renji "[setExpression(Renji,body,smirk,6)]¡Yes but they are almost fashion model!"
+
+narrator "I took only a phrase to catch my attention."
+
+Renji "[setExpression(Renji,body,smile1,6)]They were part of literature club but all thought that they must be fashion models."
+
+MC "I have the feeling that I saw some girls that fit with this description..."
+
+narrator "While we were talking our teacher entered the classroom.[playMusic(Relax) setBackground(Classroom_0,false,1)]"
+
+Sensei "[setExpression(Sensei,body,smug,6) setExpression(Tachibana,body,normal,6) setExpression(Renji,body,normal,6)]Welcome to his last year of secondary school students.I'm his teacher,Suzume and I will be in charge of you.{c}Today we are going to have three blocks of classes and before break I will give an announcement."
+
+MC "¿Humm? It looks like that we have a beautiful teacher this time,what are you thoughts Renji."
+
+Renji "[setExpression(Renji,body,smile1,6)]Eight of ten,it is pretty young."
+
+Tachibana "[setExpression(Tachibana,body,annoyed,6)]Really,are you talking about the teacher?"
+
+Sensei "I will take assistance list and I assign desks."
+
+narrator "...{c}[exit(Renji) moveCharacter(Sensei,0.85,0,3) moveCharacter(Tachibana,0.15,0,3) setExpression(Tachibana,body,normal,6)]I was lucky guy and I share my desk with Tachibana at the end of classroom.{a} Renji its only two desks away from us."
+
+MC "It's not a bad spot and I have something to see in case I get bored..."
+
+narrator "I could feel how Tachibana it's trying to hide it inside his chair."
+
+Sensei "[setExpression(Sensei,body,angry,6)]Let's began with classes."
+
+narrator "...{c}After three long hours of classes it was time for Suzume-sensei to give her announcement."
+
+Sensei "As you know our school have different kinds of clubs including art,sports and cultural.{c}Until the last year it was an obligation be part of at least one but this year is going to be optional..."
+
+narrator "After Suzume-Sensei declarations,my mood improved."
+
+Sensei "There is a rule that will be implemented this one says that any club with less than three students will be dissolved."
+
+narrator "[playMusic(Shera)]It could some surprise expression through the classroom.{c}They might came from guys who like to waste their afternoon at the school...{c}[setExpression(Tachibana,body,o,6)]One of them was Tachibana."
+
+MC "Hey Tachibana..."
+
+narrator "[exit(Sensei) moveCharacter(Tachibana,0.5,0,3) setExpression(Tachibana,body,normal,6)]She turn around to see if I'm calling her."
+
+MC "Were you thinking in join a club?"
+
+Tachibana "This year I was supposed to became the president but even the last year we had problems to find enough members for the club...{c}[setExpression(Tachibana,body,sad,6)]And know that it's not necessary be part of a club,I`m scared that we could reach the mininum."
+
+narrator "I'm not a big fan of readings but I might get closer if I give her a hand."
+
+MC "You only need three people,right?"
+
+Tachibana "Yes."
+
+MC "So if I convince Renji between him,me and you it will be three people.This year I will be the savior of your club."
+
+Tachibana "I don`t know….If you could fit in the reading club..."
+
+MC "[playMusic(Time)]He-"
+
+narrator "Again,things never happen as you plan."
+
+MC "Come on,even when I'm not a nerd I read a lot."
+
+Tachibana "..."
+
+narrator "I guess try to fool her is useless ..."
+
+Tachibana "[setExpression(Tachibana,body,normal,4)]So if I really need more club members.Are you going to help me,right?"
+
+MC "I guess I can`t reject her proposal."
+
+narrator "While talking with Tachibana the ring bells.{c}[exit(Tachibana)]She usually eat his lunch at the garden inside the school but If it discover that I'm following her choose another place for it.I looks like she prefer eat alone.{c}Personally I prefer the roof but aparently for the rest of the people it`s not a good place.They can't live without air conditioning...[moveCharacter(Renji,0.5,0)]"
+
+Renji "[enter(Renji) setPosition(Renji,0.5,0) setExpression(Renji,body,normal,4)][mainCharacterName], Do you want to see the hall for clubs?"
+
+narrator "I think that I have enough time to check a couple of thing during the break."
+
+choice " "
+{
+  "Follow to Tachibana"
+    "[Load(chapter_1_ab_ab_a)]"
+  "Follow to Renji"
+    "[Load(chapter_1_ab_ab_b)]"
+  "Go to the roof"
+    "[Load(chapter_1_ab_ab_c)]" 
+}

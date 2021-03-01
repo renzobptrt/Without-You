@@ -1,0 +1,151 @@
+MC "[playMusic(Shera)] They worry too much just because this year I have the entrance exams, but... {a} Should I care about that? {c} I’ve been studying every year killing myself and I have left the girls aside, while everyone else was having fun with their couple, I killed myself studying."
+
+Airi "[setExpression(Airi,body,angry,4)] If you really studied like you say, your grades wouldn't be so horrible..."
+
+MC "[Buzz()]-guuhh"
+
+Airi "[setExpression(Airi,body,annoyed,4)] And that all the girls reject you doesn’t mean that you have voluntarily left them aside, after all you are not popular at all."
+
+MC "[Buzz()]----gaahhhhhhhh, Even if I am bad at flirting, I try hard, and there is also a girl I still have a chance with."
+
+Airi "I don't know how Tachibana hasn't sent you to fly yet"
+
+MC "And it's not that the others have rejected me because I don't stand out!!! {a} It's because I haven't had a chance to close my distance with them! {C} Yes, that's right. {A} It's because I've been letting each opportunity I've had to bond with a girl."
+
+Airi "[setExpression(Airi,body,normal,4)] And the one to whom you were practically her slave for a week? {c} Weren't you with her all that time?"
+
+MC "[Buzz()]Aaaaaah!!!"
+
+narrator "I got ready as fast as I could, yelling so that my sister's words wouldn't continue to hurt me. [exit(Airi)]"
+
+MC "*Yawn*[setBackground(Kitchen_MC_1,false,1)]"
+
+mcFather "With that attitude you make me doubt my decision to educate you..."
+
+narrator "I don't even make it to the table and they are already attacking me."
+
+MC "Have they all conspired to be against my self-esteem today?"
+
+mcMother "It's your dad's way of encouraging you to start your last school year off right."
+
+narrator "How is it that treating me badly will encourage me?"
+
+MC "It would be much more helpful to my desire to study, if they gave me more freedom."
+
+mcMother "You freely walk around the city with your friends, and you always come home late, I don't know what more freedom you want."
+
+MC "I would love to be allowed to have a girlfriend..."
+
+mcMother "..."
+
+mcFather "I won’t object if with that you stop making so much noise at night. [playMusic(MagicalSecun)]"
+
+MC "..."
+
+mcFather "..."
+
+mcMother "..."
+
+Airi "..."
+
+narrator "I decided to retire with my morale destroyed. [exit(Airi)] {c}[setBackground(HouseStreet_0,false,1) playMusic(Relax)]I take a long breath trying to free myself from all the emotional wounds left by my family."
+
+MC "Ahhh…"
+
+narrator "It’s not that I haven't tried, for some reason whenever I try to get close to a girl it only ends up increasing our distance. {c} As if I was destined to remain alone and  virgin for life."
+
+MC "Aaaaaah, worst of all, I have to go to college next year. {a} I won't have time to flirt with girls!"
+
+narrator " I scream my only wish before finishing high school."
+
+MC "Damn I want a girlfriend!!!"
+
+narrator "As I was walking down the street I saw in the distance a thin girl with glasses, a figure that was already quite familiar to me. {c} [playMusic (Time)] I start running towards my childhood friend yelling her name."
+
+MC "¡¡Tachibana!!"
+
+narrator "Tachibana keeps walking looking at the ground."
+
+MC " No answer, hah?"
+
+narrator "As I get closer I can see that she has a remorseful expression on her face.{a} I'm going to annoy her a little, hopefully that will reduce her discouragement a bit. {c}[enter(Tachibana)] When I'm too close to her I decide to whisper her name in her ear"
+
+MC "Hey,{w 1} Tachi-"
+
+Tachibana "[setExpression(Tachibana,body,shocked,4)]Hiiii!"
+
+narrator "[playSfx(punch)]I get to hear a loud thud before I feel a very sharp pain on my cheek."
+
+Tachibana "[mainCharacterName] A-are you okay? [setExpression(Tachibana,body,sad,4)]"
+
+MC "Yeah, yeah I'm fine, it was my fault for sneaking up on you."
+
+narrator "The girl who is desperately apologizing for slapping me is Tachibana Hitomi, and as you can see she is very cute…{c}I would date her if it weren't for the fact that every time I have tried to get close to her romantically, I have been ignored."
+
+MC "Whenever I seem to be making progress, she moves away from me..."
+
+Tachibana "[setExpression(Tachibana,body,normal,4)]?"
+
+MC "Nothing! Nothing! Forget everything you heard! [playMusic(Shera)]"
+
+Tachibana "Sure you're okay?"
+
+narrator "With an internal sigh, I beg the universe not to let me be left alone.{c} Haaa, everything went wrong for me today, hopefully because all my luck is accumulating for a fated match.{c}[setExpression(Tachibana,body,sad,4)] Tachibana seems to start worrying because I didn't answer her again "
+
+MC "Damn cheering her up is being more difficult than I thought. {c} Haha, don't worry it just seems like I'm delirious a bit ..."
+
+narrator "Tachibana makes a huge expression of surprise. [setExpression(Tachibana,body,o,6) playMusic(Time)]"
+
+Tachibana "I- *snif*, I’m so-*snif* [setExpression(Tachibana,body,sad,6)]"
+
+narrator "Little tears begin to form in Tachibana's eyes {c} Shit! It seems that I am the one who is making her suffer the most"
+
+MC "C-Come on, I told you it was my fault, you don't have to worry, it was just a joke .."
+
+Tachibana "You are really fine?"
+
+MC "As if nothing had happened, besides if at any moment you feel that I am exceeding myself you can hit me as much as you want."
+
+Tachibana "Are you seriously okay with me hitting you? [setExpression(Tachibana,body,smile1,6)]"
+
+MC "If that makes you vent and feel more safe, then I'll hold up to a beating."
+
+narrator "Tachibana begins to clench her fist. [setExpression(Tachibana,body,smile2,6)]"
+
+MC "Oy, oy, it was just an expression, you don't have to knock me out now!"
+
+Tachibana "[setExpression(Tachibana,body,laugh,6)] Hahaha, you don't have to offer yourself something if you're going to be a wimp later."
+
+narrator "From now on I must be more careful with jokes."
+
+MC "But I managed to cheer you up, didn't I?"
+
+Tachibana "Yes.[setExpression(Tachibana,body,smile2,6)]"
+
+narrator "[setExpression(Tachibana,body,laugh,6)]Tachibana laughs as her face flushes, and her hair begins to shine affirming my idea that she is very pretty, it even seems that a light begins to emanate from her-"
+
+MC "Damn how can you be so cute! [setExpression(Tachibana,body,shocked,6)]{c}[playSfx(punch) setExpression(Tachibana,body,annoyed,6)]{c} You see?, you can be calm next to me."
+
+narrator "I start to touch my cheek with the intention of making the pain go away."
+
+MC "And you can even vent to me... ouch!"
+
+narrator "As I try to hide the pain of being slapped a second time today, I keep joking with Tachibana."
+
+Tachibana "Hehe, thank you [mainCharacterName]. [setExpression(Tachibana,body,smile2,6)]"
+
+narrator "[playMusic(Time)] She seems to be better now. {a} But she's been having a lot of trouble at home lately...{c} Before I could think of another way to annoy her, Tachibana makes a gesture of having remembered something and started running back home."
+
+Tachibana " It's true! I forgot my lunch. {a} You can go ahead without me... [setExpression(Tachibana,body,sad,6)]"
+
+MC "What? Wait!"
+
+narrator " Tachibana begins to disappear from my sight.[exit(Tachibana)]{a} I thought I was making some progress...{c} And there is also the possibility that she becomes depressed again... with what it takes to make her laugh...{c} Although if I cheer her on again, I will earn a lot of points with her.{a} But that's at the cost of her having a bad time first...{c} Ahhh, what should I do ?!"
+
+choice ""
+{
+  "Follow Tachibana"
+    "[Affinity(Tachibana,1) Load(chapter_1_ab_a)]"
+  "Go to school"
+    "[Affinity(Chitose,1) Affinity(Akiko,1) Load(chapter_1_ab_b)]"
+}

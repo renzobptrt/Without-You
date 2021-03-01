@@ -1,0 +1,30 @@
+narrator " I think I'll wait for Chitose to come down.{a}If I speak to Akiko alone, I may get even more information. {c} Chitose starts down the stairs.[exit(Chitose) moveCharacter(Akiko,0.5,0,3)]"
+
+Akiko "Haaa, sometimes dealing with you is a bit tiresome.[setExpression(Akiko,body,annoyed,6)]"
+
+narrator "I think I can get closer to her now that she's alone."
+
+MC "[playMusic(Time)] I think you should be more honest with her."
+
+Akiko "¿?[setExpression(Akiko,body,shocked,6)]"
+
+narrator "I stand up to make it more obvious that I was there the whole time."
+
+Akiko "So you heard everything, right?[setExpression(Akiko,body,angry,6)]"
+
+narrator "I think it would be better if I explained calmly."
+
+MC "Well, I heard some things, at first I was asleep. {c} And when I woke up you were talking about a sensitive topic, so I didn't want to interrupt."
+
+narrator "I lied, but I think that it's helpful at this point. "
+
+Akiko "So that's how it was, my apologies for thinking you were spying.[setExpression(Akiko,body,normal,6)]"
+
+narrator Ehhh? For some reason, I felt like she was more aggressive around Chitose. {c}Akiko doesn't seem to be coming down yet, what should I ask her? "
+choice " "
+{
+  "I would like to ask you about someone"
+    "[Load(chapter_1_ab_ab_c_b_a_a)]"
+  "Are you also in the same situation as Chitose?"
+    "[Load(chapter_1_ab_ab_c_b_a_b)]"
+}

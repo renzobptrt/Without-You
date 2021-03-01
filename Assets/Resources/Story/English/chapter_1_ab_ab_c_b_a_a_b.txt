@@ -1,0 +1,24 @@
+MC "[playMusic(Shera)]You, I want to know more about you!"
+
+Akiko "¡¿?![setExpression(Akiko,body,shocked,6)]"
+
+narrator "I could see that Akiko made a surprised expression and immediately after that she regained her mocking smile.[setExpression(Akiko,body,laugh,6)]"
+	
+Akiko " I didn't think you would ask for me, you are more interesting than I thought..[setExpression(Akiko,body,smug,6)]"
+
+MC " Well I was being careful as Chitose gives off an aura of calm{a} but I can't help but get excited if there is a pretty girl in front of me"
+
+narrator " At my words she never blushed or showed signs of shame {c} In truth, she is very different from Tachibana ... "
+
+Akiko " Since you caught my attention, I'll tell you something about me."
+
+narrator " Keeping a relaxed appearance is tough with all these nerves, but it seems like it was worth it."
+
+Akiko "[playMusic(Time)] You've managed to get my attention, but that trick won't work 2 times in a row, so you'd better think of something different if we meet again …{c} Well, I already answered you so I'll be leaving.[setExpression(Akiko,body,smile2,6)]"
+
+MC "Weren't you waiting for Chitose?"
+Akiko "Yes, but I think it's funnier if I leave you here thinking…"
+
+narrator "[exit(Akiko)]..."
+
+"[Load(chapter_1_ab_ab_c_ab1)]"

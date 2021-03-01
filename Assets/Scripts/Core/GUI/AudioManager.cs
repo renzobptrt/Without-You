@@ -121,7 +121,7 @@ public class AudioManager : MonoBehaviour
             activeSong = null;
 
         StopAllCoroutines();
-        //StartCoroutine(VolumeLeveling());
+        StartCoroutine(VolumeLeveling());
     }
 
     IEnumerator VolumeLeveling()
@@ -142,11 +142,11 @@ public class AudioManager : MonoBehaviour
 
             if (song == activeSong)
             {
-                if (song.volume < song.maxVolume)
+                if (song.volume < 1f)
                 {
                     song.volume = 1f;
-                    //song.volume = songSmoothTransitions ? Mathf.Lerp(song.volume, song.maxVolume, speed) :
-                    //Mathf.MoveTowards(song.volume, song.maxVolume, speed);
+                    /*song.volume = songSmoothTransitions ? Mathf.Lerp(0f, 1f, speed) :
+                    Mathf.MoveTowards(0f, 1f, speed);*/
                     anyValueChanged = true;
                 }
 
@@ -156,8 +156,8 @@ public class AudioManager : MonoBehaviour
                 if (song.volume > 0)
                 {
                     song.volume = 1f;
-                    //song.volume = songSmoothTransitions ? Mathf.Lerp(song.volume, 0f, speed) :
-   // Mathf.MoveTowards(song.volume, 0f, speed);
+                    /*song.volume = songSmoothTransitions ? Mathf.Lerp(1f, 0f, speed) :
+   Mathf.MoveTowards(1f, 0f, speed);*/
                     anyValueChanged = true;
                 }
 
@@ -193,7 +193,7 @@ public class AudioManager : MonoBehaviour
         {
             //source = AudioManager.CreateNewSource(string.Format("SONG [{0}]", newClip.name));
             source = newSource;
-            //source.clip = newClip;
+            source.clip = newClip;
             source.volume = startVolume;
             maxVolume = newMaxVolume;
             source.pitch = newPitch;
@@ -202,9 +202,11 @@ public class AudioManager : MonoBehaviour
 
             AudioManager.allSongs.Add(this);
 
-            if(source.clip != null)
+            /*if(source.clip != null)
             {
+           
                 print("Entro");
+
                 AudioManager.instance.StartCoroutine(TransitionNewMusic(newClip,()=> {
                     //AudioManager.instance.StopAllCoroutines();
                 }));
@@ -212,11 +214,11 @@ public class AudioManager : MonoBehaviour
                 //source.Play();
             }
             else
-            {
-                source.clip = newClip;
+            {*/
+                //source.clip = newClip;
                 if (playOnStart)
                     source.Play();
-            }
+            //}
 
         }
 
@@ -248,15 +250,17 @@ public class AudioManager : MonoBehaviour
 
         IEnumerator TransitionNewMusic(AudioClip newClip,OnComplete onComplete = null)
         {
-            Transition.SetTrigger("IsTransition");
-            //yield return new WaitForEndOfFrame();
-            //Transition.SetTrigger("IsTransition");
-            //source.clip = newClip;
-            //source.Play();
-            //print(source.clip);
-            
-            yield return new WaitForSeconds(0.5f);
-            onComplete();
+            float currentTime = 0;
+            float start = source.volume;
+
+            while (currentTime < 0.5f)
+            {
+                currentTime += Time.deltaTime;
+                float newVol = Mathf.Lerp(start, 0f, 2f*Time.deltaTime);
+                AudioManager.instance.masterMixer.SetFloat("MusicVolume", Mathf.Log10(newVol) * 20);
+                yield return null;
+            }
+            yield break;
         }
     }
 }

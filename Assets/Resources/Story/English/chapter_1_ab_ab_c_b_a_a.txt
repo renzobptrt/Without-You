@@ -1,0 +1,15 @@
+narrator " She seems to be in a good mood, I think I can ask her some questions."
+
+MC "[playMusic(Relax)]Would you mind if I asked about the likes of a certain person? "
+Akiko "Hmm, and who could that person be? 
+[setExpression(Akiko,body,smile2,6)]"
+
+narrator "Akiko asks while making a mocking smile as if she already knows the answer."
+
+choice " "
+{
+  " I want to know about Chitose's likes "
+    "[Load(chapter_1_ab_ab_c_b_a_a_a)]"
+  " You, I want to know more about you!"
+    "[Load(chapter_1_ab_ab_c_b_a_a_b)]"
+}

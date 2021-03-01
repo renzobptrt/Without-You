@@ -1,0 +1,29 @@
+narrator "I couldn't bear the pressure of being in front of Tachibana's father, knowing that at that moment he was judging me."
+
+tachibanaFather "Hm?[setExpression(Tachibana,body,sad,6)]"
+
+Tachibana "I-.."
+
+tachibanaFather "If you forgot something, take it.{wa 1} I'll go to work."
+
+narrator "And with those words she continued on his way to work.{a} I think the best thing would be to try to cheer her up."
+
+MC "Don't worry, it wasn't your fault that you forgot, and I don't think your dad hates you either, he's just...{wa 1} a little stressed out."
+
+narrator "After her dad left, we headed back to school."
+
+Tachibana "[setExpression(Tachibana,body,normal,6)]I'm sorry you saw that."
+
+MC "Don't worry about that, rather...[playMusic(Here)]{a} Sorry for not being able to help."
+
+Tachibana "There was nothing you can do, don't worry."
+
+narrator "I think I could have done more...{a} next time, I'll do something, sorry for now..."
+
+Tachibana "With you worrying and accompanying me...{a}[setExpression(Tachibana,body,smile2,6)] It's very helpful.{w 1}Thank you..."
+
+narrator "It seems that she is better...[playMusic(Time)]{c}[setBackground(School_Entrance_0,false,1)]After a while walking in silence, we got to school."
+
+MC "You want to go see which room we will be in?"
+
+"[Load(chapter_1_ab_ab)]"
