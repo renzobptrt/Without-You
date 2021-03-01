@@ -4,17 +4,17 @@ Chitose "I return in a second.[setExpression(Chitose,body,smile2,6)]"
 
 narrator "I would make my gamble before Chitose leaves."
 
-MC "[playMusic(Shera)] I think that we have similar objectives…"
+MC "[playMusic(Shera)]I think that we have similar objectives…"
 
 Chitose "¡¿?![setExpression(Chitose,body,shocked,6)]"
 
 Akiko "¡¿?![setExpression(Akiko,body,shocked,6)]"
 
-narrator "After realizing that they hadn't been alone,they were surprised and his face showed it ."
+narrator "After realizing that they hadn't been alone,they were surprised and his face showed it."
 
-Akiko "¡¡ Hey,you shouldn`t listen private conversations !![setExpression(Akiko,body,angry,6)]"
+Akiko "¡¡Hey,you shouldn`t listen private conversations!![setExpression(Akiko,body,angry,6)]"
 
-Chitose " It`s okay after all It was our fault to talk before checked that nobody else was here  .[setExpression(Chitose,body,smile2,6)]"
+Chitose "It`s okay after all It was our fault to talk before checked that nobody else was here.[setExpression(Chitose,body,smile2,6)]"
 
 MC "Well I have to admit that It`s not too polite my side listen your talk."
 
@@ -24,7 +24,7 @@ MC "At first I was just resting but something called my attention... {wa 1}I thi
 
 Chitose "I like your point but I think its too early for began something."
 
-narrator " Eh? I thought that all was going smooth."
+narrator "Eh? I thought that all was going smooth."
 
 Chitose "[playMusic(Time)]But let`s said that you understand what kind of guy I`m looking…{c}You made a good start.[setExpression(Chitose,body,laugh,6)]"
 

@@ -103,15 +103,15 @@ public class DialogueSystem : MonoBehaviour
             }
             else if (s.ToLower().Equals("tachibanafather"))
             {
-                retVal = "Papá de Tachibana";
+                retVal = PlayerPrefs.GetString("CurrentLenguage").Equals("Spanish") ? "Papá de Tachibana" : "Tachibana's father";
             }
             else if (s.ToLower().Equals("mcfather"))
             {
-                retVal = "Papá";
+                retVal = PlayerPrefs.GetString("CurrentLenguage").Equals("Spanish") ? "Papá" : "Father";
             }
             else if (s.ToLower().Equals("mcmother"))
             {
-                retVal = "Mamá";
+                retVal = PlayerPrefs.GetString("CurrentLenguage").Equals("Spanish") ? "Mamá" : "Mother";
             }
             else
             {

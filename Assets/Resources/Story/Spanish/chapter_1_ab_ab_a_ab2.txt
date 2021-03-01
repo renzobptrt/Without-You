@@ -1,1 +1,3 @@
+narrator "[Next()]"
+
 narrator "[playMusic(End) FinishGame()]..."

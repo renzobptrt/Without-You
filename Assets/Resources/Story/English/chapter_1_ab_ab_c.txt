@@ -1,14 +1,14 @@
-narrator "I could follow her* to Renji but I don't want be looking around the clubs"
+narrator "I could follow Renji but I don't want be looking around the clubs"
 
 MC "Maybe for the next one."
 
 Renji "[setExpression(Renji,body,smile1,6)]So,Are you going with Tachibana?"
 
-MC "I don't think so.{c} Actually,I just want to be alone on the roof."
+MC "I don't think so.{c}Actually,I just want to be alone on the roof."
 
-narrator "[exit(Renji) setBackground(school_rooftop_0,false,1) playMusic(Shera)] I came and began to rest at the benches on the roof.{c}[enter(Chitose) enter(Akiko) setPosition(Chitose,1,0,3) setPosition(Akiko,0,0,3) moveCharacter(Akiko,0,0,3) moveCharacter(Chitose,1,0,3) setExpression(Chitose,body,normal,6) setExpression(Akiko,body,normal,6)]Two girls arrive."
+narrator "[exit(Renji) setBackground(school_rooftop_0,false,1) playMusic(Shera)]I came and began to rest at the benches on the roof.{c}[enter(Chitose) enter(Akiko) setPosition(Chitose,1,0,3) setPosition(Akiko,0,0,3) moveCharacter(Akiko,0,0,3) moveCharacter(Chitose,1,0,3) setExpression(Chitose,body,normal,6) setExpression(Akiko,body,normal,6)]Two girls arrive."
 
-Akiko "I thought it would be like* [LastSchoolAkiko],but there isn't any umbrella..."
+Akiko "I thought it would be like [LastSchoolAkiko],but there isn't any umbrella..."
 
 Chitose "[setExpression(Chitose,body,smile1,6)]This place have his attractive."
 

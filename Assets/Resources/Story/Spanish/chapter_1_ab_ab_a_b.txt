@@ -1,4 +1,4 @@
-narrator "Es muy linda cuando hace ese sonido...{c}Aunque me da algo de verguenza decirselo. {w 1}Creo que la molestaré un poco con el pastel que está comiendo."
+narrator "Es muy linda cuando hace ese sonido...{c}Aunque me da algo de verguenza decirselo.{wa 1} Creo que la molestaré un poco con el pastel que está comiendo."
 
 MC "Vamos, sabes que si sigues comiendo tantos dulces no le harás bien a tu salud…"
 

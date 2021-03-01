@@ -14,7 +14,7 @@ narrator "Para acelerar las cosas trato de pedirle a mi hermana que me alcance m
 
 Airi "¿Qué cosa?"
 
-narrator "[Buzz()]{c}Antes de que Airi de un paso dentro de mi habitación me lanzo hacia la revista para cubrirla con mi cuerpo."
+narrator "[Buzz()]Antes de que Airi de un paso dentro de mi habitación me lanzo hacia la revista para cubrirla con mi cuerpo."
 
 MC "Nada, nada ya la encontré yo."
 

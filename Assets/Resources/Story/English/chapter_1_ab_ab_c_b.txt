@@ -1,6 +1,6 @@
 narrator "I will continue to listen just a little longer.{a} Maybe I could hear something useful…{c}or enoughly good to begin a talk."
 
-Chitose "I are right,it's too warm here and there isn`t any kind of cover…[setExpression(Chitose,body,sad,6)]"
+Chitose "I are right,it's too warm here and there isn't any kind of cover...[setExpression(Chitose,body,sad,6)]"
 
 narrator "You are right but if you sit on the benches they can make a small shade."
 
@@ -10,7 +10,7 @@ Chitose "But the good side is his calm,I could get used to it...[setExpression(C
 
 narrator "So Chitose is a bad looser.{a} That is useful information."
 
-Akiko "If you like calm places,Why we are here[setExpression(Akiko,body,annoyed,6)]"
+Akiko "If you like calm places,why we are here[setExpression(Akiko,body,annoyed,6)]"
 
 Chitose "You know the answer.[setExpression(Chitose,body,smile2,6)]"
 
@@ -22,17 +22,17 @@ narrator "I hear what Chitose said,she also looking a partner before year's end.
 
 Akiko "At [LastSchoolAkiko] the guy were smarter and sexier than here.[setExpression(Akiko,body,angry,6)]"
 
-Chitose "I hope my purposes were so simple…[setExpression(Chitose,body,normal,6) setExpression(Akiko,body,annoyed,6)]{c}I doesn`t matter if his intelligence is limited to solve maths.I need someone who can help me to defeat my sister.[setExpression(Chitose,body,sad,6)]"
+Chitose "I hope my purposes were so simple...[setExpression(Chitose,body,normal,6) setExpression(Akiko,body,annoyed,6)]{c}I doesn`t matter if his intelligence is limited to solve maths.I need someone who can help me to defeat my sister.[setExpression(Chitose,body,sad,6)]"
 
 Akiko "Okay,okay I will accept this free bronze.[setExpression(Akiko,body,normal,6)]"
 
 Chitose "Thanks Akiko for make me company here.[setExpression(Chitose,body,smile2,6)]"
 
-Akiko "You said many times...{c}and I keep saying the same.You are my friend,I will support while there is a chance.[setExpression(Akiko,body,smile1,6)]"
+Akiko "You said many times...{c}And I keep saying the same.You are my friend,I will support while there is a chance.[setExpression(Akiko,body,smile1,6)]"
 
-Chitose "Thanks (Gracias).{wa 1} [setExpression(Chitose,body,smile1,6)] I will go ahead to buy a lunch."
+Chitose "Thanks.{wa 1} [setExpression(Chitose,body,smile1,6)]I will go ahead to buy a lunch."
 
-narrator "Apparently Chitose is going to stay here just a little bit longer and then she will left his friend.{c} What should I do?{c}Now I have a better understanding of the situation.Apparently Chitose need someone to defeat another person.That person also  has to be able to understand something and blackmail …"
+narrator "Apparently Chitose is going to stay here just a little bit longer and then she will left his friend.{c}What should I do?{c}Now I have a better understanding of the situation.Apparently Chitose need someone to defeat another person.That person also  has to be able to understand something and blackmail..."
 
 choice " "
 {

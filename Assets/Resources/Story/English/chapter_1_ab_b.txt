@@ -1,28 +1,28 @@
 MC "[playMusic(Relax)]Haaa,It doesn't matter.She`is going to get angry if I follow,after all she had said that I have to go ahead.{c}Unless something annoy her I can be more relaxed."
 
-narrator "Once I realized that I couldn't reach Tachibana.I continued my route toward the academy .{c}[setBackground(HouseStreet_2_0,false,1) playMusic(Time)] While I was in route ,I realized that a cross the street were two girls with the same uniform were walking ."
+narrator "Once I realized that I couldn't reach Tachibana.I continued my route toward the academy.{c}[setBackground(HouseStreet_2_0,false,1) playMusic(Time)]While I was in route, I realized that a cross the street were two girls with the same uniform were walking ."
 
 MC "They might be new students?"
 
-narrator "One has long and brown hair while the other has* short and pink hair .[enter(Chitose) moveCharacter(Chitose,0,0,3) enter(Akiko) moveCharacter(Akiko,1,0,3)]{c}Due that one of them was talking pretty loudly I could hear part of his conversation.[playMusic(Shera)]"
+narrator "One has long and brown hair while the other has* short and pink hair.[enter(Chitose) moveCharacter(Chitose,0,0,3) enter(Akiko) moveCharacter(Akiko,1,0,3)]{c}Due that one of them was talking pretty loudly I could hear part of his conversation.[playMusic(Shera)]"
 
-RandomGirl1 "! I'm sure that in this school we will be fine![setExpression(Chitose,body,smile2,6)]"
+RandomGirl1 "!I'm sure that in this school we will be fine![setExpression(Chitose,body,smile2,6)]"
 
-RandomGirl2 "[setExpression(Akiko,body,smile1,6)] I hope you are be right but I will miss the rest [LastSchoolAkiko]"
+RandomGirl2 "[setExpression(Akiko,body,smile1,6)]I hope you are be right but I will miss the rest [LastSchoolAkiko]"
 
-RandomGirl1 "[setExpression(Chitose,body,normal,6)] Don`t worry they still have plenty of fun.Instead you should worried for us,after all maybe we're are not going to meet anyone today."
+RandomGirl1 "[setExpression(Chitose,body,normal,6)]Don`t worry they still have plenty of fun.Instead you should worried for us,after all maybe we're are not going to meet anyone today."
 
-narrator "'Fun?,It's how you call school life.{c} At that moment they cross sights."
+narrator "'Fun'?,It's how you call school life.{c}At that moment they cross sights."
 
 MC "[playMusic(Time)]Ah"
 
-narrator " Is she was looking me?{a} The cross of sights was enduring more than a moment .{c} It might have called his attention.Maybe this the moment that I had been looking for a long time …{a}This could be beginning of my love life{c} The brown hair girl after realized that we had crossed sights,turns around and keep his route.{c} Apparently my luck is changing this could result in a predestined encounter .{c} I could hear how they keep talking while walking but in low tone."
+narrator "Is she was looking me?{a} The cross of sights was enduring more than a moment.{c}It might have called his attention.Maybe this the moment that I had been looking for a long time...{a} This could be beginning of my love life.{c}The brown hair girl after realized that we had crossed sights,turns around and keep his route.{c}Apparently my luck is changing this could result in a predestined encounter.{c}I could hear how they keep talking while walking but in low tone."
 
 RandomGirl1 "[setExpression(Chitose,body,sleepy,6) setExpression(Akiko,body,o,6)]That guy doesn't look weird."
 
-narrator "[Buzz()]Guuhh, Aparently I was too optimistic.{c} Hummm,maybe I still have a chance to another opportunity .{c}[setBackground(School_Entrance_0,false,1)] I arrive to the entrance of the academy. [exit(Chitose) exit(Akiko)]"
+narrator "[Buzz()]Guuhh, Aparently I was too optimistic.{c}Hummm,maybe I still have a chance to another opportunity.{c}[setBackground(School_Entrance_0,false,1)]I arrive to the entrance of the academy.[exit(Chitose) exit(Akiko)]"
 
-MC "There is still 20 minutes before the ring bells,I hope that Tachibana manage to arrive on time…[playMusic(Time)]"
+MC "There is still 20 minutes before the ring bells,I hope that Tachibana manage to arrive on time...[playMusic(Time)]"
 
 narrator "While it hope the best for his friend,a thin and shy girl appear running."
 
@@ -32,7 +32,7 @@ MC "Jajá, you did a good time between your house and here."
 
 Tachibana "[setExpression(Tachibana,body,annoyed,6)]..."
 
-narrator "Aparently something happened,again...{c}I don`t think that with so many people around a joke improve her mood .{c}I moved near her to pet his head and remind it that everything will be fine."
+narrator "Aparently something happened,again...{c}I don`t think that with so many people around a joke improve her mood.{c}I moved near her to pet his head and remind it that everything will be fine."
 
 MC "Come on,you are already at the school so nothing wrong could happen."
 
@@ -40,12 +40,12 @@ Tachibana "[setExpression(Tachibana,body,shocked,6) playSfx(punch) Buzz()]Hiii..
 
 narrator "[setExpression(Tachibana,body,o,6)]I was a little bit tired but I decided to see if it worked."
 
-MC "[playMusic(Shera)] Now,are you better?"
+MC "[playMusic(Shera)]Now,are you better?"
 
 Tachibana "[setExpression(Tachibana,body,sad,6)]¿Eh? ¿Ah? Ye-yes"
 
-narrator "[setExpression(Tachibana,body,normal,6)] Once I had confirmed that she was okay.I wanted to continue with our activities."
+narrator "[setExpression(Tachibana,body,normal,6)]Once I had confirmed that she was okay.I wanted to continue with our activities."
 
-MC "[playMusic(Time)] So let 's go,we have to see which is our classroom."
+MC "[playMusic(Time)]So let 's go,we have to see which is our classroom."
 
 "[Load(chapter_1_ab_ab)]"

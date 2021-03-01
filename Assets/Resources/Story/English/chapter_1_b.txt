@@ -4,9 +4,9 @@ MC "Damn,how is this my last year?"
 
 narrator "My name is [mainCharacterName] and this year I have to take an admission test."
 
-Airi "Are you ready? or I have to kick your ass to make you move"
+Airi "Are you ready? or I have to kick your ass to make you move."
 
-narrator "[setExpression(Airi,body,annoyed,6)]and that girl, who is teasing me from the door is my little sister,Airi."
+narrator "[setExpression(Airi,body,annoyed,6)]And that girl, who is teasing me from the door is my little sister,Airi."
 
 MC "I am putting my clothes as fast as I can,so you don't have to worry.{c}Airi,could you give that shirt..."
 
@@ -14,9 +14,9 @@ narrator "In order to dress me quickly,I ask my sister to pass my clothes but at
 
 Airi "Which one?"
 
-narrator "[Buzz()]{c}Before Airi put a foot inside my room,I jumped to hide the magazine with my body."
+narrator "[Buzz()]Before Airi put a foot inside my room,I jumped to hide the magazine with my body."
 
-MC "Nothing,I find it for myself ."
+MC "Nothing,I find it for myself."
 
 Airi "You make weird things onii-san.[setExpression(Airi,body,annoyed,6)]"
 

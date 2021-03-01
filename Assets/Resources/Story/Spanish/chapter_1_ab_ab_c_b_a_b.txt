@@ -6,8 +6,7 @@ Akiko "Sé lo que intentas…[setExpression(Akiko,body,smug,6)]"
 
 narrator "Parece que vio completamente a través de mi."
 
-Akiko "Pero ya que te atreviste a preguntar te daré una pista…
-[setExpression(Akiko,body,smile2,6)]{c}La situación de Chitose es totalmente diferente a la mía."
+Akiko "Pero ya que te atreviste a preguntar te daré una pista…[setExpression(Akiko,body,smile2,6)]{c}La situación de Chitose es totalmente diferente a la mía."
 
 narrator "Me respondió con una sonrisa burlona en su rostro."
 

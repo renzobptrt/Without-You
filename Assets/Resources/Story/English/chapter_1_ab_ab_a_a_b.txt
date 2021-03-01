@@ -1,16 +1,15 @@
-Narrator: " I can´t hide the fact that I think that all girls are beautiful, but she think that I´m saying that because I’m desperate ”
+Narrator "I can´t hide the fact that I think that all girls are beautiful.{c}But she think that I´m saying that because I'm desperate"
 
+MC "Tachibana, you are so beautiful.[setExpression(Tachibana,body,o,6)]"
 
-MC “Tachibana, you are so beautiful.”
+narrator "I try to say that as serious as possible."
 
-Narrator: “I try to say that as serious as possible.”
-
-MC: “I know that with Renji always joke about other girls and all. And it´s because I think that all girls have their own charm.
+MC "I know that with Renji always joke about other girls and all.{c}And it´s because I think that all girls have their own charm.[setExpression(Tachibana,body,annoyed,6)]"
 
 narrator "Tachibana is listening indifferently."
 
 Tachibana "..."
 
-Narrator “It looks like the situation got awkward.
+narrator "It looks like the situation got awkward.
 
 "[Load(chapter_1_ab_ab_a_ab2)]"

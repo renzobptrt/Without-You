@@ -1,8 +1,8 @@
 MC "I want to know what kind of person Chitose is looking for …"
 
-Akiko "I was expecting that question [setExpression(Akiko,body,laugh,6)]"
+Akiko "I was expecting that question.[setExpression(Akiko,body,laugh,6)]"
 
-narrator "Akiko said sarcastically while keeping a mocking smile on her face. "
+narrator "Akiko said sarcastically while keeping a mocking smile on her face."
 
 Akiko "I can't talk all about my friend behind her back.[setExpression(Akiko,body,smile1,6)]"
 
