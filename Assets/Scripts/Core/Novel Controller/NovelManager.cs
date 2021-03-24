@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Audio;
 using TMPro;
+using DG.Tweening;
 
 public class NovelManager : MonoBehaviour
 {
@@ -13,51 +14,53 @@ public class NovelManager : MonoBehaviour
     List<string> data = new List<string>();
 
     Coroutine handlingLine = null;
-    public bool isHandlingLine { get { return handlingLine != null; } }
+    Coroutine handlingChapterFile = null; 
+    Coroutine FinishMessageCoroutine = null;
+    [HideInInspector]public bool isHandlingLine { get { return handlingLine != null; } }
 
-    public bool isHandlingChapterFile { get { return handlingChapterFile != null; } }
-
-    Coroutine handlingChapterFile = null;
-
-    bool _next = false;
-
-    [SerializeField] private int chapterProgress = 0;
-
-    public string activeGameFileName = "";
-
-    public GameSavePanel saveLoadPanel;
-
-    public GameObject FinishLayer;
-
+    [HideInInspector] public bool isHandlingChapterFile { get { return handlingChapterFile != null; } }
+    
     public GameFile activeGameFile
     {
         get { return GameFile.activeFile; }
         set { GameFile.activeFile = value; }
     }
 
+    [Header("Game File")]
+    [SerializeField] private int chapterProgress = 0;
+    public string activeGameFileName = "";
     string activeChapterName = string.Empty;
     public bool encrypGameFile = true;
-
     public string cachedLastSpeaker = "";
     public string mainCharacterName = "";
-
     public string[] listIgnoreInTxt;
+    bool _next = false;
 
     [Header("Heroines Affinity")]
     public int tachibanaAffinity = 0;
     public int chitoseAffinity = 0;
     public int akikoAffinity = 0;
 
+    [Header("Current Accumulated Resources")]
+    public List<string> accumulatedResources = new List<string>();
+
     [Header("Audio Componentes")]
     public Slider musicSlider;
     public Slider sfxSlider;
 
+    [Header("Message Layer")]
+    public GameObject MessageLayer;
+    public GameObject MessageLayerBackground;
+    public TextMeshProUGUI MessageLayerText;
+
+    [Header("Save Layer")]
+    public GameSavePanel saveLoadPanel;
+    public RectTransform SavePanel;
+    public RectTransform SettingsPanel;
     public TextMeshProUGUI musicText;
     public TextMeshProUGUI sfxText;
 
-    public RectTransform SavePanel;
-    public RectTransform SettingsPanel;
-
+    [Header("Input Layer")]
     public Button CheckInput;
     public bool isCheck;
     public bool isAuto;
@@ -68,8 +71,14 @@ public class NovelManager : MonoBehaviour
     public TextMeshProUGUI[] TextSettings = null;
     public TextMeshProUGUI GoMainMenu = null;
 
-    public TextMeshProUGUI FinalText;
+    [Header("Current Conditionals")]
+    List<string> actionsConditional = new List<string>();
 
+    //temporary
+    byte[] keys
+    {
+        get { return FileManager.keys; }
+    }
 
     private void Awake()
     {
@@ -101,20 +110,6 @@ public class NovelManager : MonoBehaviour
                 else isAuto = false;
             }
         });
-
-        if (PlayerPrefs.GetString("CurrentLenguage").Equals("Spanish"))
-        {
-            SetLenguageText(0);
-            FinalText.text = "Final Parte 1 - Capítulo 1. Gracias por jugar";
-        }
-        else
-        {
-            SetLenguageText(1);
-            FinalText.text = "End of Part 1 - Chapter 1. Thanks for playing";
-        }
-
-
-
     }
 
     // Update is called once per frame
@@ -133,7 +128,6 @@ public class NovelManager : MonoBehaviour
         for (int i = 0; i < TextSettings.Length; i++)
             TextSettings[i].text = interfaceLenguage.lenguagesText[position].settingsText[i];
         GoMainMenu.text = interfaceLenguage.lenguagesText[position].goMenu;
-
     }
 
     public bool IsSpeakerIgnore(string speaker)
@@ -169,7 +163,6 @@ public class NovelManager : MonoBehaviour
         }
 
         //Load the file
-        //data = FileManager.LoadFile(FileManager.savPath + "Resources/Story/" + activeGameFile.chapterName);
         data = FileManager.ReadTextAsset(Resources.Load<TextAsset>($"Story/{PlayerPrefs.GetString("CurrentLenguage")}/{activeGameFile.chapterName}"));
         activeChapterName = activeGameFile.chapterName;
         cachedLastSpeaker = activeGameFile.cachedLastSpeaker;
@@ -179,7 +172,9 @@ public class NovelManager : MonoBehaviour
         chitoseAffinity = activeGameFile.chitoseAffinity;
         akikoAffinity = activeGameFile.akikoAffinity;
 
-        if(System.IO.File.Exists(filePath))
+        accumulatedResources = activeGameFile.listAccumulatedResources;
+
+        if (System.IO.File.Exists(filePath))
             DialogueSystem.instance.Open(activeGameFile.currentTextSystemSpeakerDisplayText, activeGameFile.currentTextSystemDisplayText);
 
 
@@ -234,10 +229,12 @@ public class NovelManager : MonoBehaviour
         activeGameFile.currentTextSystemSpeakerDisplayText = DialogueSystem.instance.speakerNameText.text;
         activeGameFile.currentTextSystemDisplayText = DialogueSystem.instance.speechText.text;
         AudioManager.instance.SaveVolume();
-        //Affinity
+
+        //Affinity and Resources
         activeGameFile.tachibanaAffinity = tachibanaAffinity;
         activeGameFile.chitoseAffinity = chitoseAffinity;
         activeGameFile.akikoAffinity = akikoAffinity;
+        activeGameFile.listAccumulatedResources = accumulatedResources;
 
         //Get all characters and save their stats
         activeGameFile.charactersInScene.Clear();
@@ -281,29 +278,14 @@ public class NovelManager : MonoBehaviour
             FileManager.SaveJSON(filePath, activeGameFile);
     }
 
-    //temporary
-    byte[] keys
-    {
-        get { return FileManager.keys; }
-    }
+
 
     public void LoadChapterFile(string fileName)
     {
         activeChapterName = fileName;
 
         data = FileManager.ReadTextAsset(Resources.Load<TextAsset>($"Story/{PlayerPrefs.GetString("CurrentLenguage")}/{fileName}"));
-        if(Resources.Load<TextAsset>($"Story/{fileName}") == null)
-        {
-            DialogueSystem.instance.speechText.text = "No encuentro";
-        }
-        else
-        {
-            DialogueSystem.instance.speechText.text = "Si encuentro "+data;
-            
-        }
 
-
-        //data = FileManager.LoadFile(FileManager.savPath + "Resources/Story/"+fileName);
         cachedLastSpeaker = "";
 
         if (handlingChapterFile != null)
@@ -354,8 +336,24 @@ public class NovelManager : MonoBehaviour
                 }
                 else
                 {
-                    HandleLine(line);
-                    chapterProgress++;
+                    if (line.StartsWith("if"))
+                    {
+                        AND(line);
+                    }else if (line.StartsWith("or"))
+                    {
+                        OR(line);
+                    }
+                    else if(line.StartsWith("{") || line.StartsWith("}"))
+                    {
+                        chapterProgress++;
+                        Next();
+                    }
+                    else
+                    {
+                        HandleLine(line);
+                        chapterProgress++;
+                    }
+
                     while (isHandlingLine)
                     {
                         yield return new WaitForEndOfFrame();
@@ -372,7 +370,6 @@ public class NovelManager : MonoBehaviour
             //We need a way of knowing when the player wants to advance. We need a "next" trigger.
             yield return new WaitForEndOfFrame();
         }
-
         handlingChapterFile = null;
     }
 
@@ -407,9 +404,7 @@ public class NovelManager : MonoBehaviour
                     InputScreen.instance.Accept();
                     isCheck = false;
                 }
-
             }
-
             yield return new WaitForEndOfFrame();
         }
 
@@ -421,6 +416,195 @@ public class NovelManager : MonoBehaviour
         }
     }
 
+    bool IsANDorOR(string condition, bool isAND = true)
+    {
+        string[] listConditions = new string[0];
+
+        List<string> currentConditionsDoing = new List<string>();
+        if (condition.Contains(";"))
+        {
+            listConditions = condition.Split(";"[0]);
+        }
+        else
+        {
+            listConditions = new string[1] { condition };
+        }
+
+        int affinityConditionalTachibana = -1;
+        int affinityConditionalAkiko = -1;
+        int affinityConditionalChitose = -1;
+
+        for (int i = 0; i < listConditions.Length; i++)
+        {
+            if (listConditions[i].Contains(","))
+            {
+                switch (listConditions[i].Split(',')[0])
+                {
+                    case "Tachibana":
+                        affinityConditionalTachibana = int.Parse(listConditions[i].Split(',')[1]);
+                        break;
+                    case "Chitose":
+                        affinityConditionalChitose = int.Parse(listConditions[i].Split(',')[1]);
+                        break;
+                    case "Akiko":
+                        affinityConditionalAkiko = int.Parse(listConditions[i].Split(',')[1]);
+                        break;
+                }
+            }
+            else
+            {
+                currentConditionsDoing.Add(listConditions[i]);
+            }
+        }
+
+        if (isAND)
+        {
+            if ((affinityConditionalTachibana != -1 && affinityConditionalTachibana != tachibanaAffinity) ||
+                (affinityConditionalChitose != -1 && affinityConditionalChitose != chitoseAffinity) ||
+                (affinityConditionalAkiko != -1 && affinityConditionalAkiko != akikoAffinity)
+                )
+                return false;
+        }
+        else
+        {
+            if ((affinityConditionalTachibana != -1 && affinityConditionalTachibana == tachibanaAffinity) ||
+                (affinityConditionalChitose != -1 && affinityConditionalChitose == chitoseAffinity) ||
+                (affinityConditionalAkiko != -1 && affinityConditionalAkiko == akikoAffinity))
+                return true;
+        }
+
+        if (accumulatedResources.Count > 0)
+        {
+            int count = 0;
+            for (int i = 0; i < currentConditionsDoing.Count; i++)
+            {
+                if (currentConditionsDoing[i].Contains("!"))
+                {
+                    currentConditionsDoing[i] = currentConditionsDoing[i].Replace("!", "");
+                    bool isFalse = true;
+                    for (int j = 0; j < accumulatedResources.Count; j++)
+                    {
+                        if (accumulatedResources[j].Equals(currentConditionsDoing[i]))
+                        {
+                            isFalse = false;
+                            break;
+                        }
+                    }
+
+                    if (isFalse)
+                        count++;
+                }
+                else
+                {
+                    for (int j = 0; j < accumulatedResources.Count; j++)
+                    { 
+                        if (accumulatedResources[j].Equals(currentConditionsDoing[i]))
+                        {
+                            count++;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            if (isAND)
+            {
+                if (count == currentConditionsDoing.Count)
+                    return true;
+            }
+            else
+            {
+                if (count > 0)
+                    return true;
+            }
+        }
+        else
+        {
+            if (currentConditionsDoing.Count == 0)
+                return true;
+        }
+        return false;
+    }
+     
+    void OR(string line)
+    {
+        string condition = line.Split('"')[1];
+        bool rpta = IsANDorOR(condition, false); 
+        
+        bool gatheringActions = true;
+
+        int currentChapterProgress = chapterProgress;
+
+        while (gatheringActions)
+        {
+            currentChapterProgress++;
+
+            line = data[currentChapterProgress];
+
+            if (line == "{")
+                continue;
+
+            line = line.Replace("  ", "");
+
+            if (line != "}")
+            {
+                actionsConditional.Add(line.Split('"')[1]);
+            }
+            else
+            {
+                gatheringActions = false;
+            }
+        }
+
+        if (rpta)
+            chapterProgress++;
+        else
+            chapterProgress += actionsConditional.Count + 3;
+
+        actionsConditional.Clear();
+        Next();
+    }
+
+    void AND(string line)
+    {
+        string condition = line.Split('"')[1];
+
+        bool rpta = IsANDorOR(condition);
+
+        bool gatheringActions = true;
+
+        int currentChapterProgress = chapterProgress;
+
+        while (gatheringActions)
+        {
+            currentChapterProgress++;
+
+            line = data[currentChapterProgress];
+
+            if (line == "{")
+                continue;
+
+            line = line.Replace("  ", "");
+
+            if(line != "}")
+            {
+                actionsConditional.Add(line.Split('"')[1]); 
+            }
+            else
+            {
+                gatheringActions = false;
+            }
+        }
+
+        if(rpta)
+            chapterProgress++;
+        else
+            chapterProgress += actionsConditional.Count + 3;
+
+        actionsConditional.Clear();
+        Next();
+    }
+    
     IEnumerator HandlingChoiceLine(string line)
     {
         string title = line.Split('"')[1];
@@ -441,8 +625,22 @@ public class NovelManager : MonoBehaviour
 
             if (line != "}")
             {
-                choices.Add(line.Split('"')[1]);
-                actions.Add(data[chapterProgress + 1].Replace("    ", ""));
+                string currentChoice = line.Split('"')[1];
+                if (currentChoice.Contains("|"))
+                {
+                    string conditionLine = currentChoice.Split('|')[1];
+                    if (IsANDorOR(conditionLine))
+                    {
+                        choices.Add(currentChoice.Split('|')[0]);
+                        actions.Add(data[chapterProgress + 1].Replace("    ", ""));
+                    }
+                    //actionsConditional.Clear();
+                }
+                else
+                {
+                    choices.Add(line.Split('"')[1]);
+                    actions.Add(data[chapterProgress + 1].Replace("    ", ""));
+                }
                 chapterProgress++;
             }
             else
@@ -627,13 +825,51 @@ public class NovelManager : MonoBehaviour
                     Command_Finish();
                     break;
                 }
+            case "AddResource":
+                {
+                    Command_AddResource(data[1]);
+                    break;
+                }
+            case "Message":
+                {
+                    Command_Message(data[1]);
+                    break;
+                }
         }
+    }
+
+    void Command_Message(string data)
+    {
+        MessageLayerBackground.SetActive(true);
+        string message = data;
+        message = message.Replace("_", " ");
+        MessageLayerText.text = message;
+        FinishMessageCoroutine = StartCoroutine(FinishSeeMessageLayer());
+    }
+
+    IEnumerator FinishSeeMessageLayer()
+    {
+        MessageLayer.SetActive(true);
+        MessageLayer.GetComponent<Animator>().SetTrigger("Finish");
+        yield return new WaitForSeconds(6.0f);
+        MessageLayer.GetComponent<Animator>().SetTrigger("Finish");
+        yield return new WaitForSeconds(1.0f);
+        MessageLayerBackground.SetActive(false);
+        MessageLayer.SetActive(false);
+        NextFinishMessageLayer();
+    }
+
+    void NextFinishMessageLayer()
+    {
+        Next();
+        StopCoroutine(FinishSeeMessageLayer());
+        FinishMessageCoroutine = null;
     }
 
     void Command_Finish()
     {
-        FinishLayer.SetActive(true);
-        FinishLayer.GetComponent<Animator>().SetTrigger("Finish");
+        MessageLayer.SetActive(true);
+        MessageLayer.GetComponent<Animator>().SetTrigger("Finish");
     }
 
     void Command_Buzz()
@@ -665,7 +901,10 @@ public class NovelManager : MonoBehaviour
                 break;
         }
     }
-
+    void Command_AddResource(string data)
+    {
+        accumulatedResources.Add(data);
+    }
 
     void Command_Load(string chapterName)
     {
@@ -730,6 +969,7 @@ public class NovelManager : MonoBehaviour
         Character c = CharacterManager.instance.GetCharacter(character);
         c.MoveTo(new Vector2(locationX, locationY), speed,smooth);
     }
+
     void Command_SetPosition(string data)
     {
         string[] parameters = data.Split(',');
@@ -739,6 +979,7 @@ public class NovelManager : MonoBehaviour
         Character c = CharacterManager.instance.GetCharacter(character);
         c.SetPosition(new Vector2(locationX, locationY));
     }
+
     void Command_ChangeExpression(string data)
     {
         string[] parameters = data.Split(',');

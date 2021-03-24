@@ -1,12 +1,21 @@
+narrator "[Message(Ten_en_cuenta_que_las_decisiones_que_tomes_afetarán_en_gran_manera_la_historia)]"
+
 input "¿Cual es tu nombre?" SavePlayerName()
 
 narrator "[setBackground(Bethroom_MC_0,false,1) playSfx(door)]{wa 1}[enter(Airi)]"
+
+or "Tachibana,10;Akiko,20;1;!aea"
+{
+narrator "aeaaaaaaaa"
+narrator "gaaaaaaaaaa"
+narrator "gaeeeeaa"
+}
 
 Airi "[setExpression(Airi,body,angry,6)][mainCharacterName] Despierta…"
 
 choice " "
 {
-  "Seguir durmiendo"
+  "Seguir durmiendo|Chitose,0"
     "[Load(chapter_1_a)]"
   "Levantarte"
     "[Load(chapter_1_b)]"

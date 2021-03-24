@@ -35,6 +35,9 @@ public class GameFile
     public int chitoseAffinity = 0;
     public int akikoAffinity = 0;
 
+    //ListConditions
+    public List<string> listAccumulatedResources = new List<string>();
+
     public GameFile()
     {
         this.chapterName = "chapter_1";
@@ -55,6 +58,8 @@ public class GameFile
         this.tachibanaAffinity = 0;
         this.chitoseAffinity = 0;
         this.akikoAffinity = 0;
+
+        this.listAccumulatedResources = new List<string>();
     }
 
     [System.Serializable]
